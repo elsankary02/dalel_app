@@ -4,6 +4,12 @@ A sophisticated Flutter application designed to take users on a historical journ
 
 ---
 
+<p align="center">
+  <img src="https://i.imgur.com/vH3P3zU.png" alt="Dalel App Screenshots" width="800">
+</p>
+
+---
+
 ## 🚀 Features
 
 * **Historical Exploration:** Browse through detailed historical periods with a smooth user experience.
