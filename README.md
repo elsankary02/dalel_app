@@ -1,32 +1,48 @@
-Dalel App 🗺️🏛️
-A Flutter mobile application designed to be a comprehensive guide for history enthusiasts, showcasing historical periods, influential figures, and ancient artifacts.
+# 🏛️ Dalel App (تطبيق دليل)
 
-🌟 Overview
-Dalel (Guide) is a platform that blends historical knowledge with a modern user experience. It allows users to travel through time and explore civilizations through an interactive and visually stunning interface.
+A sophisticated Flutter application designed to take users on a historical journey, exploring civilizations, artifacts, and legendary figures with a modern and intuitive UI.
 
-✨ Key Features
-Authentication System: Secure Sign-in and Sign-up (Firebase integration).
+---
 
-Home Dashboard: Browse historical periods (e.g., Ancient, Islamic, etc.) with rich visuals.
+## 🚀 Features
 
-Detailed Insights: Comprehensive information about historical characters and artifacts.
+* **Historical Exploration:** Browse through detailed historical periods with a smooth user experience.
+* **Artifacts Bazaar:** A dedicated marketplace view for exploring ancient artifacts and replicas.
+* **Deep Insights:** Comprehensive data regarding historical characters and ancient legends.
+* **Dynamic Theming:** High-quality UI/UX inspired by the historical theme with modern touches.
+* **Multi-language Support:** Full localization support using **Easy Localization** (Arabic/English).
+* **Clean UI:** A professional and polished interface designed in Figma for visual clarity.
 
-Bazaar/Marketplace: A dedicated section for browsing and purchasing historical replicas or artifacts.
+---
 
-Search Functionality: Quickly find specific historical events or figures.
+## 🛠️ Tech Stack & Tools
 
-User Profile: Manage personal information and app settings.
+* **State Management:** **Cubit (Flutter Bloc)** for efficient, reactive, and scalable state handling.
+* **Networking:** **Dio** for robust communication with backend APIs and Firebase.
+* **Architecture:** **Clean Architecture** (Data, Domain, Presentation layers) for a maintainable codebase.
+* **Dependency Injection:** **Get_it** for managing service locators.
+* **Database & Auth:** **Firebase** integration for real-time data and user authentication.
+* **Local Storage:** **Shared Preferences** for handling user sessions and cache.
 
-🛠️ Tech Stack
-Flutter & Dart: UI development and logic.
+---
 
-BLoC Pattern: Robust State Management.
+## 🎨 Design Reference
 
-Firebase: Backend for Auth and Firestore database.
+The application UI was meticulously crafted to ensure a seamless transition from design to code.
+* **Figma Design:** [🔗 View on Figma](https://www.figma.com/design/rDL7yYQ3uH0GI45w4h0x5j/Dalel?m=auto&t=pIfcjgp5zt3VRoFy-6)
 
-Clean Architecture: Organized code structure for scalability.
+---
 
-🎨 Design (UI/UX)
-The UI was meticulously crafted in Figma, focusing on a "historical" theme using earthy tones and elegant typography.
+## 📥 Getting Started & Installation
 
-<a href="https://www.figma.com/design/rDL7yYQ3uH0GI45w4h0x5j/Dalel">🔗 Open Figma Design</a>
+Follow these steps to get a local copy up and running:
+
+### Prerequisites
+* Flutter SDK (Latest Version)
+* Dart SDK
+* Android Studio / VS Code
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/elsankry02/dalel_app.git](https://github.com/elsankry02/dalel_app.git)
