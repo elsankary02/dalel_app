@@ -1,12 +1,6 @@
-# 🏛️ Dalel App (تطبيق دليل)
+# 🏛️ Dalel App 
 
 A sophisticated Flutter application designed to take users on a historical journey, exploring civilizations, artifacts, and legendary figures with a modern and intuitive UI.
-
----
-
-<p align="center">
-  <img src="https://i.imgur.com/vH3P3zU.png" alt="Dalel App Screenshots" width="800">
-</p>
 
 ---
 
