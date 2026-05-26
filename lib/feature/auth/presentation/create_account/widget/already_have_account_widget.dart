@@ -1,10 +1,11 @@
-import '../../../../../core/router/route_names.dart';
-import '../../../../../core/utils/extensions/extensions.dart';
-import '../../../../../core/utils/themes/app_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../core/router/route_names.dart';
+import '../../../../../core/utils/extensions/extensions.dart';
+import '../../../../../core/utils/themes/app_colors.dart';
 
 class AlreadyHaveAccountWidget extends StatelessWidget {
   const AlreadyHaveAccountWidget({super.key});
@@ -31,8 +32,6 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.lightGrey,
-              decoration: .underline,
-              decorationColor: AppColors.lightGrey,
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {

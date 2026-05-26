@@ -1,8 +1,10 @@
-import '../../../../../core/utils/extensions/extensions.dart';
-import '../../../../../core/utils/themes/app_colors.dart';
+import 'package:dalel_app/feature/auth/func/terms_and_conditions_func.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/extensions/extensions.dart';
+import '../../../../../core/utils/themes/app_colors.dart';
 
 class TermsAndConditionWidget extends StatefulWidget {
   const TermsAndConditionWidget({super.key});
@@ -51,7 +53,7 @@ class _TermsAndConditionWidgetState extends State<TermsAndConditionWidget> {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    // TODO : trems
+                    termsAndConditionsFunc(context);
                   },
               ),
             ],

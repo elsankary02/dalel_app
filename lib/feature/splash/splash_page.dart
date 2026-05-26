@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../app/boot.dart';
 import '../../core/databases/cache/cache_helper.dart';
 import '../../core/router/route_names.dart';
 import '../../core/utils/constants/app_strings.dart';
 import '../../core/utils/extensions/extensions.dart';
 import '../../core/utils/themes/app_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -25,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
 
-    //! Check isVisited
+    //! Check isVisited from cache to decide where to navigate
     final isVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
     if (isVisited == true) {
       context.replaceNamed(RouteNames.loginPage);
