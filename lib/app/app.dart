@@ -1,11 +1,11 @@
-import '../core/utils/themes/app_themes.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/router/app_go_router.dart';
+import '../core/utils/themes/app_themes.dart';
 
-class DalelApp extends StatelessWidget {
-  const DalelApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {

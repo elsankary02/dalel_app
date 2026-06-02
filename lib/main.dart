@@ -15,7 +15,7 @@ void main() async {
     EasyLocalization(
       path: AppStrings.kTranslations,
       supportedLocales: [Locale('ar'), Locale('en')],
-      child: DalelApp(),
+      child: App(),
     ),
   );
 }

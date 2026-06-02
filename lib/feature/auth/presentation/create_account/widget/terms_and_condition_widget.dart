@@ -1,4 +1,4 @@
-import 'package:dalel_app/feature/auth/func/terms_and_conditions_func.dart';
+import '../../../func/terms_and_conditions_func.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
