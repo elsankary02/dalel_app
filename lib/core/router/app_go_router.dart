@@ -1,5 +1,5 @@
-import 'package:dalel_app/app/boot.dart';
-import 'package:dalel_app/feature/auth/data/cubit/auth_cubit/auth_cubit.dart';
+import '../../app/boot.dart';
+import '../../feature/auth/data/cubit/auth_cubit/auth_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
