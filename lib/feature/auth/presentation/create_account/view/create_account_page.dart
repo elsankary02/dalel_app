@@ -1,5 +1,7 @@
+import 'package:dalel_app/feature/auth/data/cubit/auth_cubit/auth_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
@@ -30,76 +32,108 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
+  void signUpFunc() {
+    context.read<AuthCubit>().createUserWithEmailAndPassword(
+      emailAddress: emailAddressController.text,
+      password: passWordController.text,
+      firstName: firstNameController.text,
+      lastName: lastNameController.text,
+    );
+  }
+
   bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.offWhite,
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: EdgeInsetsDirectional.only(
-            top: context.h * 0.200,
-            start: context.h * 0.024,
-            end: context.h * 0.024,
-          ),
-          children: [
-            Text(
-              context.tr("welcome"),
-              style: context.textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.w600,
+      body: BlocConsumer<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is AuthError) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.message)));
+            return;
+          }
+
+          if (state is AuthSuccess) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(context.tr("account_created_successfully")),
               ),
-              textAlign: .center,
-            ),
-            SizedBox(height: context.h * 0.060),
-            CustomTextFormField(
-              labelText: context.tr("first_name"),
-              controller: firstNameController,
-            ),
-            SizedBox(height: context.h * 0.030),
-            CustomTextFormField(
-              labelText: context.tr("last_name"),
-              controller: lastNameController,
-            ),
-            SizedBox(height: context.h * 0.030),
-            CustomTextFormField(
-              labelText: context.tr("email_address"),
-              controller: emailAddressController,
-            ),
-            SizedBox(height: context.h * 0.030),
-            CustomTextFormField(
-              labelText: context.tr("password"),
-              controller: passWordController,
-              obscureText: isSelected,
-              suffixIcon: InkWell(
-                onTap: () {
-                  setState(() {
-                    isSelected = !isSelected;
-                  });
-                },
-                child: Icon(
-                  isSelected
-                      ? Icons.visibility_off_outlined
-                      : Icons.visibility_outlined,
-                  color: AppColors.lightGrey,
+            );
+            return;
+          }
+        },
+        builder: (context, state) {
+          return Form(
+            key: _formKey,
+            child: ListView(
+              padding: EdgeInsetsDirectional.only(
+                top: context.h * 0.200,
+                start: context.h * 0.024,
+                end: context.h * 0.024,
+              ),
+              children: [
+                Text(
+                  context.tr("welcome"),
+                  style: context.textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: .center,
                 ),
-              ),
+                SizedBox(height: context.h * 0.060),
+                CustomTextFormField(
+                  labelText: context.tr("first_name"),
+                  controller: firstNameController,
+                ),
+                SizedBox(height: context.h * 0.030),
+                CustomTextFormField(
+                  labelText: context.tr("last_name"),
+                  controller: lastNameController,
+                ),
+                SizedBox(height: context.h * 0.030),
+                CustomTextFormField(
+                  labelText: context.tr("email_address"),
+                  controller: emailAddressController,
+                ),
+                SizedBox(height: context.h * 0.030),
+                CustomTextFormField(
+                  labelText: context.tr("password"),
+                  controller: passWordController,
+                  obscureText: isSelected,
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isSelected = !isSelected;
+                      });
+                    },
+                    child: Icon(
+                      isSelected
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      color: AppColors.lightGrey,
+                    ),
+                  ),
+                ),
+                SizedBox(height: context.h * 0.020),
+                TermsAndConditionWidget(),
+                SizedBox(height: context.h * 0.120),
+                CustomPrimaryBtn(
+                  title: context.tr("sign_up"),
+                  textStyle: context.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.white,
+                  ),
+                  onTap: () => signUpFunc(),
+                  isLoading: state is AuthLoading,
+                ),
+                SizedBox(height: context.h * 0.016),
+                AlreadyHaveAccountWidget(),
+              ],
             ),
-            SizedBox(height: context.h * 0.020),
-            TermsAndConditionWidget(),
-            SizedBox(height: context.h * 0.120),
-            CustomPrimaryBtn(
-              title: context.tr("sign_up"),
-              textStyle: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w500,
-                color: AppColors.white,
-              ),
-            ),
-            SizedBox(height: context.h * 0.016),
-            AlreadyHaveAccountWidget(),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
