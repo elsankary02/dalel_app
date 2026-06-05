@@ -33,6 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void signUpFunc() {
+    if (!_formKey.currentState!.validate()) return;
     context.read<AuthCubit>().createUserWithEmailAndPassword(
       emailAddress: emailAddressController.text,
       password: passWordController.text,
@@ -41,7 +42,8 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  bool isSelected = false;
+  bool isSuffixIconSelected = true;
+  bool isCheckBoxSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -85,31 +87,43 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(height: context.h * 0.060),
                 CustomTextFormField(
                   labelText: context.tr("first_name"),
+                  validator: (value) => value == null || value.isEmpty
+                      ? context.tr("first_name_required")
+                      : null,
                   controller: firstNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 CustomTextFormField(
                   labelText: context.tr("last_name"),
+                  validator: (value) => value == null || value.isEmpty
+                      ? context.tr("last_name_required")
+                      : null,
                   controller: lastNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 CustomTextFormField(
                   labelText: context.tr("email_address"),
+                  validator: (value) => value == null || value.isEmpty
+                      ? context.tr("email_address_required")
+                      : null,
                   controller: emailAddressController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 CustomTextFormField(
                   labelText: context.tr("password"),
+                  validator: (value) => value == null || value.isEmpty
+                      ? context.tr("password_required")
+                      : null,
                   controller: passWordController,
-                  obscureText: isSelected,
+                  obscureText: isSuffixIconSelected,
                   suffixIcon: InkWell(
                     onTap: () {
                       setState(() {
-                        isSelected = !isSelected;
+                        isSuffixIconSelected = !isSuffixIconSelected;
                       });
                     },
                     child: Icon(
-                      isSelected
+                      isSuffixIconSelected
                           ? Icons.visibility_off_outlined
                           : Icons.visibility_outlined,
                       color: AppColors.lightGrey,
@@ -117,15 +131,27 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 SizedBox(height: context.h * 0.020),
-                TermsAndConditionWidget(),
+                CheckboxAndTermsAndConditionWidget(
+                  isSelected: isCheckBoxSelected,
+                  onChanged: (value) {
+                    setState(() {
+                      isCheckBoxSelected = value ?? false;
+                    });
+                  },
+                ),
                 SizedBox(height: context.h * 0.120),
                 CustomPrimaryBtn(
+                  disabledBackgroundColor: isCheckBoxSelected
+                      ? AppColors.primaryColor
+                      : AppColors.grey,
                   title: context.tr("sign_up"),
                   textStyle: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: AppColors.white,
+                    color: isCheckBoxSelected
+                        ? AppColors.white
+                        : AppColors.primaryColor,
                   ),
-                  onTap: () => signUpFunc(),
+                  onTap: isCheckBoxSelected ? () => signUpFunc() : null,
                   isLoading: state is AuthLoading,
                 ),
                 SizedBox(height: context.h * 0.016),

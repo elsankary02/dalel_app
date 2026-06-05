@@ -44,7 +44,7 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.autofocus = false,
     this.enabledBorderColor = AppColors.lightGrey,
-    this.focusedBorderColor = AppColors.lightGrey,
+    this.focusedBorderColor = AppColors.primaryColor,
     this.prefixText,
     this.suffixText,
     this.suffixStyle,
@@ -65,7 +65,6 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       style: style,
-
       autovalidateMode: autovalidateMode,
       autofocus: autofocus,
       validator: validator,
@@ -96,6 +95,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         focusedBorder: outlineInputBorder(
           color: focusedBorderColor,
+
           radius: radius,
         ),
         focusedErrorBorder: outlineInputBorder(

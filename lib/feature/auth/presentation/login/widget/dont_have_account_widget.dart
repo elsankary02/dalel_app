@@ -31,9 +31,7 @@ class DontHaveAccountWidget extends StatelessWidget {
             text: context.tr("sign_up"),
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
-              color: AppColors.lightGrey,
-              decoration: .underline,
-              decorationColor: AppColors.lightGrey,
+              color: AppColors.primaryColor,
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {

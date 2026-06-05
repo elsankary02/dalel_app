@@ -14,11 +14,10 @@ class AuthCubit extends Cubit<AuthState> {
   }) async {
     try {
       emit(AuthLoading());
-      final credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-            email: emailAddress,
-            password: password,
-          );
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
       emit(AuthSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
