@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -29,7 +30,11 @@ class _SplashPageState extends State<SplashPage> {
     //! Check isVisited from cache to decide where to navigate
     final isVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
     if (isVisited == true) {
-      context.replaceNamed(RouteNames.loginPage);
+      if (FirebaseAuth.instance.currentUser != null) {
+        context.replaceNamed(RouteNames.homePage);
+      } else {
+        context.replaceNamed(RouteNames.signUpPage);
+      }
     } else {
       context.replaceNamed(RouteNames.onBoardingPage);
     }

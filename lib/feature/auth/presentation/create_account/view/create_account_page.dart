@@ -62,7 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
               message: context.tr("account_created_successfully"),
               context,
             );
-            context.pushReplacementNamed(RouteNames.loginPage);
+            context.pushReplacementNamed(RouteNames.homePage);
             return;
           }
         },
