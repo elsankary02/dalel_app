@@ -1,5 +1,5 @@
-import 'package:dalel_app/core/functions/show_snakbar_message.dart';
-import 'package:dalel_app/core/router/route_names.dart';
+import '../../../../../core/functions/show_snakbar_message.dart';
+import '../../../../../core/router/route_names.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  bool isCheckBoxSelected = false;
+  bool _isCheckBoxSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -118,26 +118,26 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 SizedBox(height: context.h * 0.020),
                 CheckboxAndTermsAndConditionWidget(
-                  isSelected: isCheckBoxSelected,
+                  isSelected: _isCheckBoxSelected,
                   onChanged: (value) {
                     setState(() {
-                      isCheckBoxSelected = value ?? false;
+                      _isCheckBoxSelected = value ?? false;
                     });
                   },
                 ),
                 SizedBox(height: context.h * 0.120),
                 CustomPrimaryBtn(
-                  disabledBackgroundColor: isCheckBoxSelected
+                  disabledBackgroundColor: _isCheckBoxSelected
                       ? AppColors.primaryColor
                       : AppColors.grey,
                   title: context.tr("sign_up"),
                   textStyle: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: isCheckBoxSelected
+                    color: _isCheckBoxSelected
                         ? AppColors.white
                         : AppColors.primaryColor,
                   ),
-                  onTap: isCheckBoxSelected ? () => signUpFunc() : null,
+                  onTap: _isCheckBoxSelected ? () => signUpFunc() : null,
                   isLoading: state is AuthLoading,
                 ),
                 SizedBox(height: context.h * 0.016),

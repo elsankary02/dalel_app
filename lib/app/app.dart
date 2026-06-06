@@ -17,7 +17,7 @@ class DalelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: AppThemes.darkTheme,
       theme: AppThemes.lightTheme,
-      themeMode: .light,
+      themeMode: ThemeMode.light,
     );
   }
 }

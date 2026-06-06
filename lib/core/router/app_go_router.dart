@@ -1,4 +1,4 @@
-import 'package:dalel_app/feature/home/home_page.dart';
+import '../../feature/home/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 

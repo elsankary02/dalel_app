@@ -27,9 +27,8 @@ class _SplashPageState extends State<SplashPage> {
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
 
-    //! Check isVisited from cache to decide where to navigate
-    final isVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
-    if (isVisited == true) {
+    final isUserVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
+    if (isUserVisited == true) {
       if (FirebaseAuth.instance.currentUser != null) {
         context.replaceNamed(RouteNames.homePage);
       } else {
