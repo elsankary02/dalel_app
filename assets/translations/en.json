@@ -31,5 +31,6 @@
   "last_name_required": "Last name is required",
   "email_address_required": "Email address is required",
   "password_required": "Password is required",
-  "account_created_successfully": "Account created successfully"
+  "account_created_successfully": "Account created successfully",
+  "login_successfully": "Logged in successfully"
 }

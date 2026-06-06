@@ -13,20 +13,58 @@ class AuthCubit extends Cubit<AuthState> {
     required String lastName,
   }) async {
     try {
-      emit(AuthLoading());
+      emit(CreatAccountLoading());
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
-      emit(AuthSuccess());
+      emit(CreatAccountSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        emit(AuthError(message: 'The password provided is too weak.'));
+        emit(CreatAccountError(message: 'The password provided is too weak.'));
       } else if (e.code == 'email-already-in-use') {
-        emit(AuthError(message: 'The account already exists for that email.'));
+        emit(
+          CreatAccountError(
+            message: 'The account already exists for that email.',
+          ),
+        );
       }
     } catch (e) {
-      emit(AuthError(message: 'An error occurred.'));
+      emit(CreatAccountError(message: 'An error occurred.'));
     }
+  }
+
+  Future<void> signInWithEmailAndPassword({
+    required String emailAddress,
+    required String password,
+  }) async {
+    try {
+      emit(LogInLoading());
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress.trim(),
+        password: password,
+      );
+      emit(LogInSuccess());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(LogInError(message: 'No user found for that email.'));
+      } else if (e.code == 'wrong-password') {
+        emit(LogInError(message: 'Wrong password provided for that user.'));
+      } else if (e.code == 'invalid-credential') {
+        emit(LogInError(message: 'Invalid email or password.'));
+      } else if (e.code == 'too-many-requests') {
+        emit(LogInError(message: 'too many requests'));
+      } else if (e.code == 'network-request-failed') {
+        emit(LogInError(message: 'network error'));
+      } else {
+        emit(LogInError(message: e.message ?? 'Something went wrong'));
+      }
+    } catch (e) {
+      emit(LogInError(message: e.toString()));
+    }
+  }
+
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }

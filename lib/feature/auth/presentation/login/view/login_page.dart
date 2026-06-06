@@ -1,5 +1,10 @@
+import '../../../../../core/functions/show_snakbar_message.dart';
+import '../../../../../core/router/route_names.dart';
+import '../../../data/cubit/auth_cubit/auth_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
@@ -27,55 +32,88 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
+  void loginFunc() {
+    if (!_formKey.currentState!.validate()) return;
+    context.read<AuthCubit>().signInWithEmailAndPassword(
+      emailAddress: _emailAddressController.text.trim(),
+      password: _passWordController.text.trim(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            TopLoginWidget(),
-            SizedBox(height: context.h * 0.032),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  Text(
-                    context.tr("welcomeback"),
-                    style: context.textTheme.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    textAlign: .center,
+      body: BlocConsumer<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is LogInError) {
+            showSnakBarMessage(isError: true, message: state.message, context);
+            return;
+          } else if (state is LogInSuccess) {
+            showSnakBarMessage(
+              message: context.tr("login_successfully"),
+              context,
+            );
+            context.pushReplacementNamed(RouteNames.homePage);
+            return;
+          }
+        },
+        builder: (context, state) {
+          return Form(
+            key: _formKey,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                TopLoginWidget(),
+                SizedBox(height: context.h * 0.032),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      Text(
+                        context.tr("welcomeback"),
+                        style: context.textTheme.headlineMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: .center,
+                      ),
+                      SizedBox(height: context.h * 0.048),
+                      CustomTextFormField(
+                        labelText: context.tr("email_address"),
+                        controller: _emailAddressController,
+                        validator: (value) => value == null || value.isEmpty
+                            ? context.tr("email_address_required")
+                            : null,
+                      ),
+                      SizedBox(height: context.h * 0.030),
+                      CustomTextFormField(
+                        labelText: context.tr("password"),
+                        controller: _passWordController,
+                        isPassword: true,
+                        validator: (value) => value == null || value.isEmpty
+                            ? context.tr("password_required")
+                            : null,
+                      ),
+                      SizedBox(height: 16),
+                      ForgotPasswordWidget(),
+                      SizedBox(height: context.h * 0.110),
+                      CustomPrimaryBtn(
+                        title: context.tr("sign_in"),
+                        textStyle: context.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.white,
+                        ),
+                        isLoading: state is LogInLoading,
+                        onTap: () => loginFunc(),
+                      ),
+                      SizedBox(height: context.h * 0.016),
+                      DontHaveAccountWidget(),
+                    ],
                   ),
-                  SizedBox(height: context.h * 0.048),
-                  CustomTextFormField(
-                    labelText: context.tr("email_address"),
-                    controller: _emailAddressController,
-                  ),
-                  SizedBox(height: context.h * 0.030),
-                  CustomTextFormField(
-                    labelText: context.tr("password"),
-                    controller: _passWordController,
-                    isPassword: true,
-                  ),
-                  SizedBox(height: 16),
-                  ForgotPasswordWidget(),
-                  SizedBox(height: context.h * 0.110),
-                  CustomPrimaryBtn(
-                    title: context.tr("sign_in"),
-                    textStyle: context.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.white,
-                    ),
-                  ),
-                  SizedBox(height: context.h * 0.016),
-                  DontHaveAccountWidget(),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

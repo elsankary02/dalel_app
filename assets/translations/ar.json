@@ -31,5 +31,6 @@
   "last_name_required": "اسم العائلة مطلوب",
   "email_address_required": "البريد الإلكتروني مطلوب",
   "password_required": "كلمة المرور مطلوبة",
-  "account_created_successfully": "تم إنشاء الحساب بنجاح"
+  "account_created_successfully": "تم إنشاء الحساب بنجاح",
+  "login_successfully": "تم تسجيل الدخول بنجاح"
 }

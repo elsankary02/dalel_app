@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(
@@ -5,7 +6,6 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(
   required String message,
   bool isError = false,
 }) {
-
   ScaffoldMessenger.of(context).removeCurrentSnackBar();
 
   return ScaffoldMessenger.of(context).showSnackBar(
@@ -16,7 +16,7 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(
       behavior: SnackBarBehavior.floating,
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      margin: const EdgeInsets.all(16),
+      margin: EdgeInsets.all(context.h * 0.016),
       duration: const Duration(seconds: 3),
       content: Row(
         children: [
@@ -28,10 +28,9 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(
           Expanded(
             child: Text(
               message,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
+              style: context.textTheme.titleMedium?.copyWith(
                 color: Colors.white,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),

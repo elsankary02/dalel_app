@@ -29,10 +29,10 @@ class _SplashPageState extends State<SplashPage> {
 
     final isUserVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
     if (isUserVisited == true) {
-      if (FirebaseAuth.instance.currentUser != null) {
-        context.replaceNamed(RouteNames.homePage);
-      } else {
+      if (FirebaseAuth.instance.currentUser == null) {
         context.replaceNamed(RouteNames.signUpPage);
+      } else {
+        context.replaceNamed(RouteNames.homePage);
       }
     } else {
       context.replaceNamed(RouteNames.onBoardingPage);

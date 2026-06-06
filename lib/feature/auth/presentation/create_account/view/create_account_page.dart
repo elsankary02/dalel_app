@@ -1,5 +1,3 @@
-import '../../../../../core/functions/show_snakbar_message.dart';
-import '../../../../../core/router/route_names.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
+import '../../../../../core/functions/show_snakbar_message.dart';
+import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
 import '../../../data/cubit/auth_cubit/auth_cubit.dart';
@@ -38,10 +38,10 @@ class _SignUpPageState extends State<SignUpPage> {
   void signUpFunc() {
     if (!_formKey.currentState!.validate()) return;
     context.read<AuthCubit>().createUserWithEmailAndPassword(
-      emailAddress: emailAddressController.text,
-      password: passWordController.text,
-      firstName: firstNameController.text,
-      lastName: lastNameController.text,
+      emailAddress: emailAddressController.text.trim(),
+      password: passWordController.text.trim(),
+      firstName: firstNameController.text.trim(),
+      lastName: lastNameController.text.trim(),
     );
   }
 
@@ -53,11 +53,11 @@ class _SignUpPageState extends State<SignUpPage> {
       backgroundColor: AppColors.offWhite,
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state is AuthError) {
+          if (state is CreatAccountError) {
             showSnakBarMessage(isError: true, message: state.message, context);
 
             return;
-          } else if (state is AuthSuccess) {
+          } else if (state is CreatAccountSuccess) {
             showSnakBarMessage(
               message: context.tr("account_created_successfully"),
               context,
@@ -74,6 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 top: context.h * 0.200,
                 start: context.h * 0.024,
                 end: context.h * 0.024,
+                bottom: context.h * 0.016,
               ),
               children: [
                 Text(
@@ -138,7 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         : AppColors.primaryColor,
                   ),
                   onTap: _isCheckBoxSelected ? () => signUpFunc() : null,
-                  isLoading: state is AuthLoading,
+                  isLoading: state is CreatAccountLoading,
                 ),
                 SizedBox(height: context.h * 0.016),
                 AlreadyHaveAccountWidget(),
