@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../utils/themes/app_colors.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   final String labelText;
   final String? prefixText, suffixText;
+  final String? hintText;
   final bool obscureText, autofocus;
   final bool? filled;
   final double radius;
@@ -19,6 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String? value)? validator;
   final Color? cursorColor, suffixIconColor, prefixIconColor, fillColor;
   final Color enabledBorderColor, focusedBorderColor;
+  final bool isPassword;
   const CustomTextFormField({
     super.key,
     this.labelText = "enter your name",
@@ -40,6 +42,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIconColor,
     this.prefixIconColor,
     this.obscureText = false,
+    this.isPassword = false,
     this.filled,
     this.fillColor,
     this.autofocus = false,
@@ -60,49 +63,81 @@ class CustomTextFormField extends StatelessWidget {
       top: 20,
       start: 16,
     ),
+    this.hintText,
   });
+
+  @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  late bool _obscureText;
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.isPassword ? true : widget.obscureText;
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: style,
-      autovalidateMode: autovalidateMode,
-      autofocus: autofocus,
-      validator: validator,
-      obscureText: obscureText,
-      controller: controller,
-      onChanged: onChanged,
-      maxLength: maxLength,
-      onFieldSubmitted: onFieldSubmitted,
-      cursorColor: cursorColor,
-      keyboardType: keyboardType,
+      style: widget.style,
+      autovalidateMode: widget.autovalidateMode,
+      autofocus: widget.autofocus,
+      validator: widget.validator,
+      obscureText: _obscureText,
+      controller: widget.controller,
+      onChanged: widget.onChanged,
+      maxLength: widget.maxLength,
+      onFieldSubmitted: widget.onFieldSubmitted,
+      cursorColor: widget.cursorColor,
+      keyboardType: widget.keyboardType,
       decoration: InputDecoration(
-        contentPadding: contentPadding,
-        filled: filled,
-        fillColor: fillColor,
-        prefixIcon: prefixIcon,
-        prefixStyle: prefixStyle,
-        prefixText: prefixText,
-        suffixIcon: suffixIcon,
-        prefixIconColor: prefixIconColor,
-        suffixIconColor: suffixIconColor,
-        suffixStyle: suffixStyle,
-        suffixText: suffixText,
-        labelText: labelText,
-        labelStyle: labelStyle,
+        contentPadding: widget.contentPadding,
+        filled: widget.filled,
+        fillColor: widget.fillColor,
+        prefixIcon: widget.prefixIcon,
+        hintText: widget.hintText,
+        prefixStyle: widget.prefixStyle,
+        prefixText: widget.prefixText,
+        suffixIcon: widget.isPassword
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    _obscureText = !_obscureText;
+                  });
+                },
+                icon: Icon(
+                  _obscureText
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  color: AppColors.lightGrey,
+                ),
+              )
+            : widget.suffixIcon,
+        prefixIconColor: widget.prefixIconColor,
+        suffixIconColor: widget.suffixIconColor,
+        suffixStyle: widget.suffixStyle,
+        suffixText: widget.suffixText,
+        labelText: widget.labelText,
+        labelStyle: widget.labelStyle,
         enabledBorder: outlineInputBorder(
-          color: enabledBorderColor,
-          radius: radius,
+          color: widget.enabledBorderColor,
+          radius: widget.radius,
         ),
         focusedBorder: outlineInputBorder(
-          color: focusedBorderColor,
+          color: widget.focusedBorderColor,
 
-          radius: radius,
+          radius: widget.radius,
         ),
         focusedErrorBorder: outlineInputBorder(
           color: AppColors.error,
-          radius: radius,
+          radius: widget.radius,
         ),
-        errorBorder: outlineInputBorder(color: AppColors.error, radius: radius),
+        errorBorder: outlineInputBorder(
+          color: AppColors.error,
+          radius: widget.radius,
+        ),
       ),
     );
   }

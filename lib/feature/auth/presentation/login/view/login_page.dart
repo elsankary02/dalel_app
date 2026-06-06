@@ -27,8 +27,6 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  bool isSelected = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,20 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                   CustomTextFormField(
                     labelText: context.tr("password"),
                     controller: _passWordController,
-                    obscureText: isSelected,
-                    suffixIcon: InkWell(
-                      onTap: () {
-                        setState(() {
-                          isSelected = !isSelected;
-                        });
-                      },
-                      child: Icon(
-                        isSelected
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
-                        color: AppColors.lightGrey,
-                      ),
-                    ),
+                    isPassword: true,
                   ),
                   SizedBox(height: 16),
                   ForgotPasswordWidget(),

@@ -1,4 +1,4 @@
-import '../../../data/cubit/auth_cubit/auth_cubit.dart';
+import 'package:dalel_app/core/functions/show_snakbar_message.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +7,7 @@ import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
+import '../../../data/cubit/auth_cubit/auth_cubit.dart';
 import '../widget/already_have_account_widget.dart';
 import '../widget/terms_and_condition_widget.dart';
 
@@ -42,7 +43,6 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  bool isSuffixIconSelected = true;
   bool isCheckBoxSelected = false;
 
   @override
@@ -52,17 +52,13 @@ class _SignUpPageState extends State<SignUpPage> {
       body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is AuthError) {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(SnackBar(content: Text(state.message)));
-            return;
-          }
+            showSnakBarMessage(isError: true, message: state.message, context);
 
-          if (state is AuthSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(context.tr("account_created_successfully")),
-              ),
+            return;
+          } else if (state is AuthSuccess) {
+            showSnakBarMessage(
+              message: context.tr("account_created_successfully"),
+              context,
             );
             return;
           }
@@ -115,20 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ? context.tr("password_required")
                       : null,
                   controller: passWordController,
-                  obscureText: isSuffixIconSelected,
-                  suffixIcon: InkWell(
-                    onTap: () {
-                      setState(() {
-                        isSuffixIconSelected = !isSuffixIconSelected;
-                      });
-                    },
-                    child: Icon(
-                      isSuffixIconSelected
-                          ? Icons.visibility_off_outlined
-                          : Icons.visibility_outlined,
-                      color: AppColors.lightGrey,
-                    ),
-                  ),
+                  isPassword: true,
                 ),
                 SizedBox(height: context.h * 0.020),
                 CheckboxAndTermsAndConditionWidget(
