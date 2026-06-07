@@ -1,10 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
 import '../../../../../core/utils/constants/app_images.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});

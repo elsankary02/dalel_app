@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,8 +20,10 @@ class AuthCubit extends Cubit<AuthState> {
         email: emailAddress,
         password: password,
       );
+      sendEmailVerification();
       emit(CreatAccountSuccess());
     } on FirebaseAuthException catch (e) {
+      log(e.code);
       if (e.code == 'weak-password') {
         emit(CreatAccountError(message: 'The password provided is too weak.'));
       } else if (e.code == 'email-already-in-use') {
@@ -28,10 +32,16 @@ class AuthCubit extends Cubit<AuthState> {
             message: 'The account already exists for that email.',
           ),
         );
+      } else if (e.code == 'invalid-email') {
+        emit(CreatAccountError(message: 'The email address is not valid.'));
       }
     } catch (e) {
       emit(CreatAccountError(message: 'An error occurred.'));
     }
+  }
+
+  Future<void> sendEmailVerification() async {
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
   Future<void> signInWithEmailAndPassword({

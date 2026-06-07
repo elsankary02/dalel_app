@@ -32,5 +32,7 @@
   "email_address_required": "البريد الإلكتروني مطلوب",
   "password_required": "كلمة المرور مطلوبة",
   "account_created_successfully": "تم إنشاء الحساب بنجاح",
-  "login_successfully": "تم تسجيل الدخول بنجاح"
+  "login_successfully": "تم تسجيل الدخول بنجاح",
+  "successfully_verify_and_login": "تم التسجيل بنجاح! يرجى التحقق من بريدك الإلكتروني للتفعيل وتسجيل الدخول.",
+  "check_email_verification": "يرجى التحقق من بريدك الإلكتروني لتفعيل حسابك."
 }

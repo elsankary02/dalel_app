@@ -55,14 +55,13 @@ class _SignUpPageState extends State<SignUpPage> {
         listener: (context, state) {
           if (state is CreatAccountError) {
             showSnakBarMessage(isError: true, message: state.message, context);
-
             return;
           } else if (state is CreatAccountSuccess) {
             showSnakBarMessage(
-              message: context.tr("account_created_successfully"),
+              message: context.tr("successfully_verify_and_login"),
               context,
             );
-            context.pushReplacementNamed(RouteNames.homePage);
+            context.pushReplacementNamed(RouteNames.loginPage);
             return;
           }
         },

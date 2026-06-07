@@ -32,5 +32,7 @@
   "email_address_required": "Email address is required",
   "password_required": "Password is required",
   "account_created_successfully": "Account created successfully",
-  "login_successfully": "Logged in successfully"
+  "login_successfully": "Logged in successfully",
+  "successfully_verify_and_login": "Successfully registered! Please check your verification email and log in.",
+  "check_email_verification": "Please check your email to verify your account."
 }

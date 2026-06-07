@@ -1,11 +1,11 @@
-import '../../../../app/boot.dart';
-import '../../../../core/databases/cache/cache_helper.dart';
-import '../../../../core/router/route_names.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../app/boot.dart';
+import '../../../../core/databases/cache/cache_helper.dart';
+import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../data/model/on_boardind_model.dart';
 

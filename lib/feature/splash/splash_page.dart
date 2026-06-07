@@ -26,16 +26,16 @@ class _SplashPageState extends State<SplashPage> {
   void _navigateDelayed() async {
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
-
-    final isUserVisited = getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
-    if (isUserVisited == true) {
-      if (FirebaseAuth.instance.currentUser == null) {
-        context.replaceNamed(RouteNames.signUpPage);
-      } else {
-        context.replaceNamed(RouteNames.homePage);
-      }
-    } else {
+    final isUserVisitedOnBoarding =
+        getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
+    if (isUserVisitedOnBoarding == false) {
       context.replaceNamed(RouteNames.onBoardingPage);
+    } else if (FirebaseAuth.instance.currentUser == null) {
+      context.replaceNamed(RouteNames.signUpPage);
+    } else if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
+      context.replaceNamed(RouteNames.homePage);
+    } else {
+      context.replaceNamed(RouteNames.loginPage);
     }
   }
 
@@ -45,8 +45,8 @@ class _SplashPageState extends State<SplashPage> {
       backgroundColor: AppColors.offWhite,
       body: Center(
         child: Column(
-          crossAxisAlignment: .center,
-          mainAxisAlignment: .center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Dalel",

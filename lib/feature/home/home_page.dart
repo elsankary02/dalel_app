@@ -1,7 +1,8 @@
-import '../../core/router/route_names.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../core/router/route_names.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,9 +15,9 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-              context.pushReplacementNamed(RouteNames.loginPage);
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              context.replaceNamed(RouteNames.loginPage);
             },
           ),
         ],

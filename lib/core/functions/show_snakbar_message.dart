@@ -1,4 +1,4 @@
-import 'package:dalel_app/core/utils/extensions/extensions.dart';
+import '../utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(

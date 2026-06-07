@@ -1,15 +1,16 @@
-import '../../../../../core/functions/show_snakbar_message.dart';
-import '../../../../../core/router/route_names.dart';
-import '../../../data/cubit/auth_cubit/auth_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/components/custom_primary_btn.dart';
 import '../../../../../core/components/custom_text_form_field.dart';
+import '../../../../../core/functions/show_snakbar_message.dart';
+import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
+import '../../../data/cubit/auth_cubit/auth_cubit.dart';
 import '../widget/dont_have_account_widget.dart';
 import '../widget/forgot_password_widget.dart';
 import '../widget/top_login_widget.dart';
@@ -49,11 +50,19 @@ class _LoginPageState extends State<LoginPage> {
             showSnakBarMessage(isError: true, message: state.message, context);
             return;
           } else if (state is LogInSuccess) {
-            showSnakBarMessage(
-              message: context.tr("login_successfully"),
-              context,
-            );
-            context.pushReplacementNamed(RouteNames.homePage);
+            if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
+              context.replaceNamed(RouteNames.homePage);
+              showSnakBarMessage(
+                message: context.tr("login_successfully"),
+                context,
+              );
+            } else {
+              showSnakBarMessage(
+                isError: true,
+                message: context.tr("check_email_verification"),
+                context,
+              );
+            }
             return;
           }
         },
