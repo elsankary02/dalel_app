@@ -34,5 +34,7 @@
   "account_created_successfully": "Account created successfully",
   "login_successfully": "Logged in successfully",
   "successfully_verify_and_login": "Successfully registered! Please check your verification email and log in.",
-  "check_email_verification": "Please check your email to verify your account."
+  "check_email_verification": "Please check your email to verify your account.",
+  "send_reset_link": "A password reset link has been sent to your email.",
+  "send_reset_password_link": "Send Reset Link"
 }

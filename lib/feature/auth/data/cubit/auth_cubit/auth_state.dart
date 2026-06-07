@@ -25,3 +25,14 @@ final class LogInError extends AuthState {
 
   LogInError({required this.message});
 }
+
+//! ForgetPassword States
+final class ForgetPasswordLoading extends AuthState {}
+
+final class ForgetPasswordSuccess extends AuthState {}
+
+final class ForgetPasswordError extends AuthState {
+  final String message;
+
+  ForgetPasswordError({required this.message});
+}

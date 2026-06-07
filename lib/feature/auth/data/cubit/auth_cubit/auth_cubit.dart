@@ -77,4 +77,14 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
+
+  Future<void> sendPasswordResetEmail({required String emailAddress}) async {
+    try {
+      emit(ForgetPasswordLoading());
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress);
+      emit(ForgetPasswordSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(ForgetPasswordError(message: e.toString()));
+    }
+  }
 }
