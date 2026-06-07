@@ -1,5 +1,4 @@
-import 'dart:developer';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,7 +6,7 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-
+  //! Create a new user with email and password
   Future<void> createUserWithEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -20,10 +19,14 @@ class AuthCubit extends Cubit<AuthState> {
         email: emailAddress,
         password: password,
       );
-      sendEmailVerification();
+      await addUser(
+        firstName: firstName,
+        lastName: lastName,
+        emailAddress: emailAddress,
+      );
+      await sendEmailVerification();
       emit(CreatAccountSuccess());
     } on FirebaseAuthException catch (e) {
-      log(e.code);
       if (e.code == 'weak-password') {
         emit(CreatAccountError(message: 'The password provided is too weak.'));
       } else if (e.code == 'email-already-in-use') {
@@ -40,10 +43,23 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  //! Send password reset email
+  Future<void> sendPasswordResetEmail({required String emailAddress}) async {
+    try {
+      emit(ForgetPasswordLoading());
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress);
+      emit(ForgetPasswordSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(ForgetPasswordError(message: e.toString()));
+    }
+  }
+
+  //! Send email verification
   Future<void> sendEmailVerification() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
+  //! Sign in with email and password
   Future<void> signInWithEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -74,17 +90,22 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  //! Sign out
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
 
-  Future<void> sendPasswordResetEmail({required String emailAddress}) async {
-    try {
-      emit(ForgetPasswordLoading());
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress);
-      emit(ForgetPasswordSuccess());
-    } on FirebaseAuthException catch (e) {
-      emit(ForgetPasswordError(message: e.toString()));
-    }
+  //! Add user to Firestore
+  Future<void> addUser({
+    required String firstName,
+    required String lastName,
+    required String emailAddress,
+  }) async {
+    final users = FirebaseFirestore.instance.collection("users");
+    users.add({
+      'firstName': firstName,
+      'lastName': lastName,
+      'email': emailAddress,
+    });
   }
 }
