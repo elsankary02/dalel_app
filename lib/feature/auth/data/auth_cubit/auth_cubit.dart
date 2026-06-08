@@ -27,17 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
       await sendEmailVerification();
       emit(CreatAccountSuccess());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        emit(CreatAccountError(message: 'The password provided is too weak.'));
-      } else if (e.code == 'email-already-in-use') {
-        emit(
-          CreatAccountError(
-            message: 'The account already exists for that email.',
-          ),
-        );
-      } else if (e.code == 'invalid-email') {
-        emit(CreatAccountError(message: 'The email address is not valid.'));
-      }
+      _signUpHandelException(e);
     } catch (e) {
       emit(CreatAccountError(message: 'An error occurred.'));
     }
@@ -72,19 +62,7 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(LogInSuccess());
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        emit(LogInError(message: 'No user found for that email.'));
-      } else if (e.code == 'wrong-password') {
-        emit(LogInError(message: 'Wrong password provided for that user.'));
-      } else if (e.code == 'invalid-credential') {
-        emit(LogInError(message: 'Invalid email or password.'));
-      } else if (e.code == 'too-many-requests') {
-        emit(LogInError(message: 'too many requests'));
-      } else if (e.code == 'network-request-failed') {
-        emit(LogInError(message: 'network error'));
-      } else {
-        emit(LogInError(message: e.message ?? 'Something went wrong'));
-      }
+      _logInHandelException(e);
     } catch (e) {
       emit(LogInError(message: e.toString()));
     }
@@ -107,5 +85,36 @@ class AuthCubit extends Cubit<AuthState> {
       'lastName': lastName,
       'email': emailAddress,
     });
+  }
+
+  //! Exceptions Handling
+  void _signUpHandelException(FirebaseAuthException e) {
+    if (e.code == 'weak-password') {
+      emit(CreatAccountError(message: 'The password provided is too weak.'));
+    } else if (e.code == 'email-already-in-use') {
+      emit(
+        CreatAccountError(
+          message: 'The account already exists for that email.',
+        ),
+      );
+    } else if (e.code == 'invalid-email') {
+      emit(CreatAccountError(message: 'The email address is not valid.'));
+    }
+  }
+
+  void _logInHandelException(FirebaseAuthException e) {
+    if (e.code == 'user-not-found') {
+      emit(LogInError(message: 'No user found for that email.'));
+    } else if (e.code == 'wrong-password') {
+      emit(LogInError(message: 'Wrong password provided for that user.'));
+    } else if (e.code == 'invalid-credential') {
+      emit(LogInError(message: 'Invalid email or password.'));
+    } else if (e.code == 'too-many-requests') {
+      emit(LogInError(message: 'too many requests'));
+    } else if (e.code == 'network-request-failed') {
+      emit(LogInError(message: 'network error'));
+    } else {
+      emit(LogInError(message: e.message ?? 'Something went wrong'));
+    }
   }
 }

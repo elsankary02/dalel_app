@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../feature/auth/data/cubit/auth_cubit/auth_cubit.dart';
+import '../../feature/auth/data/auth_cubit/auth_cubit.dart';
 import '../../feature/auth/presentation/create_account/view/create_account_page.dart';
 import '../../feature/auth/presentation/forget_password/view/forget_password_page.dart';
 import '../../feature/auth/presentation/login/view/login_page.dart';

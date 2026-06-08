@@ -18,7 +18,7 @@ class TopLoginWidget extends StatelessWidget {
         Positioned(bottom: 0, right: 0, child: Image.asset(AppImages.vector2)),
         Text(
           "Dalel",
-          style: context.textTheme.headlineLarge?.copyWith(
+          style: context.textTheme.displayMedium?.copyWith(
             fontWeight: FontWeight.w700,
             color: AppColors.white,
             fontFamily: AppStrings.pacifico,

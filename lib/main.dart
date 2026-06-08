@@ -11,11 +11,11 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   authStateChanges();
-  await EasyLocalization.ensureInitialized();
-  setupServiceLocator();
   await getIt<CacheHelper>().init();
+  setupServiceLocator();
   runApp(
     EasyLocalization(
       path: AppStrings.kTranslations,

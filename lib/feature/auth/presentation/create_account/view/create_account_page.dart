@@ -9,7 +9,7 @@ import '../../../../../core/functions/show_snakbar_message.dart';
 import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
-import '../../../data/cubit/auth_cubit/auth_cubit.dart';
+import '../../../data/auth_cubit/auth_cubit.dart';
 import '../widget/already_have_account_widget.dart';
 import '../widget/terms_and_condition_widget.dart';
 
@@ -35,9 +35,9 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
-  void signUpFunc() {
+  void signUpFunc() async {
     if (!_formKey.currentState!.validate()) return;
-    context.read<AuthCubit>().createUserWithEmailAndPassword(
+    await context.read<AuthCubit>().createUserWithEmailAndPassword(
       emailAddress: emailAddressController.text.trim(),
       password: passWordController.text.trim(),
       firstName: firstNameController.text.trim(),

@@ -10,7 +10,7 @@ import '../../../../../core/functions/show_snakbar_message.dart';
 import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
-import '../../../data/cubit/auth_cubit/auth_cubit.dart';
+import '../../../data/auth_cubit/auth_cubit.dart';
 import '../widget/dont_have_account_widget.dart';
 import '../widget/forgot_password_widget.dart';
 import '../widget/top_login_widget.dart';
@@ -33,9 +33,9 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void loginFunc() {
+  void loginFunc() async {
     if (!_formKey.currentState!.validate()) return;
-    context.read<AuthCubit>().signInWithEmailAndPassword(
+    await context.read<AuthCubit>().signInWithEmailAndPassword(
       emailAddress: _emailAddressController.text.trim(),
       password: _passWordController.text.trim(),
     );
@@ -75,7 +75,11 @@ class _LoginPageState extends State<LoginPage> {
                 TopLoginWidget(),
                 SizedBox(height: context.h * 0.032),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.only(
+                    left: context.h * 0.016,
+                    right: context.h * 0.016,
+                    bottom: context.h * 0.016,
+                  ),
                   child: Column(
                     children: [
                       Text(
