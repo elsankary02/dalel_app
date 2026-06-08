@@ -25,17 +25,23 @@ class _SplashPageState extends State<SplashPage> {
 
   void _navigateDelayed() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    if (!mounted) return;
+    if (mounted == false) return;
     final isUserVisitedOnBoarding =
         getIt<CacheHelper>().getBool(key: "isSaved") ?? false;
+    final user = FirebaseAuth.instance.currentUser;
+
     if (isUserVisitedOnBoarding == false) {
       context.replaceNamed(RouteNames.onBoardingPage);
-    } else if (FirebaseAuth.instance.currentUser == null) {
-      context.replaceNamed(RouteNames.signUpPage);
-    } else if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
-      context.replaceNamed(RouteNames.homePage);
+      return;
+    }
+    if (user != null) {
+      if (user.emailVerified) {
+        context.replaceNamed(RouteNames.homePage);
+      } else {
+        context.replaceNamed(RouteNames.loginPage);
+      }
     } else {
-      context.replaceNamed(RouteNames.loginPage);
+      context.replaceNamed(RouteNames.signUpPage);
     }
   }
 
