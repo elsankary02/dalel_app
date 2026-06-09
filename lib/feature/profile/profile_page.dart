@@ -1,17 +1,16 @@
+import 'package:dalel_app/core/router/route_names.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/router/route_names.dart';
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Profile"),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
@@ -22,7 +21,8 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(child: Text("Welcome to the Home Page")),
+
+      body: Center(child: Text("Welcome to the Profile Page")),
     );
   }
 }

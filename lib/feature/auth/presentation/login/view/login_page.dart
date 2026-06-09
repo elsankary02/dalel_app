@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             return;
           } else if (state is LogInSuccess) {
             if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
-              context.replaceNamed(RouteNames.homePage);
+              context.replaceNamed(RouteNames.homeNavigationPage);
               showSnakBarMessage(
                 message: context.tr("login_successfully"),
                 context,

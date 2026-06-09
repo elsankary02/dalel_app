@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
     }
     if (user != null) {
       if (user.emailVerified) {
-        context.replaceNamed(RouteNames.homePage);
+        context.replaceNamed(RouteNames.homeNavigationPage);
       } else {
         context.replaceNamed(RouteNames.loginPage);
       }
