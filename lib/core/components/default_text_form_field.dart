@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/themes/app_colors.dart';
 
-class CustomTextFormField extends StatefulWidget {
+class DefaultTextFormField extends StatefulWidget {
   final String labelText;
   final String? prefixText, suffixText;
   final String? hintText;
@@ -21,7 +21,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color? cursorColor, suffixIconColor, prefixIconColor, fillColor;
   final Color enabledBorderColor, focusedBorderColor;
   final bool isPassword;
-  const CustomTextFormField({
+  const DefaultTextFormField({
     super.key,
     this.labelText = "enter your name",
     this.controller,
@@ -67,10 +67,10 @@ class CustomTextFormField extends StatefulWidget {
   });
 
   @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+  State<DefaultTextFormField> createState() => _DefaultTextFormFieldState();
 }
 
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
+class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
   late bool _obscureText;
   @override
   void initState() {

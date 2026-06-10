@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/components/custom_primary_btn.dart';
-import '../../../../core/components/custom_text_form_field.dart';
+import '../../../../core/components/default_primary_btn.dart';
+import '../../../../core/components/default_text_form_field.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
@@ -95,7 +95,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     maxLines: 2,
                   ),
                   SizedBox(height: context.h * 0.041),
-                  CustomTextFormField(
+                  DefaultTextFormField(
                     labelText: context.tr("email_address"),
                     validator: (value) => value == null || value.isEmpty
                         ? context.tr("email_address_required")
@@ -103,7 +103,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     controller: emailAddressController,
                   ),
                   SizedBox(height: context.h * 0.129),
-                  CustomPrimaryBtn(
+                  DefaultPrimaryBtn(
                     title: context.tr("send_reset_password_link"),
                     textStyle: context.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500,

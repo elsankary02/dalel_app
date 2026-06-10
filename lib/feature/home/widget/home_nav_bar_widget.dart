@@ -1,10 +1,12 @@
 import 'package:dalel_app/core/utils/constants/app_svgs.dart';
 import 'package:dalel_app/core/utils/themes/app_colors.dart';
+import 'package:dalel_app/feature/auth/data/auth_cubit/auth_cubit.dart';
 import 'package:dalel_app/feature/cart/cart_page.dart';
 import 'package:dalel_app/feature/home/view/home_page.dart';
-import 'package:dalel_app/feature/profile/profile_page.dart';
+import 'package:dalel_app/feature/profile/view/profile_page.dart';
 import 'package:dalel_app/feature/search/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -37,7 +39,7 @@ List<Widget> _buildScreens() => [
   HomePage(),
   CartPage(),
   SearchPage(),
-  ProfilePage(),
+  BlocProvider(create: (context) => AuthCubit(), child: ProfilePage()),
 ];
 
 List<PersistentBottomNavBarItem> _items() {

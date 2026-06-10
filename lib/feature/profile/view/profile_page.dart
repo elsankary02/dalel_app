@@ -1,0 +1,108 @@
+import 'package:dalel_app/core/components/default_list_tile_profile.dart';
+import 'package:dalel_app/core/functions/show_snakbar_message.dart';
+import 'package:dalel_app/core/router/route_names.dart';
+import 'package:dalel_app/core/utils/constants/app_svgs.dart';
+import 'package:dalel_app/core/utils/extensions/extensions.dart';
+import 'package:dalel_app/core/utils/themes/app_colors.dart';
+import 'package:dalel_app/feature/auth/data/auth_cubit/auth_cubit.dart';
+import 'package:dalel_app/feature/profile/widget/appbar.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(context),
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          // TODO : Image and user name and password
+          //? Account
+          Padding(
+            padding: EdgeInsetsDirectional.only(start: 24),
+            child: Text(
+              context.tr("account_section"),
+              style: context.textTheme.titleMedium?.copyWith(
+                color: AppColors.greyTwo,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+          //! Edit Profile
+          DefaultListTileProfile(
+            title: context.tr("edit_profile"),
+            assetName: AppSvgs.editProfile,
+            onTap: () {},
+          ),
+          //! Notification
+          DefaultListTileProfile(
+            title: context.tr("notification"),
+            assetName: AppSvgs.notification,
+            onTap: () {},
+          ),
+          SizedBox(height: 32),
+          //? General
+          Padding(
+            padding: EdgeInsetsDirectional.only(start: 24),
+            child: Text(
+              context.tr("general_section"),
+              style: context.textTheme.titleMedium?.copyWith(
+                color: AppColors.greyTwo,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+          //! Settings
+          DefaultListTileProfile(
+            title: context.tr("settings"),
+            assetName: AppSvgs.setting,
+            onTap: () {},
+          ),
+          //! Security
+          DefaultListTileProfile(
+            title: context.tr("security"),
+            assetName: AppSvgs.lock,
+            onTap: () {},
+          ),
+          //! Privacy Policy
+          DefaultListTileProfile(
+            title: context.tr("privacy_policy"),
+            assetName: AppSvgs.shieldDone,
+            onTap: () {},
+          ),
+          //! log Out
+          BlocConsumer<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state is SignOutError) {
+                showSnakBarMessage(
+                  context,
+                  isError: true,
+                  message: tr("logout_failed"),
+                );
+                return;
+              } else if (state is SignOutSuccess) {
+                context.replaceNamed(RouteNames.loginPage);
+                showSnakBarMessage(context, message: tr("logout_success"));
+                return;
+              }
+            },
+            builder: (context, state) {
+              return DefaultListTileProfile(
+                title: context.tr("log_out"),
+                assetName: AppSvgs.logOut,
+                onTap: () async => await context.read<AuthCubit>().signOut(),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}

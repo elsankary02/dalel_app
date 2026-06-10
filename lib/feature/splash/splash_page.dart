@@ -35,13 +35,13 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
     if (user != null) {
-      if (user.emailVerified) {
+      if (user.emailVerified == true) {
         context.replaceNamed(RouteNames.homeNavigationPage);
       } else {
         context.replaceNamed(RouteNames.loginPage);
       }
     } else {
-      context.replaceNamed(RouteNames.signUpPage);
+      context.replaceNamed(RouteNames.loginPage);
     }
   }
 

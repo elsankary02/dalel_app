@@ -36,5 +36,16 @@
   "successfully_verify_and_login": "تم التسجيل بنجاح! يرجى التحقق من بريدك الإلكتروني للتفعيل وتسجيل الدخول.",
   "check_email_verification": "يرجى التحقق من بريدك الإلكتروني لتفعيل حسابك.",
   "send_reset_link": "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
-  "send_reset_password_link": "إرسال رابط إعادة التعيين"
+  "send_reset_password_link": "إرسال رابط إعادة التعيين",
+  "logout_success": "تم تسجيل الخروج بنجاح.",
+  "logout_failed": "فشل تسجيل الخروج. يرجى المحاولة مرة أخرى.",
+  "account_section": "الحساب",
+  "general_section": "عام",
+  "edit_profile": "تعديل الملف الشخصي",
+  "notification": "الإشعارات",
+  "settings": "الإعدادات",
+  "security": "الأمان",
+  "privacy_policy": "سياسة الخصوصية",
+  "log_out": "تسجيل الخروج",
+  "profile_title": "الملف الشخصي"
 }

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/components/custom_primary_btn.dart';
-import '../../../../../core/components/custom_text_form_field.dart';
+import '../../../../../core/components/default_primary_btn.dart';
+import '../../../../../core/components/default_text_form_field.dart';
 import '../../../../../core/functions/show_snakbar_message.dart';
 import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
@@ -84,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   textAlign: .center,
                 ),
                 SizedBox(height: context.h * 0.060),
-                CustomTextFormField(
+                DefaultTextFormField(
                   labelText: context.tr("first_name"),
                   validator: (value) => value == null || value.isEmpty
                       ? context.tr("first_name_required")
@@ -92,7 +92,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   controller: firstNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
-                CustomTextFormField(
+                DefaultTextFormField(
                   labelText: context.tr("last_name"),
                   validator: (value) => value == null || value.isEmpty
                       ? context.tr("last_name_required")
@@ -100,7 +100,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   controller: lastNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
-                CustomTextFormField(
+                DefaultTextFormField(
                   labelText: context.tr("email_address"),
                   validator: (value) => value == null || value.isEmpty
                       ? context.tr("email_address_required")
@@ -108,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   controller: emailAddressController,
                 ),
                 SizedBox(height: context.h * 0.030),
-                CustomTextFormField(
+                DefaultTextFormField(
                   labelText: context.tr("password"),
                   validator: (value) => value == null || value.isEmpty
                       ? context.tr("password_required")
@@ -126,7 +126,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                 ),
                 SizedBox(height: context.h * 0.120),
-                CustomPrimaryBtn(
+                DefaultPrimaryBtn(
                   disabledBackgroundColor: _isCheckBoxSelected
                       ? AppColors.primaryColor
                       : AppColors.grey,

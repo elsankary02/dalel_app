@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/themes/app_colors.dart';
 
-class CustomPrimaryBtn extends StatelessWidget {
+class DefaultPrimaryBtn extends StatelessWidget {
   final String title;
   final BorderSide borderSide;
   final EdgeInsets margin, padding;
@@ -20,7 +20,7 @@ class CustomPrimaryBtn extends StatelessWidget {
   final TextStyle? textStyle;
   final void Function()? onTap;
 
-  const CustomPrimaryBtn({
+  const DefaultPrimaryBtn({
     super.key,
     required this.title,
     this.margin = EdgeInsets.zero,

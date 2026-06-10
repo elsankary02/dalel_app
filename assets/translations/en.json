@@ -36,5 +36,16 @@
   "successfully_verify_and_login": "Successfully registered! Please check your verification email and log in.",
   "check_email_verification": "Please check your email to verify your account.",
   "send_reset_link": "A password reset link has been sent to your email.",
-  "send_reset_password_link": "Send Reset Link"
+  "send_reset_password_link": "Send Reset Link",
+  "logout_success": "You have been logged out successfully.",
+  "logout_failed": "Failed to log out. Please try again.",
+  "account_section": "Account",
+  "general_section": "General",
+  "edit_profile": "Edit Profile",
+  "notification": "Notification",
+  "settings": "Settings",
+  "security": "Security",
+  "privacy_policy": "Privacy Policy",
+  "log_out": "Log Out",
+  "profile_title": "Profile"
 }

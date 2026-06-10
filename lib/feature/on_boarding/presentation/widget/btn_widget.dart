@@ -5,7 +5,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/components/custom_primary_btn.dart';
+import '../../../../core/components/default_primary_btn.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
@@ -32,7 +32,7 @@ class _BtnWidgetState extends State<BtnWidget> {
         ? Column(
             spacing: 16,
             children: [
-              CustomPrimaryBtn(
+              DefaultPrimaryBtn(
                 padding: EdgeInsets.symmetric(vertical: context.h * 0.019),
                 title: context.tr("create_account"),
                 textStyle: context.textTheme.titleMedium?.copyWith(
@@ -61,7 +61,7 @@ class _BtnWidgetState extends State<BtnWidget> {
               ),
             ],
           )
-        : CustomPrimaryBtn(
+        : DefaultPrimaryBtn(
             padding: EdgeInsets.symmetric(vertical: context.h * 0.019),
             title: context.tr("next"),
             textStyle: context.textTheme.titleMedium?.copyWith(
