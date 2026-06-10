@@ -35,8 +35,9 @@ final class ForgetPasswordError extends AuthState {
   final String message;
 
   ForgetPasswordError({required this.message});
-} //! SignOut States
+}
 
+//! SignOut States
 final class SignOutSuccess extends AuthState {}
 
 final class SignOutError extends AuthState {
