@@ -33,29 +33,32 @@ class HomeNavBarWidget extends StatelessWidget {
   }
 }
 
-List<Widget> _buildScreens() {
-  return [HomePage(), CartPage(), SearchPage(), ProfilePage()];
-}
+List<Widget> _buildScreens() => [
+  HomePage(),
+  CartPage(),
+  SearchPage(),
+  ProfilePage(),
+];
 
 List<PersistentBottomNavBarItem> _items() {
   final h = 24.0;
   final w = 24.0;
   return [
     PersistentBottomNavBarItem(
-      inactiveIcon: SvgPicture.asset(AppSvgs.homeIcon, height: h, width: w),
-      icon: SvgPicture.asset(AppSvgs.homeIconActive, height: h, width: w),
+      inactiveIcon: SvgPicture.asset(AppSvgs.home, height: h, width: w),
+      icon: SvgPicture.asset(AppSvgs.homeInActive, height: h, width: w),
     ),
     PersistentBottomNavBarItem(
-      inactiveIcon: SvgPicture.asset(AppSvgs.shoppingCart, height: h, width: w),
-      icon: SvgPicture.asset(AppSvgs.shoppingCartActive, height: h, width: w),
+      inactiveIcon: SvgPicture.asset(AppSvgs.cart, height: h, width: w),
+      icon: SvgPicture.asset(AppSvgs.cartInActive, height: h, width: w),
     ),
     PersistentBottomNavBarItem(
       inactiveIcon: SvgPicture.asset(AppSvgs.search, height: h, width: w),
-      icon: SvgPicture.asset(AppSvgs.searchActive, height: h, width: w),
+      icon: SvgPicture.asset(AppSvgs.searchInActive, height: h, width: w),
     ),
     PersistentBottomNavBarItem(
       inactiveIcon: SvgPicture.asset(AppSvgs.profile, height: h, width: w),
-      icon: SvgPicture.asset(AppSvgs.profileInactive, height: h, width: w),
+      icon: SvgPicture.asset(AppSvgs.profileInActive, height: h, width: w),
     ),
   ];
 }
