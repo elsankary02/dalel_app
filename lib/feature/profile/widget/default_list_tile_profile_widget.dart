@@ -1,13 +1,14 @@
-import '../utils/extensions/extensions.dart';
-import '../utils/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class DefaultListTileProfile extends StatelessWidget {
+import '../../../core/utils/extensions/extensions.dart';
+import '../../../core/utils/themes/app_colors.dart';
+
+class DefaultListTileProfileWidget extends StatelessWidget {
   final String title;
   final String assetName;
   final Function()? onTap;
-  const DefaultListTileProfile({
+  const DefaultListTileProfileWidget({
     super.key,
     required this.title,
     required this.assetName,
