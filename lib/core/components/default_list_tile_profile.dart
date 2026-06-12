@@ -1,5 +1,5 @@
-import 'package:dalel_app/core/utils/extensions/extensions.dart';
-import 'package:dalel_app/core/utils/themes/app_colors.dart';
+import '../utils/extensions/extensions.dart';
+import '../utils/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

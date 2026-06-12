@@ -1,4 +1,4 @@
-import 'package:dalel_app/feature/home/widget/home_nav_bar_widget.dart';
+import '../../feature/home/widget/home_nav_bar_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
