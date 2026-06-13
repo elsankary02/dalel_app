@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
-import 'package:flutter/material.dart';
 
 class DefaultHistoricalCategoryCard extends StatelessWidget {
   final String title;
@@ -16,21 +17,23 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(5),
         boxShadow: _boxShadow(),
       ),
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         spacing: 16,
-        mainAxisAlignment: .spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
             width: 90,
             child: Text(
               title,
-              textAlign: .center,
+              textAlign: TextAlign.center,
               maxLines: 2,
-              overflow: .ellipsis,
+              overflow: TextOverflow.ellipsis,
               style: context.textTheme.titleMedium?.copyWith(
                 color: AppColors.deepBrown,
                 fontWeight: FontWeight.w500,
@@ -39,7 +42,12 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(imageName, height: 64, width: 47, fit: .cover),
+            child: Image.asset(
+              imageName,
+              width: 47,
+              height: 64,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),
@@ -49,9 +57,10 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
   List<BoxShadow>? _boxShadow() => [
     BoxShadow(
       blurRadius: 10,
-      offset: Offset(2, 4),
-      color: AppColors.deepGrey.withAlpha(80),
-      blurStyle: .outer,
+      spreadRadius: -4,
+      offset: const Offset(2, 4),
+      color: AppColors.deepGrey.withAlpha(150),
+      blurStyle: BlurStyle.outer,
     ),
   ];
 }

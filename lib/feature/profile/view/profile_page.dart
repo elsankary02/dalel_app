@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/utils/constants/app_strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +10,6 @@ import '../../../core/utils/constants/app_svgs.dart';
 import '../../../core/utils/extensions/extensions.dart';
 import '../../../core/utils/themes/app_colors.dart';
 import '../../auth/data/auth_cubit/auth_cubit.dart';
-import '../widget/appbar.dart';
 import '../widget/default_list_tile_profile_widget.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context),
+      appBar: appBarProfile(context),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
@@ -104,6 +104,20 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  AppBar appBarProfile(BuildContext context) {
+    return AppBar(
+      title: Text(
+        context.tr("profile_title"),
+        style: context.textTheme.titleLarge?.copyWith(
+          color: AppColors.deepBrown,
+          fontWeight: FontWeight.w700,
+          fontFamily: AppStrings.pacifico,
+        ),
+      ),
+      centerTitle: true,
     );
   }
 }
