@@ -1,5 +1,5 @@
 abstract class AppSvgs {
-  //! App Svgs
+  //? App Svgs
   static const details1 = "assets/svgs/details1.svg";
   static const details2 = "assets/svgs/details2.svg";
   static const details3 = "assets/svgs/details3.svg";
@@ -12,7 +12,7 @@ abstract class AppSvgs {
   static const shieldDone = "assets/svgs/shield_done.svg";
   static const logOut = "assets/svgs/log_out.svg";
 
-  //! Home Navbar :
+  //? Home Navbar :
   // Home
   static const home = "assets/svgs/home.svg";
   static const homeInActive = "assets/svgs/home_in_active.svg";

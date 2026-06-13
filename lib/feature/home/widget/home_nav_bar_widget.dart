@@ -1,7 +1,7 @@
 import '../../../core/utils/constants/app_svgs.dart';
 import '../../../core/utils/themes/app_colors.dart';
 import '../../auth/data/auth_cubit/auth_cubit.dart';
-import '../../cart/cart_page.dart';
+import '../../cart/view/cart_page.dart';
 import '../view/home_page.dart';
 import '../../profile/view/profile_page.dart';
 import '../../search/search_page.dart';

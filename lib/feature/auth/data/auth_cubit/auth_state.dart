@@ -2,7 +2,7 @@ part of 'auth_cubit.dart';
 
 abstract class AuthState {}
 
-//! CreatAccount States
+// CreatAccount States
 final class AuthInitial extends AuthState {}
 
 final class CreatAccountLoading extends AuthState {}
@@ -15,7 +15,7 @@ final class CreatAccountError extends AuthState {
   CreatAccountError({required this.message});
 }
 
-//! LogIn States
+// LogIn States
 final class LogInLoading extends AuthState {}
 
 final class LogInSuccess extends AuthState {}
@@ -26,7 +26,7 @@ final class LogInError extends AuthState {
   LogInError({required this.message});
 }
 
-//! ForgetPassword States
+// ForgetPassword States
 final class ForgetPasswordLoading extends AuthState {}
 
 final class ForgetPasswordSuccess extends AuthState {}
@@ -37,7 +37,7 @@ final class ForgetPasswordError extends AuthState {
   ForgetPasswordError({required this.message});
 }
 
-//! SignOut States
+// SignOut States
 final class SignOutSuccess extends AuthState {}
 
 final class SignOutError extends AuthState {

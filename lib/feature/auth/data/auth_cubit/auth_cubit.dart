@@ -6,7 +6,7 @@ part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-  //! Create a new user with email and password
+  // Create a new user with email and password
   Future<void> createUserWithEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -33,7 +33,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  //! Send password reset email
+  // Send password reset email
   Future<void> sendPasswordResetEmail({required String emailAddress}) async {
     try {
       emit(ForgetPasswordLoading());
@@ -44,12 +44,12 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  //! Send email verification
+  // Send email verification
   Future<void> sendEmailVerification() async {
     await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
-  //! Sign in with email and password
+  // Sign in with email and password
   Future<void> signInWithEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -68,7 +68,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  //! Sign out
+  // Sign out
   Future<void> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
@@ -78,7 +78,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  //! Add user to Firestore
+  // Add user to Firestore
   Future<void> addUser({
     required String firstName,
     required String lastName,
@@ -92,7 +92,7 @@ class AuthCubit extends Cubit<AuthState> {
     });
   }
 
-  //! Exceptions Handling
+  // Exceptions Handling
   void _signUpHandelException(FirebaseAuthException e) {
     if (e.code == 'weak-password') {
       emit(CreatAccountError(message: 'The password provided is too weak.'));
