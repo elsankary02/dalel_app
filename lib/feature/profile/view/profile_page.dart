@@ -1,4 +1,3 @@
-import '../../../core/utils/constants/app_strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/functions/show_snakbar_message.dart';
 import '../../../core/router/route_names.dart';
+import '../../../core/utils/constants/app_strings.dart';
 import '../../../core/utils/constants/app_svgs.dart';
 import '../../../core/utils/extensions/extensions.dart';
 import '../../../core/utils/themes/app_colors.dart';
@@ -35,13 +35,13 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-          //! Edit Profile
+          // Edit Profile
           DefaultListTileProfileWidget(
             title: context.tr("edit_profile"),
             assetName: AppSvgs.editProfile,
             onTap: () {},
           ),
-          //! Notification
+          // Notification
           DefaultListTileProfileWidget(
             title: context.tr("notification"),
             assetName: AppSvgs.notification,
@@ -60,25 +60,25 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-          //! Settings
+          // Settings
           DefaultListTileProfileWidget(
             title: context.tr("settings"),
             assetName: AppSvgs.setting,
             onTap: () {},
           ),
-          //! Security
+          // Security
           DefaultListTileProfileWidget(
             title: context.tr("security"),
             assetName: AppSvgs.lock,
             onTap: () {},
           ),
-          //! Privacy Policy
+          // Privacy Policy
           DefaultListTileProfileWidget(
             title: context.tr("privacy_policy"),
             assetName: AppSvgs.shieldDone,
             onTap: () {},
           ),
-          //! log Out
+          // log Out
           BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {
               if (state is SignOutError) {

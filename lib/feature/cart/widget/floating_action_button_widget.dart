@@ -1,5 +1,6 @@
-import '../../../core/utils/themes/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/utils/themes/app_colors.dart';
 
 class FloatingActionButtonWidget extends StatelessWidget {
   const FloatingActionButtonWidget({super.key});
