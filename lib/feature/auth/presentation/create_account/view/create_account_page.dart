@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
             return;
           } else if (state is CreatAccountSuccess) {
             showSnakBarMessage(
-              message: context.tr("successfully_verify_and_login"),
+              message: "successfully_verify_and_login".tr(),
               context,
             );
             context.pushReplacementNamed(RouteNames.loginPage);
@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               children: [
                 Text(
-                  context.tr("welcome"),
+                  "welcome".tr(),
                   style: context.textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -85,33 +85,33 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 SizedBox(height: context.h * 0.060),
                 DefaultTextFormField(
-                  labelText: context.tr("first_name"),
+                  labelText: "first_name".tr(),
                   validator: (value) => value == null || value.isEmpty
-                      ? context.tr("first_name_required")
+                      ? "first_name_required".tr()
                       : null,
                   controller: firstNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 DefaultTextFormField(
-                  labelText: context.tr("last_name"),
+                  labelText: "last_name".tr(),
                   validator: (value) => value == null || value.isEmpty
-                      ? context.tr("last_name_required")
+                      ? "last_name_required".tr()
                       : null,
                   controller: lastNameController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 DefaultTextFormField(
-                  labelText: context.tr("email_address"),
+                  labelText: "email_address".tr(),
                   validator: (value) => value == null || value.isEmpty
-                      ? context.tr("email_address_required")
+                      ? "email_address_required".tr()
                       : null,
                   controller: emailAddressController,
                 ),
                 SizedBox(height: context.h * 0.030),
                 DefaultTextFormField(
-                  labelText: context.tr("password"),
+                  labelText: "password".tr(),
                   validator: (value) => value == null || value.isEmpty
-                      ? context.tr("password_required")
+                      ? "password_required".tr()
                       : null,
                   controller: passWordController,
                   isPassword: true,
@@ -130,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   disabledBackgroundColor: _isCheckBoxSelected
                       ? AppColors.primaryColor
                       : AppColors.grey,
-                  title: context.tr("sign_up"),
+                  title: "sign_up".tr(),
                   textStyle: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w500,
                     color: _isCheckBoxSelected

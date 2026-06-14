@@ -21,14 +21,14 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
         ),
         children: [
           TextSpan(
-            text: context.tr("already_have_account"),
+            text: "already_have_account".tr(),
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.deepGrey,
             ),
           ),
           TextSpan(
-            text: context.tr("sign_in"),
+            text: "sign_in".tr(),
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.primaryColor,

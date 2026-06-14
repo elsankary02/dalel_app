@@ -50,10 +50,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               return;
             } else if (state is ForgetPasswordSuccess) {
               context.replaceNamed(RouteNames.loginPage);
-              showSnakBarMessage(
-                context,
-                message: context.tr("send_reset_link"),
-              );
+              showSnakBarMessage(context, message: "send_reset_link".tr());
               return;
             }
           },
@@ -68,7 +65,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 ),
                 children: [
                   Text(
-                    context.tr("forgot_password_page"),
+                    "forgot_password_page".tr(),
                     textAlign: .center,
                     style: context.textTheme.headlineSmall?.copyWith(
                       color: AppColors.blackBrown,
@@ -83,9 +80,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   ),
                   SizedBox(height: context.h * 0.072),
                   Text(
-                    context.tr(
-                      "enter_your_registered_email_below_to_receive_password_reset_instruction",
-                    ),
+                    "enter_your_registered_email_below_to_receive_password_reset_instruction"
+                        .tr(),
                     style: context.textTheme.titleSmall?.copyWith(
                       color: AppColors.deepGrey,
                       fontWeight: FontWeight.w400,
@@ -96,15 +92,15 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   ),
                   SizedBox(height: context.h * 0.041),
                   DefaultTextFormField(
-                    labelText: context.tr("email_address"),
+                    labelText: "email_address".tr(),
                     validator: (value) => value == null || value.isEmpty
-                        ? context.tr("email_address_required")
+                        ? "email_address_required".tr()
                         : null,
                     controller: emailAddressController,
                   ),
                   SizedBox(height: context.h * 0.129),
                   DefaultPrimaryBtn(
-                    title: context.tr("send_reset_password_link"),
+                    title: "send_reset_password_link".tr(),
                     textStyle: context.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500,
                       color: AppColors.white,

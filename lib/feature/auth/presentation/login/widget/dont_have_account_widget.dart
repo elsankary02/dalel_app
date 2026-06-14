@@ -21,14 +21,14 @@ class DontHaveAccountWidget extends StatelessWidget {
         ),
         children: [
           TextSpan(
-            text: context.tr("dont_have_account"),
+            text: "dont_have_account".tr(),
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.deepGrey,
             ),
           ),
           TextSpan(
-            text: context.tr("sign_up"),
+            text: "sign_up".tr(),
             style: context.textTheme.labelMedium?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppColors.primaryColor,

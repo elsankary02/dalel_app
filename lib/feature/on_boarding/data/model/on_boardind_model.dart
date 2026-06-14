@@ -1,6 +1,7 @@
-import '../../../../core/utils/constants/app_images.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/utils/constants/app_images.dart';
 
 class OnBoardindModel {
   final String image;
@@ -18,18 +19,18 @@ List<OnBoardindModel> onboardingFunc(BuildContext context) {
   return [
     OnBoardindModel(
       image: AppImages.imagesOnBoarding1,
-      title: context.tr("explore_history_slogan"),
-      subTitle: context.tr("app_history_libraries"),
+      title: "explore_history_slogan".tr(),
+      subTitle: "app_history_libraries".tr(),
     ),
     OnBoardindModel(
       image: AppImages.imagesOnBoarding2,
-      title: context.tr("from_every_place"),
-      subTitle: context.tr("ancient_places_variety"),
+      title: "from_every_place".tr(),
+      subTitle: "ancient_places_variety".tr(),
     ),
     OnBoardindModel(
       image: AppImages.imagesOnBoarding3,
-      title: context.tr("ai_user_experience"),
-      subTitle: context.tr("ai_recommendations"),
+      title: "ai_user_experience".tr(),
+      subTitle: "ai_recommendations".tr(),
     ),
   ];
 }

@@ -1,11 +1,13 @@
+import '../../../core/functions/appbar.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 import '../../../core/components/defalut_history_books.dart';
 import '../../../core/components/default_historical_category_card.dart';
 import '../../../core/utils/constants/app_images.dart';
 import '../../../core/utils/extensions/extensions.dart';
 import '../../../core/utils/themes/app_colors.dart';
 import '../widget/floating_action_button_widget.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -14,7 +16,8 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButtonWidget(),
-      appBar: appBarHome(context),
+      appBar: defaultAppBar(context, title: "bazar_title".tr()),
+
       body: ListView(
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16),
@@ -75,15 +78,4 @@ class CartPage extends StatelessWidget {
           ),
         ),
       );
-
-  AppBar appBarHome(BuildContext context) => AppBar(
-    title: Text(
-      "bazar_title".tr(),
-      style: context.textTheme.titleLarge?.copyWith(
-        color: AppColors.deepBrown,
-        fontWeight: FontWeight.w700,
-      ),
-    ),
-    centerTitle: true,
-  );
 }

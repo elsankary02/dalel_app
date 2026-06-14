@@ -16,7 +16,7 @@ class ForgotPasswordWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () => context.pushNamed(RouteNames.forgetPasswordPage),
         child: Text(
-          context.tr("forgot_password"),
+          "forgot_password".tr(),
           style: context.textTheme.labelMedium?.copyWith(
             fontWeight: FontWeight.w600,
             color: AppColors.deepGrey,

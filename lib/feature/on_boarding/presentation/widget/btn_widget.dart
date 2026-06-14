@@ -1,11 +1,11 @@
-import '../../../../app/boot.dart';
-import '../../../../core/databases/cache/cache_helper.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../app/boot.dart';
 import '../../../../core/components/default_primary_btn.dart';
+import '../../../../core/databases/cache/cache_helper.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
@@ -34,7 +34,7 @@ class _BtnWidgetState extends State<BtnWidget> {
             children: [
               DefaultPrimaryBtn(
                 padding: EdgeInsets.symmetric(vertical: context.h * 0.019),
-                title: context.tr("create_account"),
+                title: "create_account".tr(),
                 textStyle: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.white,
@@ -46,7 +46,7 @@ class _BtnWidgetState extends State<BtnWidget> {
               ),
               RichText(
                 text: TextSpan(
-                  text: context.tr("login_now"),
+                  text: "login_now".tr(),
                   style: context.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w400,
                     color: AppColors.blackBrown,
@@ -63,7 +63,7 @@ class _BtnWidgetState extends State<BtnWidget> {
           )
         : DefaultPrimaryBtn(
             padding: EdgeInsets.symmetric(vertical: context.h * 0.019),
-            title: context.tr("next"),
+            title: "next".tr(),
             textStyle: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w500,
               color: AppColors.white,

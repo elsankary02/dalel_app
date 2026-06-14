@@ -26,7 +26,7 @@ class _CheckboxAndTermsAndConditionWidgetState
     return Row(
       spacing: 8,
       children: [
-        //! Checkbox
+        // Checkbox
         SizedBox(
           height: context.h * 0.024,
           width: context.h * 0.024,
@@ -44,9 +44,9 @@ class _CheckboxAndTermsAndConditionWidgetState
               color: AppColors.deepGrey,
             ),
             children: [
-              TextSpan(text: context.tr("agree_terms_text")),
+              TextSpan(text: "agree_terms_text".tr()),
               TextSpan(
-                text: context.tr("terms_and_conditions"),
+                text: "terms_and_conditions".tr(),
                 style: context.textTheme.labelMedium?.copyWith(
                   fontWeight: FontWeight.w400,
                   color: AppColors.deepGrey,
@@ -66,7 +66,7 @@ class _CheckboxAndTermsAndConditionWidgetState
                               Row(
                                 children: [
                                   Text(
-                                    context.tr("terms_and_conditions"),
+                                    "terms_and_conditions".tr(),
                                     style: context.textTheme.titleLarge
                                         ?.copyWith(
                                           fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ class _CheckboxAndTermsAndConditionWidgetState
                               ),
                               SizedBox(height: context.h * 0.016),
                               Text(
-                                context.tr("actual_terms_body_text"),
+                                "actual_terms_body_text".tr(),
                                 style: context.textTheme.labelLarge?.copyWith(
                                   fontWeight: FontWeight.w400,
                                   color: AppColors.balck,

@@ -1,14 +1,15 @@
-import '../../../core/utils/constants/app_svgs.dart';
-import '../../../core/utils/themes/app_colors.dart';
-import '../../auth/data/auth_cubit/auth_cubit.dart';
-import '../../cart/view/cart_page.dart';
-import '../view/home_page.dart';
-import '../../profile/view/profile_page.dart';
-import '../../search/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+
+import '../../../core/utils/constants/app_svgs.dart';
+import '../../../core/utils/themes/app_colors.dart';
+import '../../auth/data/auth_cubit/auth_cubit.dart';
+import '../../cart/view/cart_page.dart';
+import '../../profile/view/profile_page.dart';
+import '../../search/search_page.dart';
+import '../view/home_page.dart';
 
 final _controller = PersistentTabController(initialIndex: 0);
 

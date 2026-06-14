@@ -26,7 +26,7 @@ class SkipWidget extends StatelessWidget {
             alignment: .centerRight,
             child: RichText(
               text: TextSpan(
-                text: context.tr("skip"),
+                text: "skip".tr(),
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w400,
                 ),

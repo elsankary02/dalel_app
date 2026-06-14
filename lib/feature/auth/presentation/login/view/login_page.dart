@@ -52,14 +52,11 @@ class _LoginPageState extends State<LoginPage> {
           } else if (state is LogInSuccess) {
             if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
               context.replaceNamed(RouteNames.homeNavigationPage);
-              showSnakBarMessage(
-                message: context.tr("login_successfully"),
-                context,
-              );
+              showSnakBarMessage(message: "login_successfully".tr(), context);
             } else {
               showSnakBarMessage(
                 isError: true,
-                message: context.tr("check_email_verification"),
+                message: "check_email_verification".tr(),
                 context,
               );
             }
@@ -83,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       Text(
-                        context.tr("welcomeback"),
+                        "welcomeback".tr(),
                         style: context.textTheme.headlineMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -91,26 +88,26 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: context.h * 0.048),
                       DefaultTextFormField(
-                        labelText: context.tr("email_address"),
+                        labelText: "email_address".tr(),
                         controller: _emailAddressController,
                         validator: (value) => value == null || value.isEmpty
-                            ? context.tr("email_address_required")
+                            ? "email_address_required".tr()
                             : null,
                       ),
                       SizedBox(height: context.h * 0.030),
                       DefaultTextFormField(
-                        labelText: context.tr("password"),
+                        labelText: "password".tr(),
                         controller: _passWordController,
                         isPassword: true,
                         validator: (value) => value == null || value.isEmpty
-                            ? context.tr("password_required")
+                            ? "password_required".tr()
                             : null,
                       ),
                       SizedBox(height: 16),
                       ForgotPasswordWidget(),
                       SizedBox(height: context.h * 0.110),
                       DefaultPrimaryBtn(
-                        title: context.tr("sign_in"),
+                        title: "sign_in".tr(),
                         textStyle: context.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w500,
                           color: AppColors.white,
