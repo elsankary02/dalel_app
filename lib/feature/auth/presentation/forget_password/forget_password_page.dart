@@ -1,6 +1,3 @@
-import '../../../../core/functions/show_snakbar_message.dart';
-import '../../../../core/router/route_names.dart';
-import '../../data/auth_cubit/auth_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,9 +5,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_primary_btn.dart';
 import '../../../../core/components/default_text_form_field.dart';
+import '../../../../core/functions/show_snakbar_message.dart';
+import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
+import '../../data/auth_cubit/auth_cubit.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});

@@ -21,7 +21,7 @@ class DefaultListTileProfileWidget extends StatelessWidget {
     final h = 24.0;
     final w = 24.0;
     return ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: 20),
+      contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 4),
       shape: Border(bottom: BorderSide(color: AppColors.borderSideGrey)),
       leading: SvgPicture.asset(
         assetName,
