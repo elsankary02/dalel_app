@@ -1,12 +1,11 @@
-import '../../../core/functions/appbar.dart';
+import '../../../core/functions/default_title.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/components/defalut_history_books.dart';
 import '../../../core/components/default_historical_category_card.dart';
+import '../../../core/functions/default_appbar.dart';
 import '../../../core/utils/constants/app_images.dart';
-import '../../../core/utils/extensions/extensions.dart';
-import '../../../core/utils/themes/app_colors.dart';
 import '../widget/floating_action_button_widget.dart';
 
 class CartPage extends StatelessWidget {
@@ -22,7 +21,7 @@ class CartPage extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16),
         children: [
-          text(context, title: "history_books_one".tr()),
+          defaultTitle(context, title: "history_books_one".tr()),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -36,7 +35,7 @@ class CartPage extends StatelessWidget {
               ),
             ],
           ),
-          text(context, top: 32, title: "history_books_two".tr()),
+          defaultTitle(context, top: 32, title: "history_books_two".tr()),
           SizedBox(
             height: 150,
             child: ListView.builder(
@@ -49,7 +48,7 @@ class CartPage extends StatelessWidget {
               ),
             ),
           ),
-          text(context, top: 32, title: "historical_souvenirs".tr()),
+          defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
           SizedBox(
             height: 150,
             child: ListView.builder(
@@ -66,16 +65,4 @@ class CartPage extends StatelessWidget {
       ),
     );
   }
-
-  Padding text(BuildContext context, {required String title, double top = 0}) =>
-      Padding(
-        padding: EdgeInsetsDirectional.only(top: top, bottom: 16),
-        child: Text(
-          title,
-          style: context.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w400,
-            color: AppColors.deepBrown,
-          ),
-        ),
-      );
 }

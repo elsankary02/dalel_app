@@ -1,5 +1,6 @@
-import '../utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/extensions/extensions.dart';
 
 ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnakBarMessage(
   BuildContext context, {

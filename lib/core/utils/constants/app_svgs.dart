@@ -4,6 +4,7 @@ abstract class AppSvgs {
   static const details2 = "assets/svgs/details2.svg";
   static const details3 = "assets/svgs/details3.svg";
   static const drawer = "assets/svgs/drawer.svg";
+  static const dalelLogo = "assets/svgs/dalel_logo.svg";
   static const arrowRightTwo = "assets/svgs/arrow_right_2.svg";
   static const editProfile = "assets/svgs/edit_profile.svg";
   static const notification = "assets/svgs/notification.svg";
