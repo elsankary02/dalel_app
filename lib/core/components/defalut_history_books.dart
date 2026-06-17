@@ -7,24 +7,27 @@ class DefalutHistoryBooks extends StatelessWidget {
   final String title;
   final String assetName;
   final VoidCallback? onTap;
-  final int? itemCount;
+  final int itemCount;
 
   const DefalutHistoryBooks({
     super.key,
     required this.title,
     required this.assetName,
     this.onTap,
-    this.itemCount,
+    this.itemCount = 6,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 133,
-      child: ListView.builder(
+      child: ListView.separated(
         physics: BouncingScrollPhysics(),
         clipBehavior: Clip.none,
         itemCount: itemCount,
+        separatorBuilder: (context, index) {
+          return SizedBox(height: 10);
+        },
         scrollDirection: .horizontal,
         itemBuilder: (context, index) => _historyBook(
           context,
@@ -75,7 +78,7 @@ class DefalutHistoryBooks extends StatelessWidget {
                 color: AppColors.deepBrown,
                 fontWeight: FontWeight.w500,
               ),
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
             ),

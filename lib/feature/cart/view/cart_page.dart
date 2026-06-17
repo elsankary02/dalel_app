@@ -1,4 +1,3 @@
-import '../../../core/utils/extensions/extensions.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +6,7 @@ import '../../../core/components/default_historical_category_card.dart';
 import '../../../core/functions/default_appbar.dart';
 import '../../../core/functions/default_title.dart';
 import '../../../core/utils/constants/app_images.dart';
+import '../../../core/utils/extensions/extensions.dart';
 import '../widget/floating_action_button_widget.dart';
 
 class CartPage extends StatelessWidget {
@@ -19,7 +19,6 @@ class CartPage extends StatelessWidget {
       appBar: defaultAppBar(context, title: "bazar_title".tr()),
 
       body: ListView(
-        physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: context.h * 0.016),
         children: [
           defaultTitle(context, title: "history_books_one".tr()),
@@ -28,25 +27,27 @@ class CartPage extends StatelessWidget {
             children: [
               DefaultHistoricalCategoryCard(
                 title: 'ancient_egypt'.tr(),
-                imageName: AppImages.dalelLogin,
+                imageName: AppImages.imagesFrame3,
+                onTap: () {},
               ),
               DefaultHistoricalCategoryCard(
                 title: 'islamic_era'.tr(),
-                imageName: AppImages.dalelLogin,
+                imageName: AppImages.imagesFrame3,
+                onTap: () {},
               ),
             ],
           ),
           defaultTitle(context, top: 32, title: "history_books_two".tr()),
           DefalutHistoryBooks(
             title: "Test",
-            assetName: AppImages.dalelLogin,
+            assetName: AppImages.imagesFrame3,
             itemCount: 5,
             onTap: () {},
           ),
           defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
           DefalutHistoryBooks(
             title: "Test",
-            assetName: AppImages.dalelLogin,
+            assetName: AppImages.imagesFrame3,
             itemCount: 5,
             onTap: () {},
           ),

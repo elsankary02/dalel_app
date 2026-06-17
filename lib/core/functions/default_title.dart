@@ -1,6 +1,8 @@
+import 'package:dalel_app/core/utils/constants/app_strings.dart';
+import 'package:flutter/material.dart';
+
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
-import 'package:flutter/material.dart';
 
 Padding defaultTitle(
   BuildContext context, {
@@ -13,6 +15,7 @@ Padding defaultTitle(
     style: context.textTheme.titleLarge?.copyWith(
       fontWeight: FontWeight.w400,
       color: AppColors.deepBrown,
+      fontFamily: AppStrings.poppins,
     ),
   ),
 );

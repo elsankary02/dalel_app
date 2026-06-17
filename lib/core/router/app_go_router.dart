@@ -5,7 +5,7 @@ import '../../feature/auth/data/auth_cubit/auth_cubit.dart';
 import '../../feature/auth/presentation/create_account/view/create_account_page.dart';
 import '../../feature/auth/presentation/forget_password/forget_password_page.dart';
 import '../../feature/auth/presentation/login/view/login_page.dart';
-import '../../feature/home/widget/home_nav_bar_widget.dart';
+import '../../feature/home/presentation/widget/home_nav_bar_widget.dart';
 import '../../feature/on_boarding/presentation/view/on_boarding_page.dart';
 import '../../feature/splash/splash_page.dart';
 import 'route_names.dart';

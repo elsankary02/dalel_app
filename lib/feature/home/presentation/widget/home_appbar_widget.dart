@@ -1,4 +1,4 @@
-import '../../../core/utils/constants/app_svgs.dart';
+import '../../../../core/utils/constants/app_svgs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

@@ -7,6 +7,9 @@ abstract class AppColors {
   static const offWhite = Color(0xffF8F4F9);
   static const borderColor = Color(0xff0F0D23);
   static const textColor = Color(0xff07122E);
+  // Dot Color
+  static const dotColor = Color(0xffFCFCFC);
+  static const dotGrey = Color(0xffA4A4A4);
   //  gray colors
   static const grey = Color(0xffC4C4C4);
   static const borderSideGrey = Color(0xffeae3e6);
