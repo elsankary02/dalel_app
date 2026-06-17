@@ -1,10 +1,11 @@
-import '../../../core/functions/default_title.dart';
+import '../../../core/utils/extensions/extensions.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/components/defalut_history_books.dart';
 import '../../../core/components/default_historical_category_card.dart';
 import '../../../core/functions/default_appbar.dart';
+import '../../../core/functions/default_title.dart';
 import '../../../core/utils/constants/app_images.dart';
 import '../widget/floating_action_button_widget.dart';
 
@@ -19,7 +20,7 @@ class CartPage extends StatelessWidget {
 
       body: ListView(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: context.h * 0.016),
         children: [
           defaultTitle(context, title: "history_books_one".tr()),
           Row(
@@ -27,39 +28,27 @@ class CartPage extends StatelessWidget {
             children: [
               DefaultHistoricalCategoryCard(
                 title: 'ancient_egypt'.tr(),
-                imageName: AppImages.imagesFrame,
+                imageName: AppImages.dalelLogin,
               ),
               DefaultHistoricalCategoryCard(
                 title: 'islamic_era'.tr(),
-                imageName: AppImages.imagesFrame2,
+                imageName: AppImages.dalelLogin,
               ),
             ],
           ),
           defaultTitle(context, top: 32, title: "history_books_two".tr()),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemCount: 5,
-              scrollDirection: .horizontal,
-              itemBuilder: (context, index) => DefalutHistoryBooks(
-                title: 'Lionheart',
-                assetName: AppImages.imagesFrame3,
-              ),
-            ),
+          DefalutHistoryBooks(
+            title: "Test",
+            assetName: AppImages.dalelLogin,
+            itemCount: 5,
+            onTap: () {},
           ),
           defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              itemCount: 5,
-              scrollDirection: .horizontal,
-              itemBuilder: (context, index) => DefalutHistoryBooks(
-                title: 'Lionheart',
-                assetName: AppImages.imagesFrame3,
-              ),
-            ),
+          DefalutHistoryBooks(
+            title: "Test",
+            assetName: AppImages.dalelLogin,
+            itemCount: 5,
+            onTap: () {},
           ),
         ],
       ),

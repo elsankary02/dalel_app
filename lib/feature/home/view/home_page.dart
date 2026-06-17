@@ -1,12 +1,13 @@
 import '../../../core/components/defalut_history_books.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 import '../../../core/components/default_historical_category_card.dart';
 import '../../../core/functions/default_title.dart';
 import '../../../core/utils/constants/app_images.dart';
 import '../../../core/utils/extensions/extensions.dart';
 import '../widget/drawer_widget.dart';
 import '../widget/home_appbar_widget.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,37 +21,37 @@ class HomePage extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           padding: EdgeInsets.symmetric(horizontal: context.h * 0.016),
           children: [
-            SizedBox(height: context.h * 0.028),
+            SizedBox(height: context.h * 0.020),
             HomeAppBarWidget(),
-            SizedBox(height: context.h * 0.032),
+            SizedBox(height: context.h * 0.025),
             defaultTitle(context, title: "historical_periods".tr()),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 DefaultHistoricalCategoryCard(
                   title: 'ancient_egypt'.tr(),
-                  imageName: AppImages.imagesFrame,
+                  imageName: AppImages.dalelLogin,
                 ),
                 DefaultHistoricalCategoryCard(
                   title: 'islamic_era'.tr(),
-                  imageName: AppImages.imagesFrame2,
+                  imageName: AppImages.dalelLogin,
                 ),
               ],
             ),
             defaultTitle(context, top: 32, title: "historical_characters".tr()),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                itemCount: 5,
-                scrollDirection: .horizontal,
-                itemBuilder: (context, index) => DefalutHistoryBooks(
-                  title: 'Lionheart',
-                  assetName: AppImages.imagesFrame3,
-                ),
-              ),
+            DefalutHistoryBooks(
+              title: "Test",
+              assetName: AppImages.dalelLogin,
+              itemCount: 5,
+              onTap: () {},
             ),
             defaultTitle(context, top: 32, title: "ancient_wars".tr()),
+            DefalutHistoryBooks(
+              title: "Test",
+              assetName: AppImages.dalelLogin,
+              itemCount: 5,
+              onTap: () {},
+            ),
           ],
         ),
       ),

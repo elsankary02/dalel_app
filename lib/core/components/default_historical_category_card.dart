@@ -6,50 +6,54 @@ import '../utils/themes/app_colors.dart';
 class DefaultHistoricalCategoryCard extends StatelessWidget {
   final String title;
   final String imageName;
-
+  final VoidCallback? onTap;
   const DefaultHistoricalCategoryCard({
     super.key,
     required this.title,
     required this.imageName,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: _boxShadow(),
-      ),
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        spacing: 16,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            width: 90,
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: context.textTheme.titleMedium?.copyWith(
-                color: AppColors.deepBrown,
-                fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: _boxShadow(),
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 16,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              width: 90,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: AppColors.deepBrown,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              imageName,
-              width: 47,
-              height: 64,
-              fit: BoxFit.cover,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                imageName,
+                width: 47,
+                height: 64,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
