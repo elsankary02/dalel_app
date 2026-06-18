@@ -1,4 +1,4 @@
-import 'package:dalel_app/core/utils/constants/app_strings.dart';
+import '../utils/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/extensions/extensions.dart';

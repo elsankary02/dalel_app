@@ -13,7 +13,7 @@ class TopLoginWidget extends StatelessWidget {
     return Stack(
       alignment: .center,
       children: [
-        Image.asset(AppImages.imagesFrame3),
+        Image.asset(AppImages.dalel),
         Positioned(bottom: 0, left: 0, child: Image.asset(AppImages.vector1)),
         Positioned(bottom: 0, right: 0, child: Image.asset(AppImages.vector2)),
         Text(

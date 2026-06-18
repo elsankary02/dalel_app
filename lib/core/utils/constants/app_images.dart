@@ -15,8 +15,8 @@ abstract class AppImages {
   static const imagesForgotPassword = "assets/images/forgotPassword.png";
   static const imagesSucccesOrder = "assets/images/succcesOrder.png";
   // Splash
-  static const dalel = "assets/images/dalel.png";
-  // static const imagesFrame3 = "assets/images/dalel_login.png";
+  static const logoApp = "assets/images/dalel.png";
+  static const dalel = "assets/images/dalel_login.png";
   //vector
   static const vector1 = "assets/images/Vector1.png";
   static const vector2 = "assets/images/Vector2.png";

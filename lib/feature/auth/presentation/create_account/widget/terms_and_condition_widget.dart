@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
 
-class CheckboxAndTermsAndConditionWidget extends StatefulWidget {
+class CheckboxAndTermsAndConditionWidget extends StatelessWidget {
   final Function(bool?)? onChanged;
   final bool isSelected;
   const CheckboxAndTermsAndConditionWidget({
@@ -14,13 +14,6 @@ class CheckboxAndTermsAndConditionWidget extends StatefulWidget {
     this.isSelected = false,
   });
 
-  @override
-  State<CheckboxAndTermsAndConditionWidget> createState() =>
-      _CheckboxAndTermsAndConditionWidgetState();
-}
-
-class _CheckboxAndTermsAndConditionWidgetState
-    extends State<CheckboxAndTermsAndConditionWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,8 +24,8 @@ class _CheckboxAndTermsAndConditionWidgetState
           height: context.h * 0.024,
           width: context.h * 0.024,
           child: Checkbox(
-            value: widget.isSelected,
-            onChanged: widget.onChanged,
+            value: isSelected,
+            onChanged: onChanged,
             activeColor: AppColors.deepBrown,
             side: BorderSide(color: AppColors.deepGrey),
           ),
@@ -61,19 +54,15 @@ class _CheckboxAndTermsAndConditionWidgetState
                         child: SingleChildScrollView(
                           physics: const BouncingScrollPhysics(),
                           child: Column(
+                            crossAxisAlignment: .start,
                             mainAxisSize: .min,
                             children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    "terms_and_conditions".tr(),
-                                    style: context.textTheme.titleLarge
-                                        ?.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          color: AppColors.deepBrown,
-                                        ),
-                                  ),
-                                ],
+                              Text(
+                                "terms_and_conditions".tr(),
+                                style: context.textTheme.titleLarge?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.deepBrown,
+                                ),
                               ),
                               SizedBox(height: context.h * 0.016),
                               Text(

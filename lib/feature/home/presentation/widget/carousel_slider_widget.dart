@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dalel_app/core/utils/constants/app_images.dart';
-import 'package:dalel_app/core/utils/themes/app_colors.dart';
+import '../../../../core/utils/constants/app_images.dart';
+import '../../../../core/utils/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CarouselSliderWidget extends StatefulWidget {

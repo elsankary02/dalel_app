@@ -1,4 +1,4 @@
-import 'package:dalel_app/feature/home/presentation/widget/carousel_slider_widget.dart';
+import '../widget/carousel_slider_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

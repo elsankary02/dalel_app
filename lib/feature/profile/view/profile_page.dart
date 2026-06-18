@@ -1,5 +1,8 @@
+import '../../auth/data/auth_cubit/auth_cubit.dart';
+import '../widget/privacy_policy_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/functions/default_appbar.dart';
 import '../../../core/utils/constants/app_images.dart';
@@ -21,7 +24,10 @@ class ProfilePage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20),
         physics: BouncingScrollPhysics(),
         children: [
-          UserProfileAvatarWidget(assetName: AppImages.dalel),
+          BlocProvider(
+            create: (context) => AuthCubit(),
+            child: UserProfileAvatarWidget(assetName: AppImages.logoApp),
+          ),
           // Account
           Text(
             "account_section".tr(),
@@ -65,6 +71,10 @@ class ProfilePage extends StatelessWidget {
           DefaultListTileProfileWidget(
             title: "privacy_policy".tr(),
             assetName: AppSvgs.shieldDone,
+            onTap: () => showModalBottomSheet(
+              context: context,
+              builder: (context) => PrivacyPolicyWidget(),
+            ),
           ),
           // log Out
           LogOutWidget(),
