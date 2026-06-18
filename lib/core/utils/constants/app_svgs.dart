@@ -23,6 +23,7 @@ abstract class AppSvgs {
   static const cartInActive = "assets/svgs/cart_in_active.svg";
   // Search
   static const search = "assets/svgs/search.svg";
+  static const searchIcon = "assets/svgs/search_icon.svg";
   static const searchInActive = "assets/svgs/search_in_active.svg";
   // profile
   static const profile = "assets/svgs/profile.svg";

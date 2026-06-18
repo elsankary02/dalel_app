@@ -47,7 +47,6 @@ class HomePage extends StatelessWidget {
             DefalutHistoryBooks(
               title: "Test",
               assetName: AppImages.imagesFrame3,
-              onTap: () {},
             ),
             defaultTitle(context, top: 32, title: "ancient_wars".tr()),
             // Carousel Slider
@@ -56,7 +55,6 @@ class HomePage extends StatelessWidget {
             DefalutHistoryBooks(
               title: "Test",
               assetName: AppImages.imagesFrame3,
-              onTap: () {},
             ),
           ],
         ),

@@ -13,7 +13,9 @@ class FloatingActionButtonWidget extends StatelessWidget {
         borderRadius: .circular(100),
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          
+        },
         icon: Icon(Icons.shopping_cart, color: AppColors.white, size: 24),
       ),
     );

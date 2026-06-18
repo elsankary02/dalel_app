@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../utils/themes/app_colors.dart';
 
 class DefaultTextFormField extends StatefulWidget {
-  final String labelText;
+  final String? labelText;
   final String? prefixText, suffixText;
   final String? hintText;
   final bool obscureText, autofocus;
@@ -12,7 +12,7 @@ class DefaultTextFormField extends StatefulWidget {
   final AutovalidateMode? autovalidateMode;
   final TextInputType? keyboardType;
   final EdgeInsetsGeometry? contentPadding;
-  final TextStyle? labelStyle, suffixStyle, style, prefixStyle;
+  final TextStyle? labelStyle, suffixStyle, style, prefixStyle, hintStyle;
   final int? maxLength;
   final Widget? prefixIcon, suffixIcon;
   final TextEditingController? controller;
@@ -21,9 +21,10 @@ class DefaultTextFormField extends StatefulWidget {
   final Color? cursorColor, suffixIconColor, prefixIconColor, fillColor;
   final Color enabledBorderColor, focusedBorderColor;
   final bool isPassword;
+  final BoxConstraints? prefixIconConstraints;
   const DefaultTextFormField({
     super.key,
-    this.labelText = "enter your name",
+    this.labelText,
     this.controller,
     this.keyboardType,
     this.validator,
@@ -64,6 +65,8 @@ class DefaultTextFormField extends StatefulWidget {
       start: 16,
     ),
     this.hintText,
+    this.hintStyle,
+    this.prefixIconConstraints,
   });
 
   @override
@@ -98,8 +101,10 @@ class _DefaultTextFormFieldState extends State<DefaultTextFormField> {
         fillColor: widget.fillColor,
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
+        hintStyle: widget.hintStyle,
         prefixStyle: widget.prefixStyle,
         prefixText: widget.prefixText,
+        prefixIconConstraints: widget.prefixIconConstraints,
         suffixIcon: widget.isPassword
             ? IconButton(
                 onPressed: () {

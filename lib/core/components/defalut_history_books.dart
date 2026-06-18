@@ -6,14 +6,12 @@ import '../utils/themes/app_colors.dart';
 class DefalutHistoryBooks extends StatelessWidget {
   final String title;
   final String assetName;
-  final VoidCallback? onTap;
   final int itemCount;
 
   const DefalutHistoryBooks({
     super.key,
     required this.title,
     required this.assetName,
-    this.onTap,
     this.itemCount = 6,
   });
 
@@ -33,7 +31,9 @@ class DefalutHistoryBooks extends StatelessWidget {
           context,
           title: title,
           assetName: assetName,
-          onTap: onTap,
+          onTap: (){
+            
+          },
         ),
       ),
     );
