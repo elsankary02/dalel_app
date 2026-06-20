@@ -1,12 +1,12 @@
-import '../widget/carousel_slider_widget.dart';
+import 'package:dalel_app/feature/home/presentation/widget/historical_periods_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/defalut_history_books.dart';
-import '../../../../core/components/default_historical_category_card.dart';
 import '../../../../core/functions/default_title.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
+import '../widget/carousel_slider_widget.dart';
 import '../widget/drawer_widget.dart';
 import '../widget/home_appbar_widget.dart';
 
@@ -28,21 +28,7 @@ class HomePage extends StatelessWidget {
             HomeAppBarWidget(),
             SizedBox(height: context.h * 0.025),
             defaultTitle(context, title: "historical_periods".tr()),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DefaultHistoricalCategoryCard(
-                  title: 'ancient_egypt'.tr(),
-                  imageName: AppImages.imagesFrame3,
-                  onTap: () {},
-                ),
-                DefaultHistoricalCategoryCard(
-                  title: 'islamic_era'.tr(),
-                  imageName: AppImages.imagesFrame3,
-                  onTap: () {},
-                ),
-              ],
-            ),
+            HistoricalPeriodsWidget(),
             defaultTitle(context, top: 32, title: "historical_characters".tr()),
             DefalutHistoryBooks(
               title: "Test",

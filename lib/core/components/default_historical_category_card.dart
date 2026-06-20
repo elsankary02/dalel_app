@@ -1,19 +1,17 @@
+import 'package:dalel_app/feature/home/data/model/historical_periods_model.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
 
 class DefaultHistoricalCategoryCard extends StatelessWidget {
-  final String title;
-  final String imageName;
   final VoidCallback? onTap;
+  final HistoricalPeriodsModel historicalPeriodsModel;
   const DefaultHistoricalCategoryCard({
     super.key,
-    required this.title,
-    required this.imageName,
     this.onTap,
+    required this.historicalPeriodsModel,
   });
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -33,7 +31,7 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
             SizedBox(
               width: 90,
               child: Text(
-                title,
+                historicalPeriodsModel.name,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -45,8 +43,8 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                imageName,
+              child: Image.network(
+                historicalPeriodsModel.image,
                 width: 47,
                 height: 64,
                 fit: BoxFit.cover,
