@@ -1,4 +1,4 @@
-import 'package:dalel_app/feature/home/data/model/historical_periods_model.dart';
+import '../../feature/home/data/model/historical_periods_model.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/extensions/extensions.dart';

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dalel_app/core/components/default_historical_category_card.dart';
-import 'package:dalel_app/core/databases/firebase_strings.dart';
-import 'package:dalel_app/core/utils/extensions/extensions.dart';
-import 'package:dalel_app/feature/home/data/model/historical_periods_model.dart';
+import '../../../../core/components/default_historical_category_card.dart';
+import '../../../../core/databases/firebase_strings.dart';
+import '../../../../core/utils/extensions/extensions.dart';
+import '../../data/model/historical_periods_model.dart';
 import 'package:flutter/material.dart';
 
 class HistoricalPeriodsWidget extends StatelessWidget {
