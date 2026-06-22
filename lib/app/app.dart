@@ -15,9 +15,9 @@ class DalelApp extends StatelessWidget {
       locale: context.locale,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
-      darkTheme: AppThemes.darkTheme,
-      theme: AppThemes.lightTheme,
-      themeMode: ThemeMode.light,
+      darkTheme: AppThemes.dark,
+      theme: AppThemes.light,
+      themeMode: ThemeMode.system,
     );
   }
 }
