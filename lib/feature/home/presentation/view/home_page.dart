@@ -1,4 +1,3 @@
-import '../widget/historical_periods_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +7,7 @@ import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../widget/carousel_slider_widget.dart';
 import '../widget/drawer_widget.dart';
+import '../widget/historical_periods_widget.dart';
 import '../widget/home_appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,7 +25,13 @@ class HomePage extends StatelessWidget {
             vertical: context.h * 0.020,
           ),
           children: [
-            HomeAppBarWidget(),
+            Builder(
+              builder: (context) {
+                return HomeAppBarWidget(
+                  onTap: () => Scaffold.of(context).openDrawer(),
+                );
+              },
+            ),
             SizedBox(height: context.h * 0.025),
             defaultTitle(context, title: "historical_periods".tr()),
             HistoricalPeriodsWidget(),

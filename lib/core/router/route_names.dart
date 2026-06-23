@@ -6,4 +6,5 @@ abstract class RouteNames {
   static const homeNavigationPage = "/HomeNavigationPage";
   static const forgetPasswordPage = "/ForgetPasswordPage";
   static const onBoardingPage = "/OnBoardingPage";
+  static const dalelChar = "/DalelChar";
 }

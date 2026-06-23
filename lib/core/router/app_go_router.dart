@@ -1,3 +1,4 @@
+import '../../feature/home/presentation/view/dalel_char_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,6 +48,11 @@ final router = GoRouter(
       path: RouteNames.homeNavigationPage,
       name: RouteNames.homeNavigationPage,
       builder: (context, state) => HomeNavBarWidget(),
+    ),
+    GoRoute(
+      path: RouteNames.dalelChar,
+      name: RouteNames.dalelChar,
+      builder: (context, state) => DalelCharPage(),
     ),
   ],
 );

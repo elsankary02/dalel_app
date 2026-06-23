@@ -12,6 +12,7 @@ Padding defaultTitle(
   padding: EdgeInsetsDirectional.only(top: top, bottom: 16),
   child: Text(
     title,
+    
     style: context.textTheme.titleLarge?.copyWith(
       fontWeight: FontWeight.w400,
       color: AppColors.deepBrown,

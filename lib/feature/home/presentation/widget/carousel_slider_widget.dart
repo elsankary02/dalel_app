@@ -1,7 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import '../../../../core/router/route_names.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/themes/app_colors.dart';
-import 'package:flutter/material.dart';
 
 class CarouselSliderWidget extends StatefulWidget {
   const CarouselSliderWidget({super.key});
@@ -19,6 +22,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
         CarouselSlider(
           options: CarouselOptions(
             clipBehavior: .none,
+
             aspectRatio: 376 / 169,
             viewportFraction: 1,
             onPageChanged: (index, reason) {
@@ -74,9 +78,12 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   ];
 
   Widget _carouselImage({required String image}) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Image.asset(image, fit: BoxFit.cover, height: 169, width: 376),
+    return GestureDetector(
+      onTap: () => context.pushNamed(RouteNames.dalelChar),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.asset(image, fit: BoxFit.cover, height: 169, width: 376),
+      ),
     );
   }
 }

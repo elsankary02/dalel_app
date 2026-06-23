@@ -47,6 +47,8 @@ dependencies:
   cloud_firestore: ^6.5.0
   persistent_bottom_nav_bar: ^6.2.1
   carousel_slider: ^5.1.2
+  readmore: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:

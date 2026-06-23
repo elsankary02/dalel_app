@@ -1,3 +1,4 @@
+import '../../home/presentation/widget/historical_periods_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -21,19 +22,7 @@ class CartPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: context.h * 0.016),
         children: [
           defaultTitle(context, title: "history_books_one".tr()),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // DefaultHistoricalCategoryCard(
-
-              //   onTap: () {},
-              // ),
-              // DefaultHistoricalCategoryCard(
-
-              //   onTap: () {},
-              // ),
-            ],
-          ),
+          HistoricalPeriodsWidget(),
           defaultTitle(context, top: 32, title: "history_books_two".tr()),
           DefalutHistoryBooks(
             title: "Test",

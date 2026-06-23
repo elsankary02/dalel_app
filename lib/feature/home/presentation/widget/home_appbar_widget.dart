@@ -1,9 +1,11 @@
-import '../../../../core/utils/constants/app_svgs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../core/utils/constants/app_svgs.dart';
+
 class HomeAppBarWidget extends StatelessWidget {
-  const HomeAppBarWidget({super.key});
+  final VoidCallback onTap;
+  const HomeAppBarWidget({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class HomeAppBarWidget extends StatelessWidget {
 
   GestureDetector _leadingFunc(BuildContext context) {
     return GestureDetector(
-      onTap: () => Scaffold.of(context).openDrawer(),
+      onTap: onTap,
       child: SvgPicture.asset(AppSvgs.drawer),
     );
   }

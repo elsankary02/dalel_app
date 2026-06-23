@@ -7,6 +7,7 @@ abstract class AppImages {
   static const imagesFrame = "assets/images/Frame.png";
   static const imagesFrame2 = "assets/images/Frame2.png";
   static const imagesFrame3 = "assets/images/frame3.png";
+  static const imagesFrame4 = "assets/images/frame4.png";
   //carousel slider
   static const sliderOne = "assets/images/slider_one.jpg";
   static const sliderTwo = "assets/images/slider_two.jpg";

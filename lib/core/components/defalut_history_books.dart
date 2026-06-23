@@ -1,4 +1,6 @@
+import '../router/route_names.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
@@ -19,21 +21,16 @@ class DefalutHistoryBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 133,
-      child: ListView.separated(
+      child: ListView.builder(
         physics: BouncingScrollPhysics(),
         clipBehavior: Clip.none,
         itemCount: itemCount,
-        separatorBuilder: (context, index) {
-          return SizedBox(height: 10);
-        },
         scrollDirection: .horizontal,
         itemBuilder: (context, index) => _historyBook(
           context,
           title: title,
           assetName: assetName,
-          onTap: (){
-            
-          },
+          onTap: () => context.pushNamed(RouteNames.dalelChar),
         ),
       ),
     );
