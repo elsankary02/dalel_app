@@ -1,12 +1,20 @@
-import '../../../../core/router/route_names.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_historical_category_card.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 
-class HistoricalPeriodsWidget extends StatelessWidget {
-  const HistoricalPeriodsWidget({super.key});
+class CustomHistoricalWidget extends StatelessWidget {
+  final VoidCallback? onTap;
+  final int? itemCount;
+  final String title;
+  final String image;
+  const CustomHistoricalWidget({
+    super.key,
+    this.onTap,
+    this.itemCount,
+    required this.title,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +23,13 @@ class HistoricalPeriodsWidget extends StatelessWidget {
       child: ListView.builder(
         clipBehavior: Clip.none,
         scrollDirection: .horizontal,
-        itemCount: 2,
+        itemCount: itemCount,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsetsDirectional.only(end: 20),
           child: DefaultHistoricalCategoryCard(
-            onTap: () => context.pushNamed(RouteNames.dalelChar),
+            onTap: onTap,
+            title: title,
+            image: image,
           ),
         ),
       ),

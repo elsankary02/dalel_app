@@ -1,3 +1,4 @@
+import 'package:dalel_app/core/router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -12,8 +13,8 @@ import '../../../../core/utils/themes/app_colors.dart';
 import '../widget/about_widget.dart';
 import '../widget/custom_historical_widget.dart';
 
-class DalelCharPage extends StatelessWidget {
-  const DalelCharPage({super.key});
+class DalelPeriodPage extends StatelessWidget {
+  const DalelPeriodPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,35 +30,40 @@ class DalelCharPage extends StatelessWidget {
             _defaultAppBarFunc(context),
             SizedBox(height: context.h * 0.025),
             // About
-            Stack(
-              clipBehavior: .none,
+            Row(
+              spacing: 7,
               children: [
-                PositionedDirectional(
-                  end: 0,
-                  child: SvgPicture.asset(AppSvgs.charDeatails1),
-                ),
-                defaultTitle(context, title: "About Saladin (1137-1193)"),
+                defaultTitle(context, title: "About Ancient Egypt"),
+                Stack(children: [SvgPicture.asset(AppSvgs.periodDetails1)]),
               ],
             ),
             SizedBox(height: context.h * 0.030),
-            _aboutFunc(),
+            Stack(
+              clipBehavior: .none,
+              children: [
+                Positioned(
+                  top: -23,
+                  child: SvgPicture.asset(AppSvgs.periodDetails2),
+                ),
+                AboutWidget(
+                  image: AppImages.imagesFrame,
+                  descreption:
+                      ' qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm',
+                ),
+              ],
+            ),
             SizedBox(height: context.h * 0.020),
             // Ancient Egypt Wars
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                defaultTitle(context, title: "Saladin Wars"),
-                Row(
-                  spacing: 7,
-                  children: [
-                    SvgPicture.asset(AppSvgs.charDeatails4),
-                    SvgPicture.asset(AppSvgs.charDeatails3),
-                  ],
-                ),
+                defaultTitle(context, title: "Ancient Egypt Wars"),
+                SvgPicture.asset(AppSvgs.periodDetails3),
               ],
             ),
             // TODO
             CustomHistoricalWidget(
+              onTap: () => context.pushNamed(RouteNames.dalelCharPage),
               title: 'test',
               image: AppImages.imagesFrame2,
             ),
@@ -70,33 +76,6 @@ class DalelCharPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Stack _aboutFunc() {
-    return Stack(
-      clipBehavior: .none,
-      children: [
-        PositionedDirectional(
-          top: 55,
-          end: 0,
-          child: SvgPicture.asset(AppSvgs.charDeatails2),
-        ),
-        PositionedDirectional(
-          top: -20,
-          start: 34,
-          child: SvgPicture.asset(AppSvgs.charDeatails4),
-        ),
-        PositionedDirectional(
-          top: -10,
-          child: SvgPicture.asset(AppSvgs.charDeatails3),
-        ),
-        AboutWidget(
-          image: AppImages.imagesFrame4,
-          descreption:
-              'qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm',
-        ),
-      ],
     );
   }
 

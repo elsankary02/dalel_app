@@ -1,6 +1,4 @@
-import '../../auth/data/auth_cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/extensions/extensions.dart';
 import '../../../core/utils/themes/app_colors.dart';
@@ -19,37 +17,30 @@ class UserProfileAvatarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
-      builder: (context, state) {
-        return Padding(
-          padding: EdgeInsetsDirectional.only(bottom: 24),
-          child: ListTile(
-            contentPadding: .zero,
-            leading: CircleAvatar(
-              radius: 30,
-              backgroundImage: AssetImage(assetName),
-              onBackgroundImageError: (exception, stackTrace) {},
-            ),
-            title: Text(
-              title ?? "Mohamed",
-              style: context.textTheme.titleLarge?.copyWith(
-                color: AppColors.deepBrown,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            subtitle: Text(
-              subTitle ?? "elsankry02@gmail.com",
-              style: context.textTheme.titleMedium?.copyWith(
-                color: AppColors.greyTwo,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
+    return Padding(
+      padding: EdgeInsetsDirectional.only(bottom: 24),
+      child: ListTile(
+        contentPadding: .zero,
+        leading: CircleAvatar(
+          radius: 30,
+          backgroundImage: AssetImage(assetName),
+          onBackgroundImageError: (exception, stackTrace) {},
+        ),
+        title: Text(
+          title ?? "Mohamed",
+          style: context.textTheme.titleLarge?.copyWith(
+            color: AppColors.deepBrown,
+            fontWeight: FontWeight.w500,
           ),
-        );
-      },
+        ),
+        subtitle: Text(
+          subTitle ?? "elsankry02@gmail.com",
+          style: context.textTheme.titleMedium?.copyWith(
+            color: AppColors.greyTwo,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ),
     );
   }
 }

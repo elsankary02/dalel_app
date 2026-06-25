@@ -1,13 +1,15 @@
+import 'package:dalel_app/core/router/route_names.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_title.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../widget/carousel_slider_widget.dart';
+import '../widget/custom_historical_widget.dart';
 import '../widget/drawer_widget.dart';
-import '../widget/historical_periods_widget.dart';
 import '../widget/home_appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,11 +36,16 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: context.h * 0.025),
             defaultTitle(context, title: "historical_periods".tr()),
-            HistoricalPeriodsWidget(),
+            // TODO
+            CustomHistoricalWidget(
+              onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
+              title: 'test',
+              image: AppImages.imagesFrame2,
+            ),
             defaultTitle(context, top: 32, title: "historical_characters".tr()),
             DefalutHistoryBooks(
               title: "Test",
-              assetName: AppImages.imagesFrame3,
+              assetName: AppImages.imagesFrame,
             ),
             defaultTitle(context, top: 32, title: "ancient_wars".tr()),
             // Carousel Slider

@@ -14,8 +14,16 @@ class TopLoginWidget extends StatelessWidget {
       alignment: .center,
       children: [
         Image.asset(AppImages.dalel),
-        Positioned(bottom: 0, left: 0, child: Image.asset(AppImages.vector1)),
-        Positioned(bottom: 0, right: 0, child: Image.asset(AppImages.vector2)),
+        PositionedDirectional(
+          bottom: 0,
+          start: 0,
+          child: Image.asset(AppImages.vector1),
+        ),
+        PositionedDirectional(
+          bottom: 0,
+          end: 0,
+          child: Image.asset(AppImages.vector2),
+        ),
         Text(
           "Dalel",
           style: context.textTheme.displayMedium?.copyWith(

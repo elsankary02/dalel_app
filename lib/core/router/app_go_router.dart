@@ -1,4 +1,4 @@
-import '../../feature/cart/widget/cart_widget.dart';
+import 'package:dalel_app/feature/home/presentation/view/dalel_period_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -6,6 +6,7 @@ import '../../feature/auth/data/auth_cubit/auth_cubit.dart';
 import '../../feature/auth/presentation/create_account/view/create_account_page.dart';
 import '../../feature/auth/presentation/forget_password/forget_password_page.dart';
 import '../../feature/auth/presentation/login/view/login_page.dart';
+import '../../feature/cart/widget/cart_widget.dart';
 import '../../feature/home/presentation/view/dalel_char_page.dart';
 import '../../feature/home/presentation/widget/home_nav_bar_widget.dart';
 import '../../feature/on_boarding/presentation/view/on_boarding_page.dart';
@@ -51,14 +52,19 @@ final router = GoRouter(
       builder: (context, state) => HomeNavBarWidget(),
     ),
     GoRoute(
-      path: RouteNames.dalelChar,
-      name: RouteNames.dalelChar,
-      builder: (context, state) => DalelCharPage(),
-    ),
-    GoRoute(
       path: RouteNames.cartWidget,
       name: RouteNames.cartWidget,
       builder: (context, state) => CartWidget(),
+    ),
+    GoRoute(
+      path: RouteNames.dalelCharPage,
+      name: RouteNames.dalelCharPage,
+      builder: (context, state) => DalelCharPage(),
+    ),
+    GoRoute(
+      path: RouteNames.dalelPeriodPage,
+      name: RouteNames.dalelPeriodPage,
+      builder: (context, state) => DalelPeriodPage(),
     ),
   ],
 );

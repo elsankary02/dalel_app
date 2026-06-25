@@ -1,7 +1,7 @@
-import '../router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../router/route_names.dart';
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
 
@@ -30,7 +30,7 @@ class DefalutHistoryBooks extends StatelessWidget {
           context,
           title: title,
           assetName: assetName,
-          onTap: () => context.pushNamed(RouteNames.dalelChar),
+          onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
         ),
       ),
     );

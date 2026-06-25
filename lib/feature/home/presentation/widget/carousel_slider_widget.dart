@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import '../../../../core/router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/themes/app_colors.dart';
 
@@ -45,9 +45,9 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   }
 
   Widget _buildDotsIndicator() {
-    return Positioned(
-      left: 0,
-      right: 0,
+    return PositionedDirectional(
+      start: 0,
+      end: 0,
       bottom: 8,
       child: Row(
         mainAxisAlignment: .center,
@@ -79,7 +79,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
 
   Widget _carouselImage({required String image}) {
     return GestureDetector(
-      onTap: () => context.pushNamed(RouteNames.dalelChar),
+      onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Image.asset(image, fit: BoxFit.cover, height: 169, width: 376),

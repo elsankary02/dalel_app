@@ -1,8 +1,5 @@
 abstract class AppSvgs {
-  //? App Svgs
-  static const details1 = "assets/svgs/details1.svg";
-  static const details2 = "assets/svgs/details2.svg";
-  static const details3 = "assets/svgs/details3.svg";
+  // App Svgs
   static const drawer = "assets/svgs/drawer.svg";
   static const dalelLogo = "assets/svgs/dalel_logo.svg";
   static const arrowRightTwo = "assets/svgs/arrow_right_2.svg";
@@ -14,7 +11,18 @@ abstract class AppSvgs {
   static const logOut = "assets/svgs/log_out.svg";
   static const deleteIcon = "assets/svgs/delete_icon.svg";
 
-  //? Home Navbar :
+  // Period Details
+  static const periodDetails1 = "assets/svgs/details1.svg";
+  static const periodDetails2 = "assets/svgs/details2.svg";
+  static const periodDetails3 = "assets/svgs/details3.svg";
+
+  // char Details
+  static const charDeatails1 = "assets/svgs/char_details_1.svg";
+  static const charDeatails2 = "assets/svgs/char_details_2.svg";
+  static const charDeatails3 = "assets/svgs/char_details_3.svg";
+  static const charDeatails4 = "assets/svgs/char_details_4.svg";
+
+  //! Home Navbar :
   // Home
   static const home = "assets/svgs/home.svg";
   static const homeInActive = "assets/svgs/home_in_active.svg";
@@ -22,10 +30,11 @@ abstract class AppSvgs {
   //  Cart
   static const cart = "assets/svgs/cart.svg";
   static const cartInActive = "assets/svgs/cart_in_active.svg";
+
   // Search
   static const search = "assets/svgs/search.svg";
-  static const searchIcon = "assets/svgs/search_icon.svg";
   static const searchInActive = "assets/svgs/search_in_active.svg";
+
   // profile
   static const profile = "assets/svgs/profile.svg";
   static const profileInActive = "assets/svgs/profile_in_active.svg";

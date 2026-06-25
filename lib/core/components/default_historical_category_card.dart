@@ -1,4 +1,3 @@
-import '../utils/constants/app_images.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/extensions/extensions.dart';
@@ -6,7 +5,14 @@ import '../utils/themes/app_colors.dart';
 
 class DefaultHistoricalCategoryCard extends StatelessWidget {
   final VoidCallback? onTap;
-  const DefaultHistoricalCategoryCard({super.key, this.onTap});
+  final String title;
+  final String image;
+  const DefaultHistoricalCategoryCard({
+    super.key,
+    this.onTap,
+    required this.title,
+    required this.image,
+  });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,7 +32,7 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
             SizedBox(
               width: 90,
               child: Text(
-                "test",
+                title,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -39,7 +45,7 @@ class DefaultHistoricalCategoryCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
-                AppImages.imagesFrame,
+                image,
                 width: 47,
                 height: 64,
                 fit: BoxFit.cover,
