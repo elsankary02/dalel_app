@@ -1,4 +1,6 @@
+import '../../../core/router/route_names.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/utils/themes/app_colors.dart';
 
@@ -13,7 +15,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
         borderRadius: .circular(100),
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () => context.pushNamed(RouteNames.cartWidget),
         icon: Icon(Icons.shopping_cart, color: AppColors.white, size: 24),
       ),
     );

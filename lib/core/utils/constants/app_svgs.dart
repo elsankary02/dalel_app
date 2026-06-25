@@ -12,6 +12,7 @@ abstract class AppSvgs {
   static const lock = "assets/svgs/lock.svg";
   static const shieldDone = "assets/svgs/shield_done.svg";
   static const logOut = "assets/svgs/log_out.svg";
+  static const deleteIcon = "assets/svgs/delete_icon.svg";
 
   //? Home Navbar :
   // Home

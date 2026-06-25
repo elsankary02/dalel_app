@@ -7,4 +7,5 @@ abstract class RouteNames {
   static const forgetPasswordPage = "/ForgetPasswordPage";
   static const onBoardingPage = "/OnBoardingPage";
   static const dalelChar = "/DalelChar";
+  static const cartWidget = "/CartWidget";
 }

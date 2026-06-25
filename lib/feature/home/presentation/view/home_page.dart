@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/defalut_history_books.dart';
+import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_title.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';

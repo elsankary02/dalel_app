@@ -1,12 +1,16 @@
-import '../../../../core/components/defalut_history_books.dart';
+import '../../../../core/functions/default_appbar.dart';
+import '../../../../core/utils/constants/app_svgs.dart';
+import '../../../../core/utils/themes/app_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_title.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../widget/dalel_char_widget.dart';
 import '../widget/historical_periods_widget.dart';
-import '../widget/home_appbar_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DalelCharPage extends StatelessWidget {
   const DalelCharPage({super.key});
@@ -22,8 +26,8 @@ class DalelCharPage extends StatelessWidget {
             vertical: context.h * 0.020,
           ),
           children: [
-            HomeAppBarWidget(onTap: () => context.pop()),
-            SizedBox(height: context.h * 0.026),
+            _defaultAppBarFunc(context),
+            SizedBox(height: context.h * 0.025),
             defaultTitle(context, title: "About Ancient Egypt"),
             SizedBox(height: context.h * 0.030),
             DalelCharWidget(),
@@ -38,6 +42,17 @@ class DalelCharPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  AppBar _defaultAppBarFunc(BuildContext context) {
+    return defaultAppBar(
+      context,
+      leading: IconButton(
+        onPressed: () => context.pop(),
+        icon: Icon(Icons.arrow_back_ios_rounded, color: AppColors.deepBrown),
+      ),
+      actions: [SvgPicture.asset(AppSvgs.dalelLogo)],
     );
   }
 }
