@@ -20,25 +20,29 @@ class AppThemes {
     ),
     textTheme: TextTheme(
       // display
-      displayLarge: TextStyle(),
-      displayMedium: TextStyle(),
-      displaySmall: TextStyle(),
+      displayLarge: TextStyle(fontSize: 57),
+      displayMedium: TextStyle(fontSize: 45),
+      displaySmall: TextStyle(fontSize: 36),
+
       // headline
-      headlineLarge: TextStyle(),
-      headlineMedium: TextStyle(),
-      headlineSmall: TextStyle(),
+      headlineLarge: TextStyle(fontSize: 32),
+      headlineMedium: TextStyle(fontSize: 28),
+      headlineSmall: TextStyle(fontSize: 24),
+
       // title
-      titleLarge: TextStyle(),
-      titleMedium: TextStyle(),
-      titleSmall: TextStyle(),
-      // body
-      bodyLarge: TextStyle(),
-      bodyMedium: TextStyle(),
-      bodySmall: TextStyle(),
+      titleLarge: TextStyle(fontSize: 22),
+      titleMedium: TextStyle(fontSize: 16),
+      titleSmall: TextStyle(fontSize: 14),
+
       // Label
-      labelLarge: TextStyle(),
-      labelMedium: TextStyle(),
-      labelSmall: TextStyle(),
+      labelLarge: TextStyle(fontSize: 14),
+      labelMedium: TextStyle(fontSize: 12),
+      labelSmall: TextStyle(fontSize: 11),
+
+      // body
+      bodyLarge: TextStyle(fontSize: 16),
+      bodyMedium: TextStyle(fontSize: 14),
+      bodySmall: TextStyle(fontSize: 12),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.offWhite,
@@ -60,6 +64,7 @@ class AppThemes {
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundDark,
+
     colorScheme: const ColorScheme.dark(
       primary: AppColors.primaryColor,
       // secondary: AppColors.secondary,
@@ -72,25 +77,29 @@ class AppThemes {
     ),
     textTheme: TextTheme(
       // display
-      displayLarge: TextStyle(),
-      displayMedium: TextStyle(),
-      displaySmall: TextStyle(),
+      displayLarge: TextStyle(fontSize: 57),
+      displayMedium: TextStyle(fontSize: 45),
+      displaySmall: TextStyle(fontSize: 36),
+
       // headline
-      headlineLarge: TextStyle(),
-      headlineMedium: TextStyle(),
-      headlineSmall: TextStyle(),
+      headlineLarge: TextStyle(fontSize: 32),
+      headlineMedium: TextStyle(fontSize: 28),
+      headlineSmall: TextStyle(fontSize: 24),
+
       // title
-      titleLarge: TextStyle(),
-      titleMedium: TextStyle(),
-      titleSmall: TextStyle(),
-      // body
-      bodyLarge: TextStyle(),
-      bodyMedium: TextStyle(),
-      bodySmall: TextStyle(),
+      titleLarge: TextStyle(fontSize: 22),
+      titleMedium: TextStyle(fontSize: 16),
+      titleSmall: TextStyle(fontSize: 14),
+
       // Label
-      labelLarge: TextStyle(),
-      labelMedium: TextStyle(),
-      labelSmall: TextStyle(),
+      labelLarge: TextStyle(fontSize: 14),
+      labelMedium: TextStyle(fontSize: 12),
+      labelSmall: TextStyle(fontSize: 11),
+
+      // body
+      bodyLarge: TextStyle(fontSize: 16),
+      bodyMedium: TextStyle(fontSize: 14),
+      bodySmall: TextStyle(fontSize: 12),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.surfaceDark,
