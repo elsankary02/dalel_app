@@ -1,8 +1,13 @@
-import '../utils/extensions/extensions.dart';
-import '../utils/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/extensions/extensions.dart';
+import '../utils/themes/app_colors.dart';
+
 class DefaultCartWidget extends StatefulWidget {
+  final String title;
+  final String size;
+  final double price;
+  final String imagePath;
   const DefaultCartWidget({
     super.key,
     required this.title,
@@ -11,18 +16,13 @@ class DefaultCartWidget extends StatefulWidget {
     required this.imagePath,
   });
 
-  final String title;
-  final String size;
-  final double price;
-  final String imagePath;
-
   @override
   State<DefaultCartWidget> createState() => _DefaultCartWidgetState();
 }
 
 class _DefaultCartWidgetState extends State<DefaultCartWidget> {
   bool _isSelected = false;
-
+  int _count = 1;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,6 +30,7 @@ class _DefaultCartWidgetState extends State<DefaultCartWidget> {
         _checkBox(),
         Expanded(
           child: Container(
+            margin: EdgeInsetsDirectional.only(bottom: 20),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppColors.white,
@@ -106,17 +107,31 @@ class _DefaultCartWidgetState extends State<DefaultCartWidget> {
             Row(
               spacing: 14,
               mainAxisAlignment: .spaceBetween,
-              children: [ 
+              children: [
                 _circleDefault(
+                  icon: Icons.minimize_sharp,
                   iconColor: AppColors.balck,
                   color: AppColors.grey300,
-                  icon: Icons.minimize_sharp,
+                  onTap: () {
+                    if (_count > 1) {
+                      setState(() {
+                        _count--;
+                      });
+                    }
+                  },
                 ),
-                Text("1"),
+                Text("$_count"),
                 _circleDefault(
+                  icon: Icons.add,
                   iconColor: AppColors.white,
                   color: AppColors.grey,
-                  icon: Icons.add,
+                  onTap: () {
+                    if (_count < 10) {
+                      setState(() {
+                        _count++;
+                      });
+                    }
+                  },
                 ),
               ],
             ),
@@ -130,12 +145,16 @@ class _DefaultCartWidgetState extends State<DefaultCartWidget> {
     required Color color,
     required Color iconColor,
     required IconData? icon,
+    VoidCallback? onTap,
   }) {
-    return Container(
-      height: 20,
-      width: 20,
-      decoration: BoxDecoration(shape: .circle, color: color),
-      child: Center(child: Icon(icon, size: 8, color: iconColor)),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 20,
+        width: 20,
+        decoration: BoxDecoration(shape: .circle, color: color),
+        child: Center(child: Icon(icon, size: 8, color: iconColor)),
+      ),
     );
   }
 
