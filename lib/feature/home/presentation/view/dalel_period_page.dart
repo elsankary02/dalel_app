@@ -1,12 +1,13 @@
-import 'package:dalel_app/core/router/route_names.dart';
+import '../../../../core/model/dalel_details_args.dart';
+import '../../../../core/model/data_model.dart';
+import '../../../../core/router/route_names.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_appbar.dart';
 import '../../../../core/functions/default_title.dart';
-import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
@@ -14,7 +15,9 @@ import '../widget/about_widget.dart';
 import '../widget/custom_historical_widget.dart';
 
 class DalelPeriodPage extends StatelessWidget {
-  const DalelPeriodPage({super.key});
+  final DataModel data;
+  final List<DataModel> wars;
+  const DalelPeriodPage({super.key, required this.data, required this.wars});
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +32,12 @@ class DalelPeriodPage extends StatelessWidget {
           children: [
             _defaultAppBarFunc(context),
             SizedBox(height: context.h * 0.025),
+
             // About
             Row(
               spacing: 7,
               children: [
-                defaultTitle(context, title: "About Ancient Egypt"),
+                defaultTitle(context, title: "${"about".tr()} ${data.name}"),
                 Stack(children: [SvgPicture.asset(AppSvgs.periodDetails1)]),
               ],
             ),
@@ -46,32 +50,27 @@ class DalelPeriodPage extends StatelessWidget {
                   child: SvgPicture.asset(AppSvgs.periodDetails2),
                 ),
                 AboutWidget(
-                  image: AppImages.historicalPeriods1,
-                  descreption:
-                      ' qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm',
+                  image: data.image,
+                  descreption: data.descreption.toString(),
                 ),
               ],
             ),
             SizedBox(height: context.h * 0.020),
+
             // Ancient Egypt Wars
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                defaultTitle(context, title: "Ancient Egypt Wars"),
+                defaultTitle(context, title: 'wars'.tr()),
                 SvgPicture.asset(AppSvgs.periodDetails3),
               ],
             ),
-            // TODO
             CustomHistoricalWidget(
-              onTap: () => context.pushNamed(RouteNames.dalelCharPage),
-              title: 'test',
-              image: AppImages.historicalPeriods2,
-            ),
-            // Recommendations
-            defaultTitle(context, top: 32, title: "Recommendations"),
-            DefalutHistoryBooks(
-              title: "Test",
-              assetName: AppImages.historicalCharacters1,
+              items: wars,
+              onTap: (index) => context.pushNamed(
+                RouteNames.dalelCharPage,
+                extra: DalelDetailsArgs(data: wars[index]),
+              ),
             ),
           ],
         ),

@@ -1,21 +1,13 @@
+import '../model/data_model.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../router/route_names.dart';
 import '../utils/extensions/extensions.dart';
 import '../utils/themes/app_colors.dart';
 
 class DefalutHistoryBooks extends StatelessWidget {
-  final String title;
-  final String assetName;
-  final int itemCount;
-
-  const DefalutHistoryBooks({
-    super.key,
-    required this.title,
-    required this.assetName,
-    this.itemCount = 6,
-  });
+  final List<DataModel> items;
+  final Function(int index)? onTap;
+  const DefalutHistoryBooks({super.key, required this.items, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +16,17 @@ class DefalutHistoryBooks extends StatelessWidget {
       child: ListView.builder(
         physics: BouncingScrollPhysics(),
         clipBehavior: Clip.none,
-        itemCount: itemCount,
+        itemCount: items.length,
         scrollDirection: .horizontal,
-        itemBuilder: (context, index) => _historyBook(
-          context,
-          title: title,
-          assetName: assetName,
-          onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
-        ),
+        itemBuilder: (context, index) {
+          final data = items[index];
+          return _historyBook(
+            context,
+            title: data.name,
+            assetName: data.image,
+            onTap: () => onTap?.call(index),
+          );
+        },
       ),
     );
   }
@@ -45,7 +40,7 @@ class DefalutHistoryBooks extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 74,
+        width: 85,
         margin: const EdgeInsetsDirectional.only(end: 16, bottom: 5),
         clipBehavior: Clip.none,
         decoration: BoxDecoration(

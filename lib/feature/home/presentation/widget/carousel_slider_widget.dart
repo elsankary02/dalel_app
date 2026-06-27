@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/themes/app_colors.dart';
 
@@ -78,12 +76,9 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   ];
 
   Widget _carouselImage({required String image}) {
-    return GestureDetector(
-      onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Image.asset(image, fit: BoxFit.cover, height: 169, width: 376),
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image.asset(image, fit: BoxFit.cover, height: 169, width: 376),
     );
   }
 }

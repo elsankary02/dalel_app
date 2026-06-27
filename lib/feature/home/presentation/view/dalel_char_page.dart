@@ -1,19 +1,19 @@
+import '../../../../core/model/data_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_appbar.dart';
 import '../../../../core/functions/default_title.dart';
-import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../../../../core/utils/themes/app_colors.dart';
 import '../widget/about_widget.dart';
-import '../widget/custom_historical_widget.dart';
 
 class DalelCharPage extends StatelessWidget {
-  const DalelCharPage({super.key});
+  final DataModel data;
+  const DalelCharPage({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -36,44 +36,18 @@ class DalelCharPage extends StatelessWidget {
                   end: 0,
                   child: SvgPicture.asset(AppSvgs.charDeatails1),
                 ),
-                defaultTitle(context, title: "About Saladin (1137-1193)"),
+                defaultTitle(context, title: "${"about".tr()} ${data.name}"),
               ],
             ),
             SizedBox(height: context.h * 0.030),
-            _aboutFunc(),
-            SizedBox(height: context.h * 0.020),
-            // Ancient Egypt Wars
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                defaultTitle(context, title: "Saladin Wars"),
-                Row(
-                  spacing: 7,
-                  children: [
-                    SvgPicture.asset(AppSvgs.charDeatails4),
-                    SvgPicture.asset(AppSvgs.charDeatails3),
-                  ],
-                ),
-              ],
-            ),
-            // TODO
-            CustomHistoricalWidget(
-              title: 'test',
-              image: AppImages.historicalPeriods2,
-            ),
-            // Recommendations
-            defaultTitle(context, top: 32, title: "Recommendations"),
-            DefalutHistoryBooks(
-              title: "Test",
-              assetName: AppImages.historicalCharacters1,
-            ),
+            _aboutFunc(data: data),
           ],
         ),
       ),
     );
   }
 
-  Stack _aboutFunc() {
+  Stack _aboutFunc({required DataModel data}) {
     return Stack(
       clipBehavior: .none,
       children: [
@@ -92,9 +66,8 @@ class DalelCharPage extends StatelessWidget {
           child: SvgPicture.asset(AppSvgs.charDeatails3),
         ),
         AboutWidget(
-          image: AppImages.historicalCharacters3,
-          descreption:
-              'qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm',
+          image: data.image,
+          descreption: data.descreption.toString(),
         ),
       ],
     );

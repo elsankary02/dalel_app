@@ -1,37 +1,33 @@
+import '../../../../core/components/default_historical_category_card.dart';
+import '../../../../core/model/data_model.dart';
+import '../../../../core/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/default_historical_category_card.dart';
-import '../../../../core/utils/extensions/extensions.dart';
-
 class CustomHistoricalWidget extends StatelessWidget {
-  final VoidCallback? onTap;
-  final int? itemCount;
-  final String title;
-  final String image;
-  const CustomHistoricalWidget({
-    super.key,
-    this.onTap,
-    this.itemCount,
-    required this.title,
-    required this.image,
-  });
+  final List<DataModel> items;
+  final Function(int index)? onTap;
+
+  const CustomHistoricalWidget({super.key, required this.items, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: context.h * 0.1,
       child: ListView.builder(
+        scrollDirection: Axis.horizontal,
         clipBehavior: Clip.none,
-        scrollDirection: .horizontal,
-        itemCount: itemCount,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsetsDirectional.only(end: 20),
-          child: DefaultHistoricalCategoryCard(
-            onTap: onTap,
-            title: title,
-            image: image,
-          ),
-        ),
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          final data = items[index];
+          return Padding(
+            padding: const EdgeInsetsDirectional.only(end: 20),
+            child: DefaultHistoricalCategoryCard(
+              onTap: () => onTap?.call(index),
+              title: data.name,
+              image: data.image,
+            ),
+          );
+        },
       ),
     );
   }

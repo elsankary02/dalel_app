@@ -47,9 +47,19 @@ abstract class AppImages {
   static const String historicalSouvenirs4 =
       "assets/images/historical_souvenirs_4.png";
 
+  // Historical Souvenirs
+  static const String historyBooks1 = "assets/images/history_books_1.jpg";
+  static const String historyBooks2 = "assets/images/history_books_2.png";
+  static const String historyBooks3 = "assets/images/history_books_3.png";
+  static const String historyBooks4 = "assets/images/history_books_4.png";
+
   // Ancient Egypt Wars
   static const String ancientEgyptWars1 =
       "assets/images/ancient_egypt_wars_1.jpg";
   static const String ancientEgyptWars2 =
       "assets/images/ancient_egypt_wars_2.jpg";
+
+  // Saladin Wars
+  static const String saladinWars1 = "assets/images/saladin_wars_2.png";
+  static const String saladinWars2 = "assets/images/saladin_wars_1.png";
 }

@@ -1,11 +1,15 @@
-import 'package:dalel_app/core/router/route_names.dart';
+import '../../../../core/model/dalel_details_args.dart';
+import '../../../../core/router/route_names.dart';
+import '../../../cart/data/model/historical_souvenirs_model.dart';
+import '../../data/models/historical_characters_model.dart';
+import '../../data/models/historical_periods_model.dart';
+import '../../data/models/wars_model.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_title.dart';
-import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import '../widget/carousel_slider_widget.dart';
 import '../widget/custom_historical_widget.dart';
@@ -17,6 +21,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final periods = HistoricalPeriodsModel.historicalPeriodsItems(context);
+    final characters = HistoricalCharactersModel.historicalCharactersItems(
+      context,
+    );
+    final souvenirs = HistoricalSouvenirsModel.historicalSouvenirsItems(
+      context,
+    );
     return Scaffold(
       drawer: DrawerWidget(),
       body: SafeArea(
@@ -27,33 +38,45 @@ class HomePage extends StatelessWidget {
             vertical: context.h * 0.020,
           ),
           children: [
-            Builder(
-              builder: (context) {
-                return HomeAppBarWidget(
-                  onTap: () => Scaffold.of(context).openDrawer(),
+            HomeAppBarWidget(),
+            SizedBox(height: context.h * 0.025),
+
+            // historical_periods
+            defaultTitle(context, title: "historical_periods".tr()),
+            CustomHistoricalWidget(
+              items: periods,
+              onTap: (index) {
+                final wars = WarsModel.warsItems(context);
+                final data = periods[index];
+                context.pushNamed(
+                  RouteNames.dalelPeriodPage,
+                  extra: DalelDetailsArgs(data: data, wars: wars),
                 );
               },
             ),
-            SizedBox(height: context.h * 0.025),
-            defaultTitle(context, title: "historical_periods".tr()),
-            // TODO
-            CustomHistoricalWidget(
-              onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
-              title: 'test',
-              image: AppImages.historicalPeriods2,
-            ),
+
+            // historical_characters
             defaultTitle(context, top: 32, title: "historical_characters".tr()),
             DefalutHistoryBooks(
-              title: "Test",
-              assetName: AppImages.historicalPeriods1,
+              items: characters,
+              onTap: (index) => context.pushNamed(
+                RouteNames.dalelCharPage,
+                extra: DalelDetailsArgs(data: characters[index]),
+              ),
             ),
+
+            // ancient_wars
             defaultTitle(context, top: 32, title: "ancient_wars".tr()),
-            // Carousel Slider
             CarouselSliderWidget(),
+
+            // historical_souvenirs
             defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
             DefalutHistoryBooks(
-              title: "Test",
-              assetName: AppImages.historicalCharacters1,
+              items: souvenirs,
+              onTap: (index) => context.pushNamed(
+                RouteNames.dalelCharPage,
+                extra: DalelDetailsArgs(data: souvenirs[index]),
+              ),
             ),
           ],
         ),

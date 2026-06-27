@@ -60,5 +60,64 @@
   "search": "Search",
   "search_deep_history": "Search deep into history",
   "privacy_policy_full_text": "This Privacy Policy describes how Dalel (\"we\", \"our\", or \"the App\") collects, uses, and shares your information when you use our mobile application. By downloading, installing, or using this app, you agree to the collection and use of information in accordance with this policy.\n\n1. Information We Collect: We only collect information that is strictly necessary to provide and improve the services of Dalel. This may include basic usage data, device information (such as OS version and device model), and account details (such as your email and password) if you choose to register an account.\n\n2. How We Use Your Information: The data we collect is utilized to maintain, personalize, and enhance your user experience inside the app, optimize performance, resolve system bugs, and communicate important updates or technical support notices to you.\n\n3. Intellectual Property and Security: Your data security is highly important to us. All integrated systems, UI designs, and structures are built to protect your account details. While we strive to use commercially acceptable means to protect your personal information, remember that no method of transmission over the internet is 100% secure.\n\n4. Third-Party Services: The App may utilize reliable third-party services (such as Google Play Services or analytical infrastructure) that may collect data used to identify your device or track general usage performance to ensure smooth operations.\n\n5. Changes to This Privacy Policy: We reserve the right to update or modify our Privacy Policy at any time. Any changes will become effective immediately upon posting the updated policy inside the app. Continued use of the app signifies your acceptance of the revised policy.\n\n6. Contact Us: If you have any questions or suggestions about this Privacy Policy, please feel free to reach out to us through your official support email.",
-  "privacy_policy_for_dalel": "Privacy Policy for Dalel"
+  "privacy_policy_for_dalel": "Privacy Policy for Dalel",
+  "ancientEgyptTitle": "Ancient Egypt",
+  "ancientEgyptDes": "Ancient Egypt was one of the world's greatest civilizations. It developed along the fertile banks of the Nile River. The civilization began around 3100 BC. The Nile River provided water, food, and transportation. Pharaohs ruled Egypt as kings and religious leaders. The pyramids were built as tombs for pharaohs. The Great Pyramid of Giza is one of the Seven Wonders. Ancient Egyptians believed in many gods and the afterlife. Mummification preserved bodies for life after death. Hieroglyphics were the writing system of Ancient Egypt. Temples were built to honor the gods. Agriculture was the main source of food and wealth. Ancient Egypt made great advances in medicine and mathematics. Its rich history continues to inspire the world today.",
+  "islamicEraTitle": "Islamic Era",
+  "islamicEraDes": "The Islamic Era in Egypt began in 641 AD with the Arab conquest led by Amr ibn al-As. A new capital called Fustat was established near present-day Cairo. Egypt became an important center of Islamic culture, trade, and learning. The Arabic language gradually became the main language of the country. Many beautiful mosques and Islamic schools were built during this period. Different Islamic dynasties, including the Umayyads, Abbasids, Fatimids, Ayyubids, and Mamluks, ruled Egypt. Cairo was founded in 969 AD by the Fatimids and became one of the most important cities in the Islamic world. The famous Al-Azhar Mosque and University were established during the Fatimid period. Under Salah al-Din, Egypt became a strong center for defending the region. The Mamluks built magnificent architecture that still stands today. Trade flourished through Egypt's strategic location between Africa, Asia, and Europe. Science, medicine, art, and literature developed significantly during the Islamic Era. This period left a lasting cultural and architectural legacy across Egypt. Today, many Islamic monuments continue to attract visitors from around the world.",
+  "battleOfMegiddoTitle": "The Battle of Megiddo",
+  "battleOfMegiddoDes": "The Battle of Megiddo, fought around 1457 BC, is one of the earliest battles recorded in history. Pharaoh Thutmose III led the Egyptian army against a coalition of Canaanite city-states near the city of Megiddo. Using a bold military strategy, he achieved a decisive victory and secured Egyptian control over Canaan. The battle strengthened Egypt's influence in the Near East and demonstrated Thutmose III's exceptional leadership.",
+  "hyksosInvasionTitle": "The Hyksos Invasion",
+  "hyksosInvasionDes": "The Hyksos were a foreign people who entered and ruled parts of northern Egypt during the Second Intermediate Period, around 1650 BC. They introduced new military technologies such as horse-drawn chariots and advanced weapons. After years of occupation, Pharaoh Ahmose I successfully expelled the Hyksos and reunited Egypt, marking the beginning of the New Kingdom, one of the greatest periods in ancient Egyptian history.",
+  "battleOfJaffaTitle": "Battle of Jaffa",
+  "battleOfJaffaDes": "The Battle of Jaffa took place in 1192 during the Third Crusade. Saladin's forces attacked the city, but King Richard I of England launched a counterattack and regained control. The battle ended without a decisive victor and led to negotiations that resulted in the Treaty of Jaffa, allowing Christian pilgrims to visit Jerusalem peacefully.",
+  "battleOfHattinTitle": "Battle of Hattin",
+  "battleOfHattinDes": "The Battle of Hattin was fought on July 4, 1187, between the army of Saladin and the Crusader forces. Saladin achieved a decisive victory by surrounding the Crusaders and cutting off their access to water. This victory led to the recapture of Jerusalem and marked a turning point in the Crusades.",
+  "readMore": "Read more?",
+  "readLess": " Read less",
+  "about": "About",
+  "wars": "Wars",
+  "recommendations": "Recommendations",
+  "lionheartTitle": "Lionheart",
+  "lionheartDes": "Richard I of England, known as Richard the Lionheart, was one of the most famous leaders of the Third Crusade. Renowned for his courage and military skill, he fought against Saladin in the Holy Land. Although he did not capture Jerusalem, he negotiated the Treaty of Jaffa, allowing Christian pilgrims to visit the city peacefully.",
+
+  "napoleonTitle": "Napoleon",
+  "napoleonDes": "Napoleon Bonaparte was a French military leader and emperor who led the French campaign in Egypt in 1798. Although the campaign was short-lived, it introduced scientific exploration and resulted in the discovery of the Rosetta Stone, which helped scholars decipher ancient Egyptian hieroglyphs.",
+
+  "saladinTitle": "Saladin",
+  "saladinDes": "Saladin, also known as Salah ad-Din al-Ayyubi, was the founder of the Ayyubid dynasty and one of the greatest Muslim military leaders. He united Muslim lands and achieved a decisive victory at the Battle of Hattin in 1187, leading to the recapture of Jerusalem. Saladin was respected for his leadership, justice, and generosity.",
+
+  "qianlongTitle": "Qianlong",
+  "qianlongDes": "The Qianlong Emperor was one of the longest-reigning rulers of China's Qing Dynasty. During his reign, China experienced territorial expansion, economic prosperity, and cultural development. He supported literature, art, and scholarship, making his era one of the most significant periods in Chinese history.",
+
+  "odysseyTitle": "The Odyssey",
+
+  "gilgameshTitle": "The Epic of Gilgamesh",
+
+  "republicTitle": "The Republic",
+
+  "taoTeChingTitle": "Tao Te Ching",
+
+  "oldRingTitle": "Old Ring",
+
+  "miniStatueTitle": "Mini Statue",
+
+  "postersTitle": "Posters",
+
+  "oldMapsTitle": "Old Maps",
+  "odysseyDes": "The Odyssey is an ancient Greek epic poem written by Homer. It tells the story of Odysseus and his ten-year journey home after the Trojan War. Along the way, he faces dangerous monsters, powerful gods, and countless challenges that test his courage and wisdom. The poem explores themes of loyalty, perseverance, family, and the desire to return home. It remains one of the greatest masterpieces of classical literature and continues to inspire readers and writers around the world today.",
+
+  "gilgameshDes": "The Epic of Gilgamesh is one of the oldest surviving works of literature in human history. It follows the adventures of King Gilgamesh and his loyal companion Enkidu as they battle powerful creatures and seek eternal life. The epic explores themes of friendship, courage, leadership, mortality, and the meaning of human existence. Its timeless lessons have influenced literature and storytelling for thousands of years and continue to inspire modern readers.",
+
+  "republicDes": "The Republic is a philosophical masterpiece written by Plato. Through a series of dialogues led by Socrates, it examines the nature of justice, the structure of the ideal society, and the responsibilities of rulers and citizens. The book also introduces the famous Allegory of the Cave, exploring knowledge and reality. It has shaped political philosophy and remains one of the most influential books ever written.",
+
+  "taoTeChingDes": "The Tao Te Ching is an ancient Chinese philosophical text traditionally attributed to Laozi. It presents the principles of Taoism, encouraging harmony with nature, simplicity, humility, and balance in everyday life. The book teaches that true strength often comes from gentleness and that wisdom is found through inner peace rather than power. It continues to influence philosophy, spirituality, and personal development across the world.",
+
+  "oldRingDes": "The Old Ring is a beautifully crafted vintage-style accessory inspired by the artistic traditions of ancient civilizations. Its timeless design reflects the elegance and symbolism of historical jewelry once worn by kings, nobles, and warriors. It serves as a meaningful collectible and a reminder of humanity's rich cultural heritage, making it a perfect souvenir for history lovers.",
+
+  "miniStatueDes": "The Mini Statue is a carefully designed collectible inspired by famous historical figures and ancient monuments. Made to reflect the beauty of classical art and architecture, it is perfect for decorating homes, offices, or study spaces. It allows history enthusiasts to keep a small piece of the past while celebrating remarkable civilizations and their achievements.",
+
+  "postersDes": "These historical posters feature iconic events, legendary leaders, ancient civilizations, and world-famous landmarks. Designed with detailed artwork and educational value, they are ideal for classrooms, libraries, museums, or personal collections. Each poster captures an important moment from history while adding a unique decorative touch to any space.",
+
+  "oldMapsDes": "Old Maps showcase beautifully illustrated representations of ancient kingdoms, trade routes, and historical empires from different parts of the world. They highlight how people understood geography in earlier centuries and reveal the expansion of civilizations over time. These maps are both educational resources and elegant decorative artworks for anyone fascinated by history and exploration."
 }

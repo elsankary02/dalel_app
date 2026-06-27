@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
@@ -16,8 +17,9 @@ class AboutWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: 16,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: .start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: ReadMoreText(
@@ -29,13 +31,13 @@ class AboutWidget extends StatelessWidget {
             trimMode: TrimMode.Line,
             trimLines: 9,
             colorClickableText: AppColors.greyThree,
-            trimCollapsedText: 'Read more?',
-            trimExpandedText: ' Read less',
+            trimCollapsedText: 'readMore'.tr(),
+            trimExpandedText: 'readLess'.tr(),
           ),
         ),
         ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.asset(image, width: 160, height: 283, fit: .cover),
+          child: Image.asset(image, width: 160, height: 283, fit: .contain),
         ),
       ],
     );
