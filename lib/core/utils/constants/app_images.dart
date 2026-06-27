@@ -1,24 +1,55 @@
 abstract class AppImages {
   // OnBoarding
-  static const imagesOnBoarding1 = "assets/images/onBoarding1.png";
-  static const imagesOnBoarding2 = "assets/images/onBoarding2.png";
-  static const imagesOnBoarding3 = "assets/images/onBoarding.png";
-  // Frame
-  static const imagesFrame = "assets/images/Frame.png";
-  static const imagesFrame2 = "assets/images/Frame2.png";
-  static const imagesFrame3 = "assets/images/frame3.png";
-  static const imagesFrame4 = "assets/images/frame4.png";
-  //carousel slider
-  static const sliderOne = "assets/images/slider_one.jpg";
-  static const sliderTwo = "assets/images/slider_two.jpg";
-  static const sliderThree = "assets/images/slider_three.jpg";
-  // Message
-  static const imagesForgotPassword = "assets/images/forgotPassword.png";
-  static const imagesSucccesOrder = "assets/images/succcesOrder.png";
-  // Splash
-  static const logoApp = "assets/images/dalel.png";
-  static const dalel = "assets/images/dalel_login.png";
-  //vector
-  static const vector1 = "assets/images/Vector1.png";
-  static const vector2 = "assets/images/Vector2.png";
+  static const String imagesOnBoarding1 = "assets/images/onBoarding1.png";
+  static const String imagesOnBoarding2 = "assets/images/onBoarding2.png";
+  static const String imagesOnBoarding3 = "assets/images/onBoarding.png";
+
+  // Messages
+  static const String forgotPassword = "assets/images/forgotPassword.png";
+  static const String orderSuccess = "assets/images/order_success.png";
+
+  // Splash Images
+  static const String logoApp = "assets/images/dalel.png";
+  static const String dalel = "assets/images/dalel_login.png";
+
+  // SignIn Vector
+  static const String vector1 = "assets/images/Vector1.png";
+  static const String vector2 = "assets/images/Vector2.png";
+
+  // Carousel Slider Images
+  static const String sliderOne = "assets/images/slider_one.jpg";
+  static const String sliderTwo = "assets/images/slider_two.jpg";
+  static const String sliderThree = "assets/images/slider_three.jpg";
+
+  // Historical Periods
+  static const String historicalPeriods1 =
+      "assets/images/historical_periods_1.jpg";
+  static const String historicalPeriods2 =
+      "assets/images/historical_periods_2.jpg";
+
+  // Historical Characters
+  static const String historicalCharacters1 =
+      "assets/images/historical_characters_1.jpg";
+  static const String historicalCharacters2 =
+      "assets/images/historical_characters_2.jpg";
+  static const String historicalCharacters3 =
+      "assets/images/historical_characters_3.jpg";
+  static const String historicalCharacters4 =
+      "assets/images/historical_characters_4.jpg";
+
+  // Historical Souvenirs
+  static const String historicalSouvenirs1 =
+      "assets/images/historical_souvenirs_1.png";
+  static const String historicalSouvenirs2 =
+      "assets/images/historical_souvenirs_2.png";
+  static const String historicalSouvenirs3 =
+      "assets/images/historical_souvenirs_3.png";
+  static const String historicalSouvenirs4 =
+      "assets/images/historical_souvenirs_4.png";
+
+  // Ancient Egypt Wars
+  static const String ancientEgyptWars1 =
+      "assets/images/ancient_egypt_wars_1.jpg";
+  static const String ancientEgyptWars2 =
+      "assets/images/ancient_egypt_wars_2.jpg";
 }

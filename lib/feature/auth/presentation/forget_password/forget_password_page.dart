@@ -74,7 +74,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   ),
                   SizedBox(height: context.h * 0.057),
                   Image.asset(
-                    AppImages.imagesForgotPassword,
+                    AppImages.forgotPassword,
                     height: context.h * 0.235,
                     width: context.h * 0.235,
                   ),

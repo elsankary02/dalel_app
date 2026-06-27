@@ -28,18 +28,18 @@ class CartPage extends StatelessWidget {
           CustomHistoricalWidget(
             onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
             title: 'test',
-            image: AppImages.imagesFrame2,
+            image: AppImages.historicalPeriods2,
           ),
           defaultTitle(context, top: 32, title: "history_books_two".tr()),
           DefalutHistoryBooks(
             title: "Test",
-            assetName: AppImages.imagesFrame3,
+            assetName: AppImages.historicalCharacters1,
             itemCount: 5,
           ),
           defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
           DefalutHistoryBooks(
             title: "Test",
-            assetName: AppImages.imagesFrame3,
+            assetName: AppImages.historicalCharacters1,
             itemCount: 5,
           ),
         ],

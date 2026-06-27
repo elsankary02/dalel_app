@@ -40,12 +40,12 @@ class HomePage extends StatelessWidget {
             CustomHistoricalWidget(
               onTap: () => context.pushNamed(RouteNames.dalelPeriodPage),
               title: 'test',
-              image: AppImages.imagesFrame2,
+              image: AppImages.historicalPeriods2,
             ),
             defaultTitle(context, top: 32, title: "historical_characters".tr()),
             DefalutHistoryBooks(
               title: "Test",
-              assetName: AppImages.imagesFrame,
+              assetName: AppImages.historicalPeriods1,
             ),
             defaultTitle(context, top: 32, title: "ancient_wars".tr()),
             // Carousel Slider
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
             defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
             DefalutHistoryBooks(
               title: "Test",
-              assetName: AppImages.imagesFrame3,
+              assetName: AppImages.historicalCharacters1,
             ),
           ],
         ),

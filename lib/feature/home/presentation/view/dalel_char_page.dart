@@ -59,13 +59,13 @@ class DalelCharPage extends StatelessWidget {
             // TODO
             CustomHistoricalWidget(
               title: 'test',
-              image: AppImages.imagesFrame2,
+              image: AppImages.historicalPeriods2,
             ),
             // Recommendations
             defaultTitle(context, top: 32, title: "Recommendations"),
             DefalutHistoryBooks(
               title: "Test",
-              assetName: AppImages.imagesFrame3,
+              assetName: AppImages.historicalCharacters1,
             ),
           ],
         ),
@@ -92,7 +92,7 @@ class DalelCharPage extends StatelessWidget {
           child: SvgPicture.asset(AppSvgs.charDeatails3),
         ),
         AboutWidget(
-          image: AppImages.imagesFrame4,
+          image: AppImages.historicalCharacters3,
           descreption:
               'qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm qwertyuiopasdfghjklzxcvbnm',
         ),
