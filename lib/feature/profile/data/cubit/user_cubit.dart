@@ -1,16 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../model/user_model.dart';
+
 part 'user_state.dart';
 
-class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserInitial());
+class UserCubit extends Cubit<GetUserDataState> {
+  UserCubit() : super(GetUserDataInitial());
 
   Future<void> getUserData() async {
     try {
-      emit(UserLoading());
+      emit(GetUserDataLoading());
       final uid = FirebaseAuth.instance.currentUser!.uid;
       final doc = await FirebaseFirestore.instance
           .collection('users')
@@ -18,14 +19,14 @@ class UserCubit extends Cubit<UserState> {
           .get();
 
       if (!doc.exists) {
-        emit(UserFailuer("User not found"));
+        emit(GetUserDataFailuer("User not found"));
         return;
       }
       final user = UserModel.fromJson(doc.data()!);
 
-      emit(UserSuccess(user));
+      emit(GetUserDataSuccess(user));
     } catch (e) {
-      emit(UserFailuer(e.toString()));
+      emit(GetUserDataFailuer(e.toString()));
     }
   }
 }

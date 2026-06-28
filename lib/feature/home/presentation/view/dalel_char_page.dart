@@ -1,14 +1,12 @@
-import '../../../../core/model/data_model.dart';
+import 'package:dalel_app/feature/home/presentation/widget/build_appbar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../core/functions/default_appbar.dart';
 import '../../../../core/functions/default_title.dart';
+import '../../../../core/model/data_model.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
 import '../widget/about_widget.dart';
 
 class DalelCharPage extends StatelessWidget {
@@ -26,7 +24,7 @@ class DalelCharPage extends StatelessWidget {
             vertical: context.h * 0.020,
           ),
           children: [
-            _defaultAppBarFunc(context),
+            buildAppBar(context),
             SizedBox(height: context.h * 0.025),
             // About
             Stack(
@@ -70,17 +68,6 @@ class DalelCharPage extends StatelessWidget {
           descreption: data.descreption.toString(),
         ),
       ],
-    );
-  }
-
-  AppBar _defaultAppBarFunc(BuildContext context) {
-    return defaultAppBar(
-      context,
-      leading: IconButton(
-        onPressed: () => context.pop(),
-        icon: Icon(Icons.arrow_back_ios_rounded, color: AppColors.deepBrown),
-      ),
-      actions: [SvgPicture.asset(AppSvgs.dalelLogo)],
     );
   }
 }

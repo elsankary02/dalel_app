@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+
 import '../../../../core/utils/extensions/extensions.dart';
 import '../widget/btn_widget.dart';
 import '../widget/page_view_widget.dart';
 import '../widget/skip_widget.dart';
-import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -25,11 +26,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
           child: Column(
             children: [
+              // Skip Widget
               SkipWidget(
                 currentIndex: currentIndex,
                 controller: _pageViewController,
               ),
               SizedBox(height: context.h * 0.032),
+
+              // PageView
               PageViewWidget(
                 controller: _pageViewController,
                 onPageChanged: (value) {
@@ -39,6 +43,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 },
                 currentIndex: currentIndex,
               ),
+
+              // Btn Widget
               BtnWidget(
                 controller: _pageViewController,
                 currentIndex: currentIndex,

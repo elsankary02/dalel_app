@@ -66,6 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
           }
         },
         builder: (context, state) {
+          final sizedBox = SizedBox(height: context.h * 0.030);
           return Form(
             key: _formKey,
             child: ListView(
@@ -76,46 +77,15 @@ class _SignUpPageState extends State<SignUpPage> {
                 bottom: context.h * 0.016,
               ),
               children: [
-                Text(
-                  "welcome".tr(),
-                  style: context.textTheme.headlineMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: .center,
-                ),
+                _buildWelcomeAppBar(context),
                 SizedBox(height: context.h * 0.060),
-                DefaultTextFormField(
-                  labelText: "first_name".tr(),
-                  validator: (value) => value == null || value.isEmpty
-                      ? "first_name_required".tr()
-                      : null,
-                  controller: firstNameController,
-                ),
-                SizedBox(height: context.h * 0.030),
-                DefaultTextFormField(
-                  labelText: "last_name".tr(),
-                  validator: (value) => value == null || value.isEmpty
-                      ? "last_name_required".tr()
-                      : null,
-                  controller: lastNameController,
-                ),
-                SizedBox(height: context.h * 0.030),
-                DefaultTextFormField(
-                  labelText: "email_address".tr(),
-                  validator: (value) => value == null || value.isEmpty
-                      ? "email_address_required".tr()
-                      : null,
-                  controller: emailAddressController,
-                ),
-                SizedBox(height: context.h * 0.030),
-                DefaultTextFormField(
-                  labelText: "password".tr(),
-                  validator: (value) => value == null || value.isEmpty
-                      ? "password_required".tr()
-                      : null,
-                  controller: passWordController,
-                  isPassword: true,
-                ),
+                _buildFirstNameField(),
+                sizedBox,
+                _buildLastNameField(),
+                sizedBox,
+                _buildEmailAddressField(),
+                sizedBox,
+                _buildPasswordField(),
                 SizedBox(height: context.h * 0.020),
                 CheckboxAndTermsAndConditionWidget(
                   isSelected: _isCheckBoxSelected,
@@ -126,20 +96,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                 ),
                 SizedBox(height: context.h * 0.120),
-                DefaultPrimaryBtn(
-                  disabledBackgroundColor: _isCheckBoxSelected
-                      ? AppColors.primaryColor
-                      : AppColors.grey,
-                  title: "sign_up".tr(),
-                  textStyle: context.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: _isCheckBoxSelected
-                        ? AppColors.white
-                        : AppColors.primaryColor,
-                  ),
-                  onTap: _isCheckBoxSelected ? () => signUpFunc() : null,
-                  isLoading: state is CreatAccountLoading,
-                ),
+                _buildSignUpBtn(context, state),
                 SizedBox(height: context.h * 0.016),
                 AlreadyHaveAccountWidget(),
               ],
@@ -147,6 +104,68 @@ class _SignUpPageState extends State<SignUpPage> {
           );
         },
       ),
+    );
+  }
+
+  Text _buildWelcomeAppBar(BuildContext context) {
+    return Text(
+      "welcome".tr(),
+      style: context.textTheme.headlineMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+      ),
+      textAlign: .center,
+    );
+  }
+
+  DefaultTextFormField _buildFirstNameField() {
+    return DefaultTextFormField(
+      labelText: "first_name".tr(),
+      validator: (value) =>
+          value == null || value.isEmpty ? "first_name_required".tr() : null,
+      controller: firstNameController,
+    );
+  }
+
+  DefaultTextFormField _buildLastNameField() {
+    return DefaultTextFormField(
+      labelText: "last_name".tr(),
+      validator: (value) =>
+          value == null || value.isEmpty ? "last_name_required".tr() : null,
+      controller: lastNameController,
+    );
+  }
+
+  DefaultTextFormField _buildEmailAddressField() {
+    return DefaultTextFormField(
+      labelText: "email_address".tr(),
+      validator: (value) =>
+          value == null || value.isEmpty ? "email_address_required".tr() : null,
+      controller: emailAddressController,
+    );
+  }
+
+  DefaultTextFormField _buildPasswordField() {
+    return DefaultTextFormField(
+      labelText: "password".tr(),
+      validator: (value) =>
+          value == null || value.isEmpty ? "password_required".tr() : null,
+      controller: passWordController,
+      isPassword: true,
+    );
+  }
+
+  DefaultPrimaryBtn _buildSignUpBtn(BuildContext context, AuthState state) {
+    return DefaultPrimaryBtn(
+      disabledBackgroundColor: _isCheckBoxSelected
+          ? AppColors.primaryColor
+          : AppColors.grey,
+      title: "sign_up".tr(),
+      textStyle: context.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+        color: _isCheckBoxSelected ? AppColors.white : AppColors.primaryColor,
+      ),
+      onTap: _isCheckBoxSelected ? () => signUpFunc() : null,
+      isLoading: state is CreatAccountLoading,
     );
   }
 }

@@ -1,7 +1,8 @@
-import '../../../../core/model/data_model.dart';
-import '../../../../core/utils/constants/app_images.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/model/data_model.dart';
+import '../../../../core/utils/constants/app_images.dart';
 
 class WarsModel extends DataModel {
   WarsModel({required super.name, required super.image, super.descreption});

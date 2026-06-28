@@ -12,7 +12,6 @@ import '../../../../../core/utils/extensions/extensions.dart';
 import '../../../../../core/utils/themes/app_colors.dart';
 import '../../../data/auth_cubit/auth_cubit.dart';
 import '../widget/dont_have_account_widget.dart';
-import '../widget/forgot_password_widget.dart';
 import '../widget/top_login_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -50,7 +49,9 @@ class _LoginPageState extends State<LoginPage> {
             showSnakBarMessage(isError: true, message: state.message, context);
             return;
           } else if (state is LogInSuccess) {
-            if (FirebaseAuth.instance.currentUser?.emailVerified == true) {
+            final emailVerified =
+                FirebaseAuth.instance.currentUser?.emailVerified == true;
+            if (emailVerified) {
               context.replaceNamed(RouteNames.homeNavigationPage);
               showSnakBarMessage(message: "login_successfully".tr(), context);
             } else {
@@ -87,34 +88,13 @@ class _LoginPageState extends State<LoginPage> {
                         textAlign: .center,
                       ),
                       SizedBox(height: context.h * 0.048),
-                      DefaultTextFormField(
-                        labelText: "email_address".tr(),
-                        controller: _emailAddressController,
-                        validator: (value) => value == null || value.isEmpty
-                            ? "email_address_required".tr()
-                            : null,
-                      ),
+                      _buildEmailAddressField(),
                       SizedBox(height: context.h * 0.030),
-                      DefaultTextFormField(
-                        labelText: "password".tr(),
-                        controller: _passWordController,
-                        isPassword: true,
-                        validator: (value) => value == null || value.isEmpty
-                            ? "password_required".tr()
-                            : null,
-                      ),
+                      _buildPasswordField(),
                       SizedBox(height: 16),
-                      ForgotPasswordWidget(),
+                      _buildForgotPassword(context),
                       SizedBox(height: context.h * 0.110),
-                      DefaultPrimaryBtn(
-                        title: "sign_in".tr(),
-                        textStyle: context.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.white,
-                        ),
-                        isLoading: state is LogInLoading,
-                        onTap: () => loginFunc(),
-                      ),
+                      _buildSignInField(context, state),
                       SizedBox(height: context.h * 0.016),
                       DontHaveAccountWidget(),
                     ],
@@ -125,6 +105,53 @@ class _LoginPageState extends State<LoginPage> {
           );
         },
       ),
+    );
+  }
+
+  DefaultPrimaryBtn _buildSignInField(BuildContext context, AuthState state) {
+    return DefaultPrimaryBtn(
+      title: "sign_in".tr(),
+      textStyle: context.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+        color: AppColors.white,
+      ),
+      isLoading: state is LogInLoading,
+      onTap: () => loginFunc(),
+    );
+  }
+
+  Align _buildForgotPassword(BuildContext context) {
+    return Align(
+      alignment: .centerEnd,
+      child: GestureDetector(
+        onTap: () => context.pushNamed(RouteNames.forgetPasswordPage),
+        child: Text(
+          "forgot_password".tr(),
+          style: context.textTheme.labelMedium?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: AppColors.deepGrey,
+          ),
+        ),
+      ),
+    );
+  }
+
+  DefaultTextFormField _buildPasswordField() {
+    return DefaultTextFormField(
+      labelText: "password".tr(),
+      controller: _passWordController,
+      isPassword: true,
+      validator: (value) =>
+          value == null || value.isEmpty ? "password_required".tr() : null,
+    );
+  }
+
+  DefaultTextFormField _buildEmailAddressField() {
+    return DefaultTextFormField(
+      labelText: "email_address".tr(),
+      controller: _emailAddressController,
+      validator: (value) =>
+          value == null || value.isEmpty ? "email_address_required".tr() : null,
     );
   }
 }

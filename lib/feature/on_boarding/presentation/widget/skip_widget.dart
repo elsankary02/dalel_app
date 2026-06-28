@@ -20,7 +20,7 @@ class SkipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return currentIndex == onboardingFunc(context).length - 1
+    return currentIndex == onboardingItems(context).length - 1
         ? SizedBox()
         : Align(
             alignment: .centerRight,

@@ -1,16 +1,16 @@
-import '../../../../core/model/dalel_details_args.dart';
-import '../../../../core/router/route_names.dart';
-import '../../../cart/data/model/historical_souvenirs_model.dart';
-import '../../data/models/historical_characters_model.dart';
-import '../../data/models/historical_periods_model.dart';
-import '../../data/models/wars_model.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_title.dart';
+import '../../../../core/model/dalel_details_args.dart';
+import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
+import '../../../cart/data/model/historical_souvenirs_model.dart';
+import '../../data/models/historical_characters_model.dart';
+import '../../data/models/historical_periods_model.dart';
+import '../../data/models/wars_model.dart';
 import '../widget/carousel_slider_widget.dart';
 import '../widget/custom_historical_widget.dart';
 import '../widget/drawer_widget.dart';
@@ -21,13 +21,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final periods = HistoricalPeriodsModel.historicalPeriodsItems(context);
-    final characters = HistoricalCharactersModel.historicalCharactersItems(
-      context,
-    );
-    final souvenirs = HistoricalSouvenirsModel.historicalSouvenirsItems(
-      context,
-    );
+    final periods = HistoricalPeriodsModel.periodsItems(context);
+    final characters = HistoricalCharactersModel.charactersItems(context);
+    final souvenirs = HistoricalSouvenirsModel.souvenirsItems(context);
     return Scaffold(
       drawer: DrawerWidget(),
       body: SafeArea(
@@ -47,10 +43,9 @@ class HomePage extends StatelessWidget {
               items: periods,
               onTap: (index) {
                 final wars = WarsModel.warsItems(context);
-                final data = periods[index];
                 context.pushNamed(
                   RouteNames.dalelPeriodPage,
-                  extra: DalelDetailsArgs(data: data, wars: wars),
+                  extra: DalelDetailsArgs(data: periods[index], wars: wars),
                 );
               },
             ),

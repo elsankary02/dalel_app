@@ -20,7 +20,7 @@ class LogOutWidget extends StatelessWidget {
           showSnakBarMessage(
             context,
             isError: true,
-            message: tr("logout_failed"),
+            message: "logout_failed".tr(),
           );
           return;
         } else if (state is SignOutSuccess) {

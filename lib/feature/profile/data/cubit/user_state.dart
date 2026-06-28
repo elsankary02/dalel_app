@@ -1,19 +1,19 @@
 part of 'user_cubit.dart';
 
-sealed class UserState {}
+sealed class GetUserDataState {}
 
-final class UserInitial extends UserState {}
+final class GetUserDataInitial extends GetUserDataState {}
 
-final class UserLoading extends UserState {}
+final class GetUserDataLoading extends GetUserDataState {}
 
-final class UserSuccess extends UserState {
+final class GetUserDataSuccess extends GetUserDataState {
   final UserModel user;
 
-  UserSuccess(this.user);
+  GetUserDataSuccess(this.user);
 }
 
-final class UserFailuer extends UserState {
+final class GetUserDataFailuer extends GetUserDataState {
   final String message;
 
-  UserFailuer(this.message);
+  GetUserDataFailuer(this.message);
 }

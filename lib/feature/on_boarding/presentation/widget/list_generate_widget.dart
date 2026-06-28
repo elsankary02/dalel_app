@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import '../../../../core/utils/themes/app_colors.dart';
 import '../../data/model/on_boardind_model.dart';
-import 'package:flutter/material.dart';
 
 class ListGenerateWidget extends StatelessWidget {
   const ListGenerateWidget({super.key, required this.currentIndex});
@@ -12,7 +13,7 @@ class ListGenerateWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: .center,
       children: [
-        ...List.generate(onboardingFunc(context).length, (index) {
+        ...List.generate(onboardingItems(context).length, (index) {
           return Container(
             margin: EdgeInsetsDirectional.only(start: 5),
             height: 6,

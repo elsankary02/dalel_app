@@ -19,27 +19,32 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
           fontWeight: FontWeight.w400,
           color: AppColors.deepGrey,
         ),
-        children: [
-          TextSpan(
-            text: "already_have_account".tr(),
-            style: context.textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.w400,
-              color: AppColors.deepGrey,
-            ),
-          ),
-          TextSpan(
-            text: "sign_in".tr(),
-            style: context.textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.w400,
-              color: AppColors.primaryColor,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                context.replaceNamed(RouteNames.loginPage);
-              },
-          ),
-        ],
+        children: [_buildAlreadyHaveAccount(context), _buildSignIn(context)],
       ),
     );
   }
+
+  TextSpan _buildAlreadyHaveAccount(BuildContext context) {
+    return TextSpan(
+      text: "already_have_account".tr(),
+      style: context.textTheme.labelMedium?.copyWith(
+        fontWeight: FontWeight.w400,
+        color: AppColors.deepGrey,
+      ),
+    );
+  }
+}
+
+TextSpan _buildSignIn(BuildContext context) {
+  return TextSpan(
+    text: "sign_in".tr(),
+    style: context.textTheme.labelMedium?.copyWith(
+      fontWeight: FontWeight.w400,
+      color: AppColors.primaryColor,
+    ),
+    recognizer: TapGestureRecognizer()
+      ..onTap = () {
+        context.replaceNamed(RouteNames.loginPage);
+      },
+  );
 }

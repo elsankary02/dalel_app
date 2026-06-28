@@ -1,7 +1,8 @@
-import '../../../../core/model/data_model.dart';
-import '../../../../core/utils/constants/app_images.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/model/data_model.dart';
+import '../../../../core/utils/constants/app_images.dart';
 
 class HistoricalSouvenirsModel extends DataModel {
   HistoricalSouvenirsModel({
@@ -10,7 +11,7 @@ class HistoricalSouvenirsModel extends DataModel {
     super.descreption,
   });
 
-  static List<DataModel> historicalSouvenirsItems(BuildContext context) {
+  static List<DataModel> souvenirsItems(BuildContext context) {
     return [
       HistoricalSouvenirsModel(
         name: 'oldRingTitle'.tr(),

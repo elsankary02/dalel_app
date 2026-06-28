@@ -19,17 +19,7 @@ class CheckboxAndTermsAndConditionWidget extends StatelessWidget {
     return Row(
       spacing: 8,
       children: [
-        // Checkbox
-        SizedBox(
-          height: context.h * 0.024,
-          width: context.h * 0.024,
-          child: Checkbox(
-            value: isSelected,
-            onChanged: onChanged,
-            activeColor: AppColors.deepBrown,
-            side: BorderSide(color: AppColors.deepGrey),
-          ),
-        ),
+        _buildCheckBox(context),
         RichText(
           text: TextSpan(
             style: context.textTheme.labelMedium?.copyWith(
@@ -47,42 +37,59 @@ class CheckboxAndTermsAndConditionWidget extends StatelessWidget {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) => Container(
-                        padding: const EdgeInsets.all(16.0),
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: Column(
-                            crossAxisAlignment: .start,
-                            mainAxisSize: .min,
-                            children: [
-                              Text(
-                                "terms_and_conditions".tr(),
-                                style: context.textTheme.titleLarge?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.deepBrown,
-                                ),
-                              ),
-                              SizedBox(height: context.h * 0.016),
-                              Text(
-                                "actual_terms_body_text".tr(),
-                                style: context.textTheme.labelLarge?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.balck,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
+                    _buildBottomSheet(context);
                   },
               ),
             ],
           ),
         ),
       ],
+    );
+  }
+
+  SizedBox _buildCheckBox(BuildContext context) {
+    return SizedBox(
+      height: context.h * 0.024,
+      width: context.h * 0.024,
+      child: Checkbox(
+        value: isSelected,
+        onChanged: onChanged,
+        activeColor: AppColors.deepBrown,
+        side: BorderSide(color: AppColors.deepGrey),
+      ),
+    );
+  }
+
+  Future<dynamic> _buildBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: .start,
+            mainAxisSize: .min,
+            children: [
+              Text(
+                "terms_and_conditions".tr(),
+                style: context.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.deepBrown,
+                ),
+              ),
+              SizedBox(height: context.h * 0.016),
+              Text(
+                "actual_terms_body_text".tr(),
+                style: context.textTheme.labelLarge?.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.balck,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

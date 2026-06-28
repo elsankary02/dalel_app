@@ -64,56 +64,78 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   right: context.h * 0.020,
                 ),
                 children: [
-                  Text(
-                    "forgot_password_page".tr(),
-                    textAlign: .center,
-                    style: context.textTheme.headlineSmall?.copyWith(
-                      color: AppColors.blackBrown,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  _buildAppBar(context),
                   SizedBox(height: context.h * 0.057),
-                  Image.asset(
-                    AppImages.forgotPassword,
-                    height: context.h * 0.235,
-                    width: context.h * 0.235,
-                  ),
+                  _buildImage(context),
                   SizedBox(height: context.h * 0.072),
-                  Text(
-                    "enter_your_registered_email_below_to_receive_password_reset_instruction"
-                        .tr(),
-                    style: context.textTheme.titleSmall?.copyWith(
-                      color: AppColors.deepGrey,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    textAlign: .center,
-                    overflow: .ellipsis,
-                    maxLines: 2,
-                  ),
+                  _buildDescreption(context),
                   SizedBox(height: context.h * 0.041),
-                  DefaultTextFormField(
-                    labelText: "email_address".tr(),
-                    validator: (value) => value == null || value.isEmpty
-                        ? "email_address_required".tr()
-                        : null,
-                    controller: emailAddressController,
-                  ),
+                  _buildEmailAdress(),
                   SizedBox(height: context.h * 0.129),
-                  DefaultPrimaryBtn(
-                    title: "send_reset_password_link".tr(),
-                    textStyle: context.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.white,
-                    ),
-                    isLoading: state is ForgetPasswordLoading,
-                    onTap: () => forgetPasswordFunc(),
-                  ),
+                  _buildSentResetPasswordBtn(context, state),
                 ],
               ),
             );
           },
         ),
       ),
+    );
+  }
+
+  Text _buildAppBar(BuildContext context) {
+    return Text(
+      "forgot_password_page".tr(),
+      textAlign: .center,
+      style: context.textTheme.headlineSmall?.copyWith(
+        color: AppColors.blackBrown,
+        fontWeight: FontWeight.w600,
+      ),
+    );
+  }
+
+  Image _buildImage(BuildContext context) {
+    return Image.asset(
+      AppImages.forgotPassword,
+      height: context.h * 0.235,
+      width: context.h * 0.235,
+    );
+  }
+
+  DefaultPrimaryBtn _buildSentResetPasswordBtn(
+    BuildContext context,
+    AuthState state,
+  ) {
+    return DefaultPrimaryBtn(
+      title: "send_reset_password_link".tr(),
+      textStyle: context.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w500,
+        color: AppColors.white,
+      ),
+      isLoading: state is ForgetPasswordLoading,
+      onTap: () => forgetPasswordFunc(),
+    );
+  }
+
+  Widget _buildEmailAdress() {
+    return DefaultTextFormField(
+      labelText: "email_address".tr(),
+      validator: (value) =>
+          value == null || value.isEmpty ? "email_address_required".tr() : null,
+      controller: emailAddressController,
+    );
+  }
+
+  Widget _buildDescreption(BuildContext context) {
+    return Text(
+      "enter_your_registered_email_below_to_receive_password_reset_instruction"
+          .tr(),
+      style: context.textTheme.titleSmall?.copyWith(
+        color: AppColors.deepGrey,
+        fontWeight: FontWeight.w400,
+      ),
+      textAlign: .center,
+      overflow: .ellipsis,
+      maxLines: 2,
     );
   }
 }

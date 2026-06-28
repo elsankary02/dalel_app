@@ -25,7 +25,6 @@ class UserProfileAvatarWidget extends StatelessWidget {
           radius: 30,
           backgroundColor: AppColors.backgroundLight,
           backgroundImage: AssetImage(image),
-          onBackgroundImageError: (exception, stackTrace) {},
         ),
         title: Text(
           name,

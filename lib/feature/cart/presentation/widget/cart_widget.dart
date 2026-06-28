@@ -22,7 +22,7 @@ class CartWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            _defaultAppBarFunc(context),
+            _buildAppBarCart(context),
             Expanded(
               child: ListView.builder(
                 itemCount: 2,
@@ -40,11 +40,11 @@ class CartWidget extends StatelessWidget {
     );
   }
 
-  AppBar _defaultAppBarFunc(BuildContext context) {
+  AppBar _buildAppBarCart(BuildContext context) {
     return defaultAppBar(
       context,
       title: "My Cart",
-      leading: _iconbtnFunc(
+      leading: _buildIconbtn(
         context,
         icon: Icons.arrow_back_ios_rounded,
         onPressed: () => context.pop(),
@@ -53,7 +53,7 @@ class CartWidget extends StatelessWidget {
     );
   }
 
-  IconButton _iconbtnFunc(
+  IconButton _buildIconbtn(
     BuildContext context, {
     required VoidCallback onPressed,
     required IconData? icon,

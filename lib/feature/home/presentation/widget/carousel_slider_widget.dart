@@ -15,30 +15,28 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        CarouselSlider(
-          options: CarouselOptions(
-            clipBehavior: .none,
+    return Stack(children: [_buildCarouselSlider(), _buildDotsIndicator()]);
+  }
 
-            aspectRatio: 376 / 169,
-            viewportFraction: 1,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            enableInfiniteScroll: true,
-            autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 3),
-            autoPlayAnimationDuration: const Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            scrollDirection: Axis.horizontal,
-          ),
-          items: _buildCarouselItems(),
-        ),
-        _buildDotsIndicator(),
-      ],
+  CarouselSlider _buildCarouselSlider() {
+    return CarouselSlider(
+      options: CarouselOptions(
+        clipBehavior: .none,
+        aspectRatio: 376 / 169,
+        viewportFraction: 1,
+        onPageChanged: (index, reason) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        enableInfiniteScroll: true,
+        autoPlay: true,
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        scrollDirection: Axis.horizontal,
+      ),
+      items: _buildCarouselItems(),
     );
   }
 

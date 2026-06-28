@@ -19,26 +19,31 @@ class DontHaveAccountWidget extends StatelessWidget {
           fontWeight: FontWeight.w400,
           color: AppColors.deepGrey,
         ),
-        children: [
-          TextSpan(
-            text: "dont_have_account".tr(),
-            style: context.textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.w400,
-              color: AppColors.deepGrey,
-            ),
-          ),
-          TextSpan(
-            text: "sign_up".tr(),
-            style: context.textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.w400,
-              color: AppColors.primaryColor,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                context.replaceNamed(RouteNames.signUpPage);
-              },
-          ),
-        ],
+        children: [_buildDontHaveAccount(context), _buildSignUp(context)],
+      ),
+    );
+  }
+
+  TextSpan _buildSignUp(BuildContext context) {
+    return TextSpan(
+      text: "sign_up".tr(),
+      style: context.textTheme.labelMedium?.copyWith(
+        fontWeight: FontWeight.w400,
+        color: AppColors.primaryColor,
+      ),
+      recognizer: TapGestureRecognizer()
+        ..onTap = () {
+          context.replaceNamed(RouteNames.signUpPage);
+        },
+    );
+  }
+
+  TextSpan _buildDontHaveAccount(BuildContext context) {
+    return TextSpan(
+      text: "dont_have_account".tr(),
+      style: context.textTheme.labelMedium?.copyWith(
+        fontWeight: FontWeight.w400,
+        color: AppColors.deepGrey,
       ),
     );
   }

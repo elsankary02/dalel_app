@@ -15,7 +15,7 @@ class OnBoardindModel {
   });
 }
 
-List<OnBoardindModel> onboardingFunc(BuildContext context) {
+List<OnBoardindModel> onboardingItems(BuildContext context) {
   return [
     OnBoardindModel(
       image: AppImages.imagesOnBoarding1,
