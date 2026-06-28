@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/functions/default_appbar.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/themes/app_colors.dart';
 import '../../../auth/data/auth_cubit/auth_cubit.dart';
 import '../../data/cubit/user_cubit.dart';
 import '../widget/default_list_tile_profile_widget.dart';
@@ -22,7 +22,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: defaultAppBar(context, title: "profile_title".tr()),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         physics: BouncingScrollPhysics(),
         children: [
           BlocBuilder<UserCubit, GetUserDataState>(
