@@ -2,6 +2,10 @@
 
 A sophisticated Flutter application designed to take users on a historical journey, exploring civilizations, artifacts, and legendary figures with a modern and intuitive UI.
 
+![Image](https://github.com/user-attachments/assets/b891833c-0f32-4ac9-8cb0-5d5fcb47cca5)
+![Image](https://github.com/user-attachments/assets/69c86153-050c-4e02-a717-a35960686a30)
+
+
 ---
 
 ## 🚀 Features
