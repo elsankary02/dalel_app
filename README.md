@@ -139,11 +139,6 @@ lib/
 * Retrieve historical content
 * Real-time synchronization
 
-### Firebase Storage
-
-* Store historical images
-* Download images securely
-
 ---
 
 # 🚀 Getting Started
