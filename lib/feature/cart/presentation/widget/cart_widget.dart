@@ -16,21 +16,19 @@ class CartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: context.h * 0.010,
-          horizontal: context.h * 0.024,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: context.h * 0.024),
         child: Column(
           children: [
             _buildAppBarCart(context),
             Expanded(
               child: ListView.builder(
-                itemCount: 2,
+                padding: .zero,
+                itemCount: 1,
                 itemBuilder: (context, index) => DefaultCartWidget(
-                  title: 'Ancient Egypt Book',
+                  title: 'wars',
                   size: '1',
                   price: 1,
-                  imagePath: AppImages.dalel,
+                  imagePath: AppImages.ancientEgyptWars2,
                 ),
               ),
             ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_history_books.dart';
-import '../../../../core/functions/default_title.dart';
+import '../../../../core/functions/default_header.dart';
 import '../../../../core/model/dalel_details_args.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: context.h * 0.025),
 
             // historical_periods
-            defaultTitle(context, title: "historical_periods".tr()),
+            defaultHeader(context, title: "historical_periods".tr()),
             CustomHistoricalWidget(
               items: periods,
               onTap: (index) {
@@ -51,7 +51,11 @@ class HomePage extends StatelessWidget {
             ),
 
             // historical_characters
-            defaultTitle(context, top: 32, title: "historical_characters".tr()),
+            defaultHeader(
+              context,
+              top: 32,
+              title: "historical_characters".tr(),
+            ),
             DefalutHistoryBooks(
               items: characters,
               onTap: (index) => context.pushNamed(
@@ -61,11 +65,11 @@ class HomePage extends StatelessWidget {
             ),
 
             // ancient_wars
-            defaultTitle(context, top: 32, title: "ancient_wars".tr()),
+            defaultHeader(context, top: 32, title: "ancient_wars".tr()),
             CarouselSliderWidget(),
 
             // historical_souvenirs
-            defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
+            defaultHeader(context, top: 32, title: "historical_souvenirs".tr()),
             DefalutHistoryBooks(
               items: souvenirs,
               onTap: (index) => context.pushNamed(

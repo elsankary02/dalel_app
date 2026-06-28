@@ -13,8 +13,10 @@ AppBar defaultAppBar(
     centerTitle: true,
     automaticallyImplyLeading: true,
     titleSpacing: 0,
+    scrolledUnderElevation: 0.0,
     leading: leading,
     actions: actions,
+    actionsPadding: EdgeInsetsDirectional.only(end: 16),
     title: Text(
       title ?? "",
       textAlign: TextAlign.center,

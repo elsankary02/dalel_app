@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_history_books.dart';
 import '../../../../core/functions/default_appbar.dart';
-import '../../../../core/functions/default_title.dart';
+import '../../../../core/functions/default_header.dart';
 import '../../../../core/model/dalel_details_args.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
@@ -30,7 +30,7 @@ class CartPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: context.h * 0.016),
         children: [
-          defaultTitle(context, title: "historical_periods".tr()),
+          defaultHeader(context, title: "historical_periods".tr()),
 
           // historical_periods
           CustomHistoricalWidget(
@@ -42,7 +42,7 @@ class CartPage extends StatelessWidget {
               );
             },
           ),
-          defaultTitle(context, top: 32, title: "history_books_two".tr()),
+          defaultHeader(context, top: 32, title: "history_books_two".tr()),
 
           // history_books
           DefalutHistoryBooks(
@@ -52,7 +52,7 @@ class CartPage extends StatelessWidget {
               extra: DalelDetailsArgs(data: books[index]),
             ),
           ),
-          defaultTitle(context, top: 32, title: "historical_souvenirs".tr()),
+          defaultHeader(context, top: 32, title: "historical_souvenirs".tr()),
 
           // historical_souvenirs
           DefalutHistoryBooks(

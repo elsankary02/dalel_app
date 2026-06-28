@@ -64,7 +64,6 @@ class AppThemes {
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundDark,
-
     colorScheme: const ColorScheme.dark(
       primary: AppColors.primaryColor,
       // secondary: AppColors.secondary,

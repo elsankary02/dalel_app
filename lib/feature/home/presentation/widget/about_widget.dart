@@ -43,7 +43,7 @@ class AboutWidget extends StatelessWidget {
   Widget _buildImage() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: Image.asset(image, width: 160, height: 283, fit: .contain),
+      child: Image.asset(image, width: 160, height: 283, fit: .fill),
     );
   }
 }
