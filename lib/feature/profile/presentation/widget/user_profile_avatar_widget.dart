@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 
 class UserProfileAvatarWidget extends StatelessWidget {
   final String name;

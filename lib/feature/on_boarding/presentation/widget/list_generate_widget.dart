@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../data/model/on_boardind_model.dart';
 
 class ListGenerateWidget extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/router/app_go_router.dart';
-import '../core/utils/themes/app_themes.dart';
+import '../core/themes/app_themes.dart';
 
 class DalelApp extends StatelessWidget {
   const DalelApp({super.key});

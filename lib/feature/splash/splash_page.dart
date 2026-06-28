@@ -7,7 +7,7 @@ import '../../core/databases/cache/cache_helper.dart';
 import '../../core/router/route_names.dart';
 import '../../core/utils/constants/app_strings.dart';
 import '../../core/utils/extensions/extensions.dart';
-import '../../core/utils/themes/app_colors.dart';
+import '../../core/themes/app_colors.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

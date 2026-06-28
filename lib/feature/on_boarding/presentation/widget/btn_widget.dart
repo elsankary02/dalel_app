@@ -8,7 +8,7 @@ import '../../../../core/components/default_primary_btn.dart';
 import '../../../../core/databases/cache/cache_helper.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../data/model/on_boardind_model.dart';
 
 class BtnWidget extends StatefulWidget {

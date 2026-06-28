@@ -6,7 +6,7 @@ import '../../../../core/functions/default_appbar.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../../auth/data/auth_cubit/auth_cubit.dart';
 import '../../data/cubit/user_cubit.dart';
 import '../widget/default_list_tile_profile_widget.dart';

@@ -9,7 +9,7 @@ import '../../../../core/functions/show_snakbar_message.dart';
 import '../../../../core/router/route_names.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../data/auth_cubit/auth_cubit.dart';
 
 class ForgetPasswordPage extends StatefulWidget {

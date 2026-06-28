@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/components/default_cart_widget.dart';
 import '../../../../core/functions/default_appbar.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../../../core/utils/constants/app_images.dart';
 import '../../../../core/utils/constants/app_svgs.dart';
 import '../../../../core/utils/extensions/extensions.dart';
-import '../../../../core/utils/themes/app_colors.dart';
 
 class CartWidget extends StatelessWidget {
   const CartWidget({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils/extensions/extensions.dart';
-import '../utils/themes/app_colors.dart';
+import '../themes/app_colors.dart';
 
 class DefaultCartWidget extends StatefulWidget {
   final String title;

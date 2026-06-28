@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants/app_strings.dart';
 import '../utils/extensions/extensions.dart';
-import '../utils/themes/app_colors.dart';
+import '../themes/app_colors.dart';
 
 Padding defaultHeader(
   BuildContext context, {

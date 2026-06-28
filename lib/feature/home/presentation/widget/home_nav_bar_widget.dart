@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../../core/utils/constants/app_svgs.dart';
-import '../../../../core/utils/themes/app_colors.dart';
+import '../../../../core/themes/app_colors.dart';
 import '../../../profile/presentation/view/profile_page.dart';
 import '../../../search/search_page.dart';
 import '../view/home_page.dart';

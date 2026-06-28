@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/themes/app_colors.dart';
+import '../themes/app_colors.dart';
 
 class DefaultTextFormField extends StatefulWidget {
   final String? labelText;

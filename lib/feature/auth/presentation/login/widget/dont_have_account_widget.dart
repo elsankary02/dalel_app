@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/router/route_names.dart';
 import '../../../../../core/utils/extensions/extensions.dart';
-import '../../../../../core/utils/themes/app_colors.dart';
+import '../../../../../core/themes/app_colors.dart';
 
 class DontHaveAccountWidget extends StatelessWidget {
   const DontHaveAccountWidget({super.key});

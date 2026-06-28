@@ -1,7 +1,7 @@
 import '../../core/components/default_text_form_field.dart';
 import '../../core/functions/default_appbar.dart';
 import '../../core/utils/extensions/extensions.dart';
-import '../../core/utils/themes/app_colors.dart';
+import '../../core/themes/app_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
