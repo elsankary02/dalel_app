@@ -235,6 +235,9 @@ https://github.com/elsankary02
 LinkedIn:
 https://www.linkedin.com/in/mohamed-ibrahim-3734b2330
 
+Figma:
+https://www.figma.com/design/rDL7yYQ3uH0GI45w4h0x5j/Dalel?m=auto&t=Wl8uq2hdBauVHwqI-6
+
 ---
 
 ## ⭐ Show Your Support
