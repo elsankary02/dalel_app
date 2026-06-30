@@ -92,6 +92,7 @@ The application provides an intuitive user experience with Firebase integration 
 * cached_network_image
 * readmore
 * shared_preferences
+* flutter_launcher_icons 
 
 ---
 
