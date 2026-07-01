@@ -106,7 +106,6 @@ lib/
 │   ├── components/
 │   ├── constants/
 │   ├── functions/
-│   ├── services/
 │   ├── themes/
 │   └── utils/
 │
